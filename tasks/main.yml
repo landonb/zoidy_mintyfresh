@@ -23,6 +23,7 @@
     - install-develop-lang
     - install-develop-misc
     - install-develop-net
+    - install-develop-net-wireshark
     - install-develop-python
     - install-develop-sec
     - install-develop-spatial

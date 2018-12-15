@@ -14,14 +14,6 @@
 
     - whois
 
-    # Well, when I was your age, we called it Ethereal.
-    # NOTE: You will be prompted to answer Yes/No to should non-users be
-    #       able to capture packets. Default is No. Answer YES instead.
-    - wireshark
-    # Woozuh, some funky root-faking mechanism Wireshark uses.
-    # 18.04: Wireshark uses `fakeroot`, which is now be part of distro.
-    - fakeroot
-
     # *** Terminal-based Wireshark alternatives.
 
     # ssldump - SSLv3/TLS network protocol analyzer
@@ -29,4 +21,52 @@
 
     # tshark - network traffic analyzer - console version
     - tshark
+
+# *** Install Wireshark separately to support separate tags.
+
+- name: 'Install network application development and diagnostic tools'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-net, install-develop-net-wireshark
+  loop:
+
+    # Well, when I was your age, we called it Ethereal.
+    # NOTE: You will be prompted to answer Yes/No to should non-users be
+    #       able to capture packets. Default is No. Answer YES instead.
+    - wireshark
+    # Ensure expect is available, for the next task.
+
+    # Woozuh, some funky root-faking mechanism Wireshark uses.
+    # 18.04: Wireshark uses `fakeroot`, which is now be part of distro.
+    - fakeroot
+
+# *** Configure Wireshark so that it can be run unprivileged.
+
+# References:
+#  http://ask.wireshark.org/questions/7523/ubuntu-machine-no-interfaces-listedn
+#  http://wiki.wireshark.org/CaptureSetup/CapturePrivileges
+
+- name: 'Tell dumpcap to run privileged, so any user can run Wireshark'
+  become: true
+  tags: install-develop-net, install-develop-net-wireshark
+  # NOTE: Without -freadline, uses ncurses to show prompt.
+  # White -freadline, uses plaintext, which we can expect.
+  shell: |
+    spawn dpkg-reconfigure wireshark-common -freadline
+    expect "Should non-superusers be able to capture packets? [yes/no] "
+    send "yes\r"
+    exit 0
+  # NOTE: `expect eof` does not work, but `exit 0` does.
+  # NOTE: shell module docs show example with args and delegate_to. Just FYI.
+  #         args:
+  #           executable: /usr/bin/expect
+  #         delegate_to: localhost
+
+- name: 'Add user to Wireshark group'
+  become: true
+  tags: install-develop-net, install-develop-net-wireshark
+  user:
+    name: "{{ ansible_env.LOGNAME }}"
+    groups: wireshark
+    append: yes
 

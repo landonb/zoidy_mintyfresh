@@ -100,7 +100,7 @@
   include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-net
-  tags: install-develop-net
+  tags: install-develop-net, install-develop-net-wireshark
 
 - name: Install package group "install-develop-python"
   include_role:
