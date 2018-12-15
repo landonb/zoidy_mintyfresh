@@ -1,0 +1,43 @@
+---
+
+- name: 'Install security packages'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-sec
+  loop:
+
+    # EncFS is the classic encrypted filesystem.
+    # See also: CryFS, and gocryptfs.
+    - encfs
+
+    # 2018-09-20: New hotness.
+    - cryfs
+
+    # You shouldn't need to scrub if your sensitive bits only
+    # hit metal through encrypted file systems, but nevertheless.
+    - scrub
+
+    # FIXME/2018-12-15: [lb]: Disable for now -- I'm curious how `pass` works without.
+    #- pinentry-gtk2
+    #- pinentry-doc
+
+    # gnupg - GNU privacy guard - a free PGP replacement
+    # gnupg1 - GNU privacy guard - a PGP implementation (deprecated "classic" version)
+    # gnupg2 - GNU privacy guard - a free PGP replacement (dummy transitional package)
+    - gnupg2
+
+    - pwgen
+
+    # libpam0g - Pluggable Authentication Modules library
+    # libpam0g-dev - Development files for PAM
+    - libpam0g-dev
+
+    # NOTE: OpenSSH likely installed, because you did so to run Zoidy Ansible!
+    - openssh-server
+
+    # At least they didn't name it signing-key-party.
+    - signing-party
+
+    # [lb]: keepassx may work for some people, but I'm smitten with `pass`.
+    #   - keepassx
+

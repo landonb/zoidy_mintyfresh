@@ -1,0 +1,57 @@
+---
+
+- name: 'Install abcde CD encoder package and related'
+  become: true
+  apt: name={{ item }}
+  tags: install-desktop-abcde
+  loop:
+
+    # abcde - A Better CD Encoder
+    - abcde
+    # For abcde CD ripper.
+    # cd-discid - CDDB DiscID utility
+    - cd-discid
+    # vorbis-tools - several Ogg Vorbis tools
+    - vorbis-tools
+    # lame - MP3 encoding library (frontend)
+    # lame-doc - MP3 encoding library (documentation)
+    - lame
+    # Audio extraction tools: cdparanoia, libcdio17/13, icedax, flac.
+    # cdparanoia - audio extraction tool for sampling CDs
+    - cdparanoia
+    # icedax - Creates WAV files from audio CDs
+    - icedax
+    # flac - Free Lossless Audio Codec - command line tools
+    - flac
+    # mailx. Postfix. for cddb-tool
+    # bsd-mailx - simple mail user agent
+    - bsd-mailx
+    # Misc.
+    # cd-discid - CDDB DiscID utility
+    - cd-discid
+    # id3v2 - A command line id3v2 tag editor
+    - id3v2
+    # vorbis-tools - several Ogg Vorbis tools
+    - vorbis-tools
+    # mkcue - Generates a CUE sheet from a CD
+    - mkcue
+    # Searching for cdrtools returns simpleburn:
+    #   $ apt-cache search cdrtools
+    #   simpleburn - Minimalistic application for burning and extracting CDs and DVDs
+    - simpleburn
+    # abcde complains that cddb-tool not found. Is this close enough?
+    #   [2018-12-15 15:39: Must've been, if I never updated that comment!]
+    # python-cddb - Python interface to CD-IDs and FreeDB
+    - python-cddb
+    # What is the `musicbrainz` equivalent?
+    # Picard is a cross-platform music tagger written in Python.
+    # picard - Next-Generation MusicBrainz audio files tagger
+    - picard
+    # libwebservice-musicbrainz-perl - XML based Web service API to the MusicBrainz database
+    - libwebservice-musicbrainz-perl
+    # Needed for lame encoding.
+    # eyed3 - Display and manipulate id3-tags on the command-line
+    # python-eyed3 - Python module for id3-tags manipulation
+    # python3-eyed3 - Python module for id3-tags manipulation (Python 3 version)
+    - eyed3
+

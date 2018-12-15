@@ -1,0 +1,175 @@
+---
+
+# *** Update package list, and upgrade installed packages.
+
+- name: Update and upgrade installed packages
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: update-upgrade
+  tags: update-upgrade, update, upgrade
+
+# *** Install build essentials.
+
+- name: Install package group "build essentials"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-build-essentials
+  tags: install-build-essentials
+
+# *** Install new packages, grouped by functionality.
+
+- name: Install package group "install-desktop-abcde"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-abcde
+  tags: install-desktop-abcde
+
+- name: Install package group "install-desktop-apps"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-apps
+  tags: install-desktop-apps
+
+- name: Install package group "install-desktop-audio"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-audio
+  tags: install-desktop-audio
+
+- name: Install package group "install-desktop-core"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-core
+  tags: install-desktop-core
+
+- name: Install package group "install-desktop-docs"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-docs
+  tags: install-desktop-docs
+
+- name: Install package group "install-desktop-email"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-email
+  tags: install-desktop-email
+
+- name: Install package group "install-desktop-font"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-font
+  tags: install-desktop-font
+
+- name: Install package group "install-desktop-photo"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-photo
+  tags: install-desktop-photo
+
+- name: Install package group "install-develop-dbms"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-dbms
+  tags: install-develop-dbms
+
+- name: Install package group "install-develop-grep"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-grep
+  tags: install-develop-grep
+
+- name: Install package group "install-develop-image"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-image
+  tags: install-develop-image
+
+- name: Install package group "install-develop-lang"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-lang
+  tags: install-develop-lang
+
+- name: Install package group "install-develop-misc"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-misc
+  tags: install-develop-misc
+
+- name: Install package group "install-develop-net"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-net
+  tags: install-develop-net
+
+- name: Install package group "install-develop-python"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-python
+  tags: install-develop-python
+
+- name: Install package group "install-develop-sec"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-sec
+  tags: install-develop-sec
+
+- name: Install package group "install-develop-spatial"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-spatial
+  tags: install-develop-spatial
+
+- name: Install package group "install-develop-terminal"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-terminal
+  tags: install-develop-terminal
+
+- name: Install package group "install-develop-text"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-text
+  tags: install-develop-text
+
+- name: Install package group "install-develop-vcs"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-vcs
+  tags: install-develop-vcs
+
+- name: Install package group "install-develop-vim"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-vim
+  tags: install-develop-vim
+
+- name: Install package group "install-develop-web"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-web
+  tags: install-develop-web
+
+# *** Install new packages for specific distributions.
+
+- name: Install package group "install-distro-14.04"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-distro-14.04
+  tags: install-distro-14.04
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 17
+
+- name: Install package group "install-distro-16.04"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-distro-16.04
+  tags: install-distro-16.04
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
+
+- name: Install package group "install-distro-18.04"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-distro-18.04
+  tags: install-distro-18.04
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
+

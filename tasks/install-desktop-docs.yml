@@ -1,0 +1,26 @@
+---
+
+- name: "Install [this developer's selected] document applications"
+  become: true
+  apt: name={{ item }}
+  tags: install-desktop-docs
+  loop:
+
+    # Excellent diagramming.
+    - dia
+
+    # Pencil Project, a prototyping tool, has dia-ish diagram drawing.
+    #  http://pencil.evolus.vn
+    # See custom installer for pencil, elsewhere.
+
+    # PDF/Document readers.
+    # [lb]: - Back in the early 10's `acroread` was still the PDF champ.
+    #       - In 2015, I tried `okular` to open a PDF, but it crashed.
+    #       - `evince` is a reliable, stand-alone open-source PDF reader.
+    #       - Chrome/Chromium is probably the easiest path to view a PDF.
+    #       - Use LibreOffice Drawing [I think] to *edit* PDFs.
+    - evince
+
+    # SVG editor.
+    - inkscape
+

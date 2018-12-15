@@ -1,0 +1,19 @@
+---
+
+- name: "Install [this developer's have-used-at-least-once] database tools"
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-dbms
+  loop:
+
+    - postgresql
+    - postgresql-client
+
+    # SQLite3
+    - sqlite3
+    - libsqlite3-dev
+    # SpatiaLite SQLite extension akin to PostGIS.
+    - spatialite-bin
+    # Should already be installed:
+    #   - libspatialite5
+

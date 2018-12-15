@@ -1,0 +1,23 @@
+---
+
+- name: 'Install Vim and related packages'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-vim
+  loop:
+
+    # Vim. (See elsewhere: Install Dubs Vim.)
+    # Flavors: vim-gtk, vim-gtk3, vim-gnome, vim-tiny
+    # [lb]: I used to install vim-gtk, but now I build
+    #   from scratch.
+    #   #- vim-gtk
+
+    # Text columnizer. (Replaced by custom fork: parT)
+    #   #- par
+
+    # Ctags.
+    - exuberant-ctags
+
+    # Ruby dev tools for Command-T.
+    - ruby-dev
+

@@ -1,0 +1,53 @@
+---
+
+- name: 'Install distro-specific packages for 14.04'
+  become: true
+  apt: name={{ item }}
+  tags: install-distro-14.04
+  loop:
+
+    # *** install-desktop-audio.yml
+
+    # Audio extraction tool(s). [For `abcde` CD encoder.]
+    # libcdio13 - library to read and control CD-ROM
+    - libcdio13
+
+    # *** install-develop-graphical.yml
+
+    # "International Components for Unicode"
+    - libicu52
+
+    # *** install-develop-lang.yml
+
+    - ruby2.3
+    - ruby2.3-dev
+    - ruby2.3-doc
+
+    # Ruby make
+    - rake
+
+    # *** install-develop-misc.yml
+
+    # bc: An arbitrary precision calculator language.
+    # 2016-07-17: Ubuntu missing bc. What a weirdo.
+    - bc
+
+    # *** install-develop-python.yml
+
+    # wxPython. Widgets!
+    - python-wxgtk2.8
+
+    # *** install-develop-spatial.yml
+
+    - libproj0
+    - libspatialite5
+
+    # *** install-develop-vcs.yml
+
+    # 2018-12-15: 18.04 not showing a git-core package.
+    - git-core
+
+    # *** install-develop-web.yml
+
+    - apache2-mpm-worker
+

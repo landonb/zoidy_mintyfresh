@@ -1,0 +1,32 @@
+---
+
+- name: 'Install network application development and diagnostic tools'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-net
+  loop:
+
+    - curl
+
+    - socket
+
+    - traceroute
+
+    - whois
+
+    # Well, when I was your age, we called it Ethereal.
+    # NOTE: You will be prompted to answer Yes/No to should non-users be
+    #       able to capture packets. Default is No. Answer YES instead.
+    - wireshark
+    # Woozuh, some funky root-faking mechanism Wireshark uses.
+    # 18.04: Wireshark uses `fakeroot`, which is now be part of distro.
+    - fakeroot
+
+    # *** Terminal-based Wireshark alternatives.
+
+    # ssldump - SSLv3/TLS network protocol analyzer
+    - ssldump
+
+    # tshark - network traffic analyzer - console version
+    - tshark
+

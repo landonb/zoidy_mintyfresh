@@ -1,0 +1,40 @@
+---
+
+- name: "Install some language-specific develop tools [that this developer has used]"
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-lang
+  loop:
+
+    # Interactive bash debugger. To set a breakpoint:
+    #   source /usr/share/bashdb/bashdb-trace
+    #   _Dbg_debugger
+    #- bashdb
+    # http://bashdb.sourceforge.net/
+    # MAYBE/2018-12-15: bashdb dropped from 18.04. Move snippet below to new role?
+    # Build instructions courtesy
+    #  https://github.com/rogalmic/vscode-bash-debug/issues/67
+    #   apt-get install texi2html texinfo
+    #   wget https://netix.dl.sourceforge.net/project/bashdb/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.gz
+    #   tar -xvfz bashdb-*.tar.gz
+    #   cd bashdb-*
+    #   ./configure
+    #   make
+    #   sudo make install
+
+    # shellcheck - lint tool for shell scripts
+    - shellcheck
+
+    # Lua scripting.
+    # 2018-12-15: lua5.3 released, but not docs for it.
+    #- lua5.2
+    - lua5.2-doc
+    - lua5.3
+    #- lua5.3-doc
+
+    # Node.js package manager.
+    - npm
+
+    # Yaml linter. Because you always wanted more Yaml in your life.
+    - yamllint
+

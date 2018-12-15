@@ -1,0 +1,48 @@
+---
+
+- name: 'Install distro-specific packages for 16.04'
+  become: true
+  apt: name={{ item }}
+  tags: install-distro-16.04
+  loop:
+
+    # *** install-develop-core.yml
+
+    # Color picker. [That's no longer available in 18.04.]
+    - gcolor2
+
+    # *** install-develop-dbms.yml
+
+    - postgresql-server-dev-9.3
+
+    # *** install-develop-graphical.yml
+
+    # "International Components for Unicode"
+    - libicu52
+
+    # *** install-develop-lang.yml
+
+    - ruby2.3
+    - ruby2.3-dev
+    - ruby2.3-doc
+
+    # Interactive bash debugger. To set a breakpoint:
+    #   source /usr/share/bashdb/bashdb-trace
+    #   _Dbg_debugger
+    # http://bashdb.sourceforge.net/
+    - bashdb
+
+    # *** install-develop-python.yml
+
+    # wxPython. Widgets!
+    - python-wxgtk2.8
+
+    # *** install-develop-spatial.yml
+
+    - libproj0
+    - libspatialite5
+
+    # *** install-develop-web.yml
+
+    - apache2-mpm-worker
+

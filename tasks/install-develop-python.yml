@@ -1,0 +1,67 @@
+---
+
+- name: "Install python development packages"
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-python
+  loop:
+
+    # FIXME/2018-12-14: Revisit. I copied from Home-Fries
+    #   and disabled a bunch-ton of packages.
+
+    - python-dev
+    - python3-dev
+
+    - libpython-dev
+    - libpython3-dev
+
+    #- libapache2-mod-python
+
+    # Most Python packages should be pip-installed, or
+    # confined to a virtualenv, as necessary for each
+    # project, but some are nice to have at the ready.
+
+    #- python-setuptools
+
+    # Know ye there is also a get-pip.py installer.
+    #   # -python-pip
+    #   # -python3-pip
+
+    # SKIP: virtualenvwrapper is pip-installed.
+    #   #- virtualenvwrapper
+
+    #- python-pytest
+
+    #- python-tox
+
+    # Flake8 is preferred over pylint, I'm sure.
+    #   #- pylint
+    #- python-flake8
+    #- python3-flake8
+
+    #- python-coverage
+    #- python3-coverage
+
+    #- python-simplejson
+    #- python-logilab-common
+    #- python-gtk2
+    #- python-wnck
+    #- python-xlib
+    #- python-dbus
+
+    # 2018-12-14: Disabling these; cannot image I still need/use.
+    #   - python-egenix-mxdatetime
+    #   - python-egenix-mxtools
+    #   - python-subversion
+    #   - python-levenshtein
+
+    # Natural Language Toolkit. Installed for sake of curiousity.
+    #- python-nltk
+    #- python-matplotlib
+    #- python-tk
+
+    # 2018-12-14: fabric is like Ansible, but for Python.
+    # [lb]: Not sure why I added this. Did I use it once?
+    #- fabric
+    #- python3-sphinx
+

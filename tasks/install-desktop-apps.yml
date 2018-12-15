@@ -1,0 +1,22 @@
+---
+
+- name: 'Install non-specifically-categorized desktop applications'
+  become: true
+  apt: name={{ item }}
+  tags: install-desktop-apps
+  loop:
+
+    # For Home Fries' `qq` shell command.
+    # FIXME/2018-12-15: [lb]: Reenable this, after confirming needed in 18.04.
+    #- gnome-screensaver
+
+    # Terminal weather.
+    # ansiweather - Weather in your terminal, with ANSI colors and Unicode symbols
+    - ansiweather
+
+    # You'll find additional MATE theme, like BlackMATE, in themes package.
+    # mate-themes - Official themes for the MATE desktop
+    # ubuntu-mate-themes - GTK2 and GTK3 themes for Ubuntu MATE
+    # MAYBE/2018-12-14: [lb] Don't use, so disabling. Maybe look at 'em later.
+    #   #- mate-themes
+

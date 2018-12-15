@@ -1,0 +1,43 @@
+---
+
+- name: 'Install distro-specific packages for 18.04'
+  become: true
+  apt: name={{ item }}
+  tags: install-distro-18.04
+  loop:
+
+    # *** install-desktop-audio.yml
+
+    # Audio extraction tool(s). [For `abcde` CD encoder.]
+    # libcdio17 - library to read and control CD-ROM
+    - libcdio17
+
+    # *** install-develop-graphical.yml
+
+    # "International Components for Unicode"
+    # Ubuntu 16.04: libicu52
+    # Ubuntu 18.04: libicu60
+    - libicu60
+
+    # *** install-develop-lang.yml
+
+    # Ubuntu 14.04: ruby 1.9
+    # Ubuntu 16.04: ruby 2.3
+    # Ubuntu 18.04: ruby 2.5
+    - ruby2.5
+    - ruby2.5-dev
+    - ruby2.5-doc
+
+    # *** install-develop-python.yml
+
+    # wxPython. Widgets!
+    # Ubuntu 16.04: python-wxgtk2.8
+    # Ubuntu 18.04: python-wxgtk3.0
+    - python-wxgtk3.0
+
+    # *** install-develop-spatial.yml
+
+    # 2018-12-14: Disabled! Maybe again someday, GIS.
+    #   - libproj12
+    #   - libspatialite7
+

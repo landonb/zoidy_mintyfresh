@@ -1,0 +1,30 @@
+---
+
+- name: 'Install terminal tools'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-terminal
+  loop:
+
+    # expect - Automates interactive applications
+    - expect
+
+    # 2018-12-14: Is this needed for some Home Fries functionality?
+    # libedit-dev - BSD editline and history libraries (development files)
+    # FIXME/2018-12-14 18:55: Disabling for now! Revisit.
+    #- libedit-dev
+
+    # inotify-tools - command-line programs providing a simple interface to inotify
+    - inotify-tools
+
+    # tmux - terminal multiplexer
+    - tmux
+
+    # xclip - command line interface to X selections
+    - xclip
+
+    # [lb] Maybe someday I'll try a shell other than Bash.
+    #  (But why rock the boat when you've got a good thing?)
+    # zsh - shell with lots of features
+    - zsh
+

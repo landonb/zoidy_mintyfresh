@@ -1,0 +1,40 @@
+---
+
+# Main task: Check if tasks yet run, and run (via include-role) those not.
+
+- name: Update packages?
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: customize
+  tags:
+    - install-build-essentials
+    - install-build-essentials
+    - install-desktop-abcde
+    - install-desktop-apps
+    - install-desktop-audio
+    - install-desktop-core
+    - install-desktop-docs
+    - install-desktop-email
+    - install-desktop-font
+    - install-desktop-photo
+    - install-develop-dbms
+    - install-develop-grep
+    - install-develop-image
+    - install-develop-lang
+    - install-develop-misc
+    - install-develop-net
+    - install-develop-python
+    - install-develop-sec
+    - install-develop-spatial
+    - install-develop-terminal
+    - install-develop-text
+    - install-develop-vcs
+    - install-develop-vim
+    - install-develop-web
+    - install-distro-14.04
+    - install-distro-16.04
+    - install-distro-18.04
+    - update-upgrade
+    - update
+    - upgrade
+

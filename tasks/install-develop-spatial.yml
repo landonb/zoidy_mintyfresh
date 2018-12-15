@@ -1,0 +1,23 @@
+---
+
+- name: 'Install spatial packages'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-spatial
+  loop:
+
+    # Cartographic projection packages.
+    # libproj-dev - Cartographic projection library (development files)
+    - libproj-dev
+    # proj-bin - Cartographic projection library (tools)
+    - proj-bin
+    # proj-data - Cartographic projection filter and library (datum package)
+    - proj-data
+
+    # ogrinfo et al.
+    # gdal-bin - Geospatial Data Abstraction Library - Utility programs
+    # node-srs - spatial reference library for Node.js
+    - gdal-bin
+    # gpx2shp - convert GPS or GPX file to ESRI Shape file
+    - gpx2shp
+

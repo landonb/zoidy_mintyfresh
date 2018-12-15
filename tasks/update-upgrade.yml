@@ -1,0 +1,23 @@
+---
+
+# Update package list, and upgrade all packages, including distro pkgs.
+
+- name: Run command "apt-get update"
+  become: true
+  apt:
+    update_cache: yes
+  tags: update-upgrade, update
+
+- name: Run command "apt-get upgrade"
+  become: true
+  apt:
+    name: "*"
+    state: latest
+  tags: update-upgrade, upgrade
+
+- name: Run command "apt-get dist-upgrade"
+  become: true
+  apt:
+    upgrade: dist
+  tags: update-upgrade, upgrade
+

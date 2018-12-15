@@ -1,0 +1,13 @@
+---
+
+# dkms: Dynamic Kernel Module Support Framework
+
+- name: Install essential build essentials
+  become: true
+  apt: name={{ item }}
+  tags: install-build-essentials
+  loop:
+    # Kernel goodies.
+    - dkms
+    - build-essential
+

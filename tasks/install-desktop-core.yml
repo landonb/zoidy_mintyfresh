@@ -1,0 +1,60 @@
+---
+
+- name: "Install core desktop tools"
+  become: true
+  apt: name={{ item }}
+  tags: install-desktop-core
+  loop:
+
+    # CLI OS and Window Manager customizers.
+    - dconf-cli
+    - gconf-editor
+    - wmctrl
+    - xdotool
+
+    # apt-file - search for files within Debian packages (command-line interface)
+    # [lb]: Home Fries' once/ used to run: `sudo apt-file update`
+    - apt-file
+
+    # Are we in a virtual machine?
+    #   - virt-what
+
+    # Bleeding edge Chrome.
+    - chromium-browser
+
+    # Eye of Gnome, a slideshow image viewer.
+    - eog
+
+    # Awesomest graphical diff.
+    - meld
+
+    # Hexadecimal file viewer.
+    - ghex
+
+    # Hexadecimal diff.
+    # [lb] I use ghex very rarely, and vbindiff less so,
+    # but a hex viewer and a differ are essential tools.
+    - vbindiff
+    # Meh on hexdiff.
+    #   - hexdiff
+
+    # Color picker.
+    # FIXME/2018-12-15: gcolor2 is missing from 18.04.
+    #- gcolor2
+    #   https://askubuntu.com/questions/1073990/gcolor2-package-missing-in-ubuntu-18-04
+    # Maybe write deb installer, e.g.,
+    #   cd ~/Downloads
+    #   wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcolor2/gcolor2_0.4-2.1ubuntu1_amd64.deb
+    #   sudo apt-get install ./gcolor2_0.4-2.1ubuntu1_amd64.deb
+    # or Maybe update to gcolor3
+    #   ppa:evertiro/gcolor3
+    # except "gcolor3 does not have broad list of predefined colors".
+    # Which is probably a feature, not a bug, because predefined colors
+    # clutter a list of colors shared with user-saved colors. Ahuh.
+
+    # artha - Handy off-line thesaurus based on WordNet
+    # HINT: After running, press Ctrl-Alt-W to foreground!
+    # [lb]: I don't really use this, but like to know that
+    # if I'm offline, I can find a dictionary & thesaurus.
+    - artha
+

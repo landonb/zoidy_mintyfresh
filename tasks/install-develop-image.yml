@@ -1,0 +1,61 @@
+---
+
+- name: 'Install imagemagick and related packages'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-image
+  loop:
+
+    # libxml2-dev - Development files for the GNOME XML library
+    - libxml2-dev
+
+    # libjpeg-dev - Independent JPEG Group's JPEG runtime library (dependency package)
+    - libjpeg-dev
+
+    # libpng-dev - PNG library - development (version 1.6)
+    # libpng++-dev - C++ interface to the PNG (Portable Network Graphics) library
+    - libpng++-dev
+
+    # imagemagick - image manipulation programs -- binaries
+    - imagemagick
+
+    # libmagick++-dev - object-oriented C++ interface to ImageMagick -- dummy package
+    - libmagick++-dev
+
+    # texlive - TeX Live: A decent selection of the TeX Live packages
+    - texlive
+
+    # autoconf - automatic configure script builder
+    - autoconf
+
+    # vsftpd - lightweight, efficient FTP server written for security
+    - vsftpd
+
+    # MAYBE/2018-12-15: [lb]: There's also libcurl4, but I'm not sure which
+    #   one imagemagick wants. Or even if I still need all these dependencies!
+    #   (Or maybe I was using libcurl for another project?)
+    # libcurl3 - easy-to-use client-side URL transfer library (OpenSSL flavour)
+    # libcurl4 - easy-to-use client-side URL transfer library (OpenSSL flavour)
+    #- libcurl3
+
+    # pcregrep - grep utility that uses perl 5 compatible regexes.
+    - pcregrep
+
+    # gir1.2-gtop-2.0 - gtop system monitoring library (gir bindings)
+    - gir1.2-gtop-2.0
+
+    # libgd-dev - GD Graphics Library (development version)
+    - libgd-dev
+
+    # libxslt1-dev - XSLT 1.0 processing library - development kit
+    - libxslt1-dev
+
+    # xsltproc - XSLT 1.0 command line processor
+    - xsltproc
+
+    # libicu-dev - Development files for International Components for Unicode
+    - libicu-dev
+
+    # libagg-dev - AntiGrain Geometry graphical toolkit (development files)
+    - libagg-dev
+

@@ -1,0 +1,20 @@
+---
+
+- name: 'Install grepper packages (not including `rg`)'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-grep
+  loop:
+
+    # [lb]: I don't personally use ack, but sometimes I copy-paste it.
+    - ack-grep
+
+    # For when you need Perl-style regex.
+    # pcregrep - grep utility that uses perl 5 compatible regexes.
+    - pcregrep
+
+    # The stately Silver Search, ag.
+    - silversearcher-ag
+
+    # See elsewhere: ripgrep is ever better than ag!
+

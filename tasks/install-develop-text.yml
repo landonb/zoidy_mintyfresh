@@ -1,0 +1,34 @@
+---
+
+- name: 'Install apps to help working with text in the terminal'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-text
+  loop:
+
+    # 2017-05-23: What is with wanting to save color output to a file?
+    #   ls --color=always | aha --black > ls-with-colors.html
+    # aha - ANSI color to HTML converter
+    - aha
+    # You can also pygmentize exiting files.
+    #   pygmentize file.pl | \
+    #     grep -i --color=always version | \
+    #     aha --black > ls-with-colors.html
+
+    # 2018-12-14: Huh: In 14.04, says logtail is deprecated:
+    #   logtail - Print log file lines that have not been read (deprecated)
+    # but not so in 18.04:
+    #   logtail - Print log file lines that have not been read
+    # but I'm not sure what I was using logtail for, anyway.
+    #   #- logtail
+
+    # A colorful, more clever tail command.
+    # multitail - view multiple logfiles windowed on console
+    - multitail
+
+    # `most` is pretty lame; author prefers `less`.
+    #   - most
+    # Also, `less` is more with color.
+    # python-pygments - syntax highlighting package written in Python
+    - python-pygments
+

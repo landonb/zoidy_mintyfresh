@@ -1,0 +1,38 @@
+---
+
+- name: 'Install font viewers and fonts'
+  become: true
+  apt: name={{ item }}
+  tags: install-desktop-font
+  loop:
+
+    # gucharmap - Unicode character picker and font browser
+    # E.g.,
+    #   charmap --font="Hack Regular 9"
+    - gucharmap
+
+    # 2018-11-16: Simple app to view text rendereded in different fonts.
+    # font-manager - font management application for the GNOME desktop
+    - font-manager
+
+    # fonts-cantarell: sans serif font family designed for on-screen readability
+    - fonts-cantarell
+    # fonts-tuffy - The Tuffy Truetype Font Family
+    - fonts-tuffy
+    # lmodern: scalable PostScript and OpenType fonts based on Computer Modern
+    - lmodern
+    # ttf-aenigma: 465 free TrueType fonts by Brian Kent
+    - ttf-aenigma
+    # 2018-12-15: [lb] Old comment says "Symbola font for emojis."
+    #   Did I mean the `ttf-ancient-fonts` supplies emojis? Sounds weird.
+    # ttf-ancient-fonts: Unicode Fonts for Ancient Scripts (transitional package)
+    - ttf-ancient-fonts
+    # ttf-bitstream-vera: The Bitstream Vera family of free TrueType fonts
+    - ttf-bitstream-vera
+    # ttf-georgewilliams: Free unicode TrueType fonts by George Williams
+    - ttf-georgewilliams
+    # ttf-sjfonts: Some Juicy Fonts handwriting fonts
+    - ttf-sjfonts
+    # tv-fonts: X11 fonts for TV applications
+    - tv-fonts
+

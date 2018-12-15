@@ -1,0 +1,24 @@
+---
+
+- name: 'Install version control packages'
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-vcs
+  loop:
+
+    # All your repositories are belong to too many managers.
+    # [2018-12-15: [lb]: Said an old me. It's all git, now!]
+
+    - git
+
+    # GUI git log tool and commit comparison [visual diff] tool
+    - gitk
+
+    # A beautiful, colorful git browser/helper.
+    # tig - ncurses-based text-mode interface for Git
+    - tig
+
+    # Just. In. Case. (Hopefully Never.)
+    - subversion
+    - mercurial
+
