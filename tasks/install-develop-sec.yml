@@ -41,3 +41,12 @@
     # [lb]: keepassx may work for some people, but I'm smitten with `pass`.
     #   - keepassx
 
+# https://en.wikipedia.org/wiki/Filesystem_in_Userspace
+- name: 'Add user to fuse group'
+  become: true
+  tags: install-develop-sec
+  user:
+    name: "{{ ansible_env.LOGNAME }}"
+    groups: fuse
+    append: yes
+
