@@ -49,4 +49,7 @@
     name: "{{ ansible_env.LOGNAME }}"
     groups: fuse
     append: yes
+  # FIXME/2018-12-15: On 18.04, no fuse group. I guess if encfs works,
+  # I don't care! (Otherwise, maybe I'm missing a step.)
+  when: False
 
