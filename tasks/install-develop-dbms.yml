@@ -17,3 +17,11 @@
     # Should already be installed:
     #   - libspatialite5
 
+- name: 'Add user to postgres group'
+  become: true
+  tags: install-develop-dbms
+  user:
+    name: "{{ ansible_env.LOGNAME }}"
+    groups: postgres
+    append: yes
+
