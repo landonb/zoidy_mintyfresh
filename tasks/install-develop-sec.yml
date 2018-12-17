@@ -40,6 +40,8 @@
 
     # [lb]: keepassx may work for some people, but I'm smitten with `pass`.
     #   - keepassx
+    # FIXME/2018-12-17: I built pass previously. Do I still need to?
+    pass
 
 # https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - name: 'Add user to fuse group'

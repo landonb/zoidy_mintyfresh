@@ -29,3 +29,8 @@
     #   xcalib -invert -alter
     - xcalib
 
+    # FIXME/2018-12-16: Home Fries requires direnv; make Home Fries Install Role.
+    - direnv
+
+    - tree
+

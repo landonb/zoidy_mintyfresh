@@ -6,6 +6,14 @@
   tags: install-develop-terminal
   loop:
 
+    # tmux - terminal multiplexer
+    - tmux
+
+    # xclip - command line interface to X selections
+    - xclip
+
+    # *** Shell
+
     # expect - Automates interactive applications
     - expect
 
@@ -17,11 +25,11 @@
     # inotify-tools - command-line programs providing a simple interface to inotify
     - inotify-tools
 
-    # tmux - terminal multiplexer
-    - tmux
-
-    # xclip - command line interface to X selections
-    - xclip
+    # Try mosh, as suggested by wonderful post of using Ansible to secure a
+    # linux box (which I found while looking for task to regex sshd_config).
+    #   https://ryaneschinger.com/blog/securing-a-server-with-ansible/
+    # mosh - Mobile shell that supports roaming and intelligent local echo
+    - mosh
 
     # [lb] Maybe someday I'll try a shell other than Bash.
     #  (But why rock the boat when you've got a good thing?)
