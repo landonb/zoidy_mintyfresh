@@ -6,18 +6,20 @@
   become: true
   apt:
     update_cache: yes
+    cache_valid_time: 3600
   tags: update-upgrade, update
 
-- name: Run command "apt-get upgrade"
-  become: true
-  apt:
-    name: "*"
-    state: latest
-  tags: update-upgrade, upgrade
+# This is a development machine, so would rather have
+# conflicts resolved and maybe something broken, than
+# upgrades not performed because snowflake. Therefore
+# run a full/dist upgrade [which should be same: full
+# and dist have unique documentation, but in the code
+# apparently run the same code].
 
-- name: Run command "apt-get dist-upgrade"
+- name: Run command "apt full-upgrade", i.e., "apt-get upgrade"
   become: true
   apt:
-    upgrade: dist
+    # upgrade: dist | full | no | safe | yes
+    upgrade: full
   tags: update-upgrade, upgrade
 
