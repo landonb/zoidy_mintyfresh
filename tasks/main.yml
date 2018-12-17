@@ -1,6 +1,5 @@
 ---
-
-# Main task: Check if tasks yet run, and run (via include-role) those not.
+# Main task: Load package installers, or not, based on tags.
 
 - name: Update packages?
   include_role:
