@@ -20,12 +20,30 @@
     # Most Python packages should be pip-installed, or
     # confined to a virtualenv, as necessary for each
     # project, but some are nice to have at the ready.
+    #
+    # For instance, we want pip to install ansible requirments.
 
-    #- python-setuptools
+    # Know ye there is also a get-pip.py installer,
+    #   https://bootstrap.pypa.io/get-pip.py
+    # but the pip that goes with the system Python
+    # should likewise come from aptitude (i.e.,
+    # install the latest pip in a venv).
+    - python-pip
+    - python3-pip
 
-    # Know ye there is also a get-pip.py installer.
-    #   # -python-pip
-    #   # -python3-pip
+    - python-all-dev
+    - python3-all-dev
+
+    - python-wheel
+    - python3-wheel
+
+    - python-setuptools
+    - python3-setuptools
+
+    # Install psutil for Ansible dconf module.
+    # MAYBE/2018-12-23: Add psutil to Ansible requirements?
+    - python-psutil
+    - python3-psutil
 
     # SKIP: virtualenvwrapper is pip-installed.
     #   #- virtualenvwrapper
