@@ -1,3 +1,7 @@
 ---
 # defaults file for zoidy_mintyfresh
 
+# DEVs: Override this is your playbook to specify a custom greeter background.
+# The default path is Mint Tara 18.04's default greeter image (3d "lm" logo).
+zoidy_mintyfresh_slick_greeter_bg: "/usr/share/backgrounds/linuxmint/default_background.jpg"
+

@@ -184,3 +184,12 @@
         - laptop-lid-disable-wake-on
   tags: laptop-lid-disable-wake-on
 
+- name: Load role to Deactivate Reactive Laptop Lid Response
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: log-on-screen-background
+    apply:
+      tags:
+        - log-on-screen-background
+  tags: log-on-screen-background
+

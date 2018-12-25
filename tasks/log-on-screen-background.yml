@@ -1,0 +1,15 @@
+---
+
+# Refs:
+#
+#   - Official Source with Decent Documentation!
+#     (and full list of configuration options).
+#
+#     https://github.com/linuxmint/slick-greeter
+
+- name: Install custom Slick Greeter
+  become: true
+  template:
+    src: slick-greeter.conf.j2
+    dest: /etc/lightdm/slick-greeter.conf
+

@@ -39,4 +39,5 @@
     - upgrade
     # Addit'l.
     - laptop-lid-disable-wake-on
+    - log-on-screen-background
 
