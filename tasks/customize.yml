@@ -173,3 +173,14 @@
   tags: install-distro-18.04
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
 
+# *** Perform sudo setup operations (I'm too lazy to put in other Galaxy Role).
+
+- name: Load role to Deactivate Reactive Laptop Lid Response
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: laptop-lid-disable-wake-on
+    apply:
+      tags:
+        - laptop-lid-disable-wake-on
+  tags: laptop-lid-disable-wake-on
+

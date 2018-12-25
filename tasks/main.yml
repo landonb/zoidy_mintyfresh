@@ -37,4 +37,6 @@
     - update-upgrade
     - update
     - upgrade
+    # Addit'l.
+    - laptop-lid-disable-wake-on
 
