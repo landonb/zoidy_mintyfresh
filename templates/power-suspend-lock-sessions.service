@@ -1,0 +1,26 @@
+# Creating a systemd service...
+
+# https://ubuntu-mate.community/t/how-to-lock-screen-on-suspend/16836/7
+
+# man systemd.service
+#
+# FIXME: Use symlink to ~/.fries/bin file?
+#
+# systemctl start power-suspend-lock-sessions.service
+
+[Unit]
+Description=Lock sessions on Suspend/Sleep/Hibernate
+Documentation=man:loginctl(1)
+Before=sleep.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/logger --tag "loginctl" --priority auth.info "Session: Locking all user sessions"
+ExecStart=/bin/loginctl lock-sessions
+RemainAfterExit=no
+StandardOutput=journal
+
+[Install]
+#Alias=sleep.target/power-suspend-lock-sessions.service
+WantedBy=sleep.target
+

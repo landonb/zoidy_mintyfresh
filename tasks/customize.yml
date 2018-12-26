@@ -184,7 +184,16 @@
         - laptop-lid-disable-wake-on
   tags: laptop-lid-disable-wake-on
 
-- name: Load role to Deactivate Reactive Laptop Lid Response
+- name: Load role to Lock Sessions on Power Suspend
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: power-suspend-lock-sessions
+    apply:
+      tags:
+        - power-suspend-lock-sessions
+  tags: power-suspend-lock-sessions
+
+- name: Load role to Customize Log on Greeter Screen Background
   include_role:
     name: zoidy_mintyfresh
     tasks_from: log-on-screen-background

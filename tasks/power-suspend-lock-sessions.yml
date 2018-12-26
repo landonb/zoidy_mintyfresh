@@ -1,0 +1,27 @@
+---
+
+# Check systemctl to verify that this service is setup:
+#
+#   systemctl status power-suspend-lock-sessions.service
+
+- name: Ensure session is locked on power suspension
+  become: true
+  template:
+    src: power-suspend-lock-sessions.service
+    dest: /etc/systemd/system
+
+# `systemctl daemon-reload`
+- name: Reload systemd configs, to see newly installed lock-on-suspend service
+  become: true
+  systemd:
+    daemon_reload: yes
+
+# `systemctl enable power-suspend-lock-sessions.service`
+# `systemctl start power-suspend-lock-sessions.service`
+- name: Start and Enable-on-boot Our lock-on-suspend service
+  become: true
+  systemd:
+    name: power-suspend-lock-sessions.service
+    state: started
+    enabled: yes
+
