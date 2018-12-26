@@ -16,6 +16,9 @@
     # [lb]: Home Fries' once/ used to run: `sudo apt-file update`
     - apt-file
 
+    # Oh, Snap!
+    - snapd
+
     # Are we in a virtual machine?
     #   - virt-what
 

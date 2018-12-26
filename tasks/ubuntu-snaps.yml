@@ -1,0 +1,8 @@
+---
+
+- name: Install snaps
+  become: yes
+  snap:
+    name:
+      - spotify
+
