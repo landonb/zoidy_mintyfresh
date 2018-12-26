@@ -21,8 +21,18 @@
     # Ruby dev tools for Command-T.
     - ruby-dev
 
-    # Libraries needed to build Vim.
+    # Libraries needed to build Vim. See also:
+    #   sudo apt-get -s build-dep vim
+    # (provided you have update sources.list,
+    # which these Zoidy Pooh Ansible Roles do not).
+
     - libncurses5-dev
     # ncursesw is ncurses with Unicode (wide character) support.
     - libncursesw5-dev
+
+    # For GUI support. Without it, Vim builds, but gvim symlink
+    # is not made (and if you make it and run it, complains:
+    #   $ gvim
+    #   E25: GUI cannot be used: Not enabled at compile time
+    - libgtk2.0-dev
 
