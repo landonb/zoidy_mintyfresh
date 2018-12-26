@@ -61,3 +61,7 @@
     # if I'm offline, I can find a dictionary & thesaurus.
     - artha
 
+    # [lb] Because I disabled the screensaver lock, need manual method.
+    # gnome-screensaver-command --lock
+    - gnome-screensaver
+
