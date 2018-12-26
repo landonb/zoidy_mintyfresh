@@ -1,5 +1,9 @@
 ---
 
+# NOTE: In practice, on Resume, you'll see the unlocked screen for a brief
+# moment before the screensaver kicks on, and then when you interact (move
+# mouse, hit Escape, etc.), you'll get the password popup.
+
 # Check systemctl to verify that this service is setup:
 #
 #   systemctl status power-suspend-lock-sessions.service
@@ -22,6 +26,7 @@
   become: true
   systemd:
     name: power-suspend-lock-sessions.service
+    # Ha! This locks the screen on ya when it runs!
     state: started
     enabled: yes
 
