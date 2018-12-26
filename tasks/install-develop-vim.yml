@@ -21,3 +21,8 @@
     # Ruby dev tools for Command-T.
     - ruby-dev
 
+    # Libraries needed to build Vim.
+    - libncurses5-dev
+    # ncursesw is ncurses with Unicode (wide character) support.
+    - libncursesw5-dev
+
