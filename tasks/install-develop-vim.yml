@@ -24,7 +24,7 @@
     # Libraries needed to build Vim. See also:
     #   sudo apt-get -s build-dep vim
     # (provided you have update sources.list,
-    # which these Zoidy Pooh Ansible Roles do not).
+    #  which these Zoidy Pooh Ansible Roles do not).
 
     - libncurses5-dev
     # ncursesw is ncurses with Unicode (wide character) support.
