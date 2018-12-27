@@ -4,7 +4,7 @@
 - name: Update packages?
   include_role:
     name: zoidy_mintyfresh
-    tasks_from: customize
+    tasks_from: all
   tags:
     - install-build-essentials
     - install-build-essentials
