@@ -1,0 +1,23 @@
+---
+
+- name: David Bowie sings All the Young Pips
+  set_fact:
+    pip_list:
+      # You can specify exact versions, if necessary, e.g.,
+      #   - bottle==0.11
+      #   - django>1.11.0,<1.12.0
+      # but generally I prefer living on the edge. Of disaster.
+      - restview
+
+- name: Install Systemwide Pip2 packages
+  become: yes
+  pip:
+    name: "{{ pip_list }}"
+    executable: /usr/bin/pip2
+
+- name: Install Systemwide Pip2 packages
+  become: yes
+  pip:
+    name: "{{ pip_list }}"
+    executable: /usr/bin/pip3
+
