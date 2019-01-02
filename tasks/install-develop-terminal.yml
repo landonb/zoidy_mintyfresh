@@ -9,6 +9,33 @@
     # tmux - terminal multiplexer
     - tmux
 
+    # terminator - multiple GNOME terminals in one window
+    - terminator
+    # Avoid warnings, e.g.,
+    #
+    #   $ terminator -l <layout>
+    #   Unable to load Keybinder module. This means the hide_window shortcut will be unavailable
+    #   Unable to bind hide_window key, another instance/window has it.
+    #
+    # by installing recommended packages. Per package description:
+    #
+    #   $ apt-cache show terminator
+    #   Version: 1.91-1
+    #   Depends: python-cairo, ...
+    #   Recommends: gir1.2-keybinder-3.0, gir1.2-notify-0.7, xdg-utils
+    #
+    # [lb]: With additional packages, I see one remaining warning, but whatever; e.g.,:
+    #
+    #   <window.Window object at 0x7f385ab506e0 (terminatorlib+window+Window at 0x55768b192290)>
+    #     is not in registered window list
+    #
+    # gir1.2-keybinder-3.0 - registers global key bindings for applications - Gtk+3 - typelib
+    # gir1.2-notify-0.7 - sends desktop notifications to a notification daemon (Introspection files)
+    # xdg-utils - desktop integration utilities from freedesktop.org
+    - gir1.2-keybinder-3.0
+    - gir1.2-notify-0.7
+    - xdg-utils
+
     # xclip - command line interface to X selections
     - xclip
 
