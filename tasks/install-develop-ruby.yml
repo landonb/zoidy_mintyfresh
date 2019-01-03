@@ -1,0 +1,20 @@
+---
+
+- name: "Install Ruby development packages"
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-ruby
+  loop:
+
+    # Packages `ruby-install` installs unless --no-install-deps,
+    # installed here so that ruby-install can be run sudolessly.
+    - build-essential
+    - bison
+    - zlib1g-dev
+    - libyaml-dev
+    - libssl-dev
+    - libgdbm-dev
+    - libreadline-dev
+    - libncurses5-dev
+    - libffi-dev
+

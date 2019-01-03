@@ -108,6 +108,12 @@
     tasks_from: install-develop-python
   tags: install-develop-python
 
+- name: Install package group "install-develop-ruby"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-ruby
+  tags: install-develop-ruby
+
 - name: Install package group "install-develop-sec"
   include_role:
     name: zoidy_mintyfresh

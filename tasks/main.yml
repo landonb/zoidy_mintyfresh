@@ -24,6 +24,7 @@
     - install-develop-net
     - install-develop-net-wireshark
     - install-develop-python
+    - install-develop-ruby
     - install-develop-sec
     - install-develop-spatial
     - install-develop-terminal
