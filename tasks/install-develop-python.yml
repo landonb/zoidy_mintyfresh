@@ -83,3 +83,7 @@
     #- fabric
     #- python3-sphinx
 
+    # So Dropbox proprietary daemon installer can verify signatures.
+    - python-gpg
+    - python3-gpg
+
