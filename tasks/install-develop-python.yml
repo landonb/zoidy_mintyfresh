@@ -1,6 +1,6 @@
 ---
 
-- name: "Install python development packages"
+- name: "Install Python development packages"
   become: true
   apt: name={{ item }}
   tags: install-develop-python
