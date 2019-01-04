@@ -15,7 +15,7 @@
     name: "{{ pip_list }}"
     executable: /usr/bin/pip2
 
-- name: Install Systemwide Pip2 packages
+- name: Install Systemwide Pip3 packages
   become: yes
   pip:
     name: "{{ pip_list }}"
