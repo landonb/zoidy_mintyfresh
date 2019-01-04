@@ -37,7 +37,9 @@
 
     # *** install-develop-spatial.yml
 
-    # 2018-12-14: Disabled! Maybe again someday, GIS.
-    #   - libproj12
-    #   - libspatialite7
+    # [lb]: 2019-01-03: Enabling these for completeness, but both already installed.
+    # libproj12 - Cartographic projection library
+    - libproj12
+    # libspatialite7 - Geospatial extension for SQLite - libraries
+    - libspatialite7
 
