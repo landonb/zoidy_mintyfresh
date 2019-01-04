@@ -32,7 +32,8 @@
     - lua5.3
     #- lua5.3-doc
 
-    # Node.js package manager.
+    # Node.js and package manager.
+    - nodejs
     - npm
 
     # Yaml linter. Because you always wanted more Yaml in your life.
