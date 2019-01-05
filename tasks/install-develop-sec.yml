@@ -43,6 +43,20 @@
     # FIXME/2018-12-17: I built pass previously. Do I still need to?
     - pass
 
+    - tomb
+    # Optional extensions. Run `tomb --version`
+    - dcfldd
+    - steghide
+    #  tomb-kdb-pbkdf2: cannot find
+    #  For similar:
+    #     apt-cache search pbk
+    #- tomb-kdb-pbkdf2
+    - qrencode
+    - swish-e
+    - unoconv
+
+    - gocryptfs
+
 # https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - name: 'Add user to fuse group'
   become: true
