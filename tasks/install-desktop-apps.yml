@@ -20,3 +20,6 @@
     # MAYBE/2018-12-14: [lb] Don't use, so disabling. Maybe look at 'em later.
     #   #- mate-themes
 
+    # 2019-03-05: To minimize Spotify to MATE Panel Notification Area.
+    - kdocker
+
