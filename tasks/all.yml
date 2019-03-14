@@ -181,6 +181,13 @@
 
 # *** Perform sudo setup operations (I'm too lazy to put in other Galaxy Role).
 
+- name: Determine if host is “Desktop” or “Laptop”
+  # (lb): Response should be either "Desktop" or "Notebook", at least what I've seen.
+  shell: dmidecode --string chassis-type
+  become: yes
+  register: chassis_type
+  tags: laptop-lid-disable-wake-on
+
 - name: Load role to Deactivate Reactive Laptop Lid Response
   include_role:
     name: zoidy_mintyfresh
@@ -189,6 +196,9 @@
       tags:
         - laptop-lid-disable-wake-on
   tags: laptop-lid-disable-wake-on
+  when: chassis_type.stdout == 'Notebook'
+
+# ***
 
 - name: Load role to Lock Sessions on Power Suspend
   include_role:
