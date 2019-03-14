@@ -46,21 +46,55 @@
 #  http://ask.wireshark.org/questions/7523/ubuntu-machine-no-interfaces-listedn
 #  http://wiki.wireshark.org/CaptureSetup/CapturePrivileges
 
+- name: 'Ensure ‘expect’ is available'
+  become: true
+  apt: name=expect
+  tags: install-develop-net, install-develop-net-wireshark
+
 - name: 'Tell dumpcap to run privileged, so any user can run Wireshark'
   become: true
   tags: install-develop-net, install-develop-net-wireshark
-  # NOTE: Without -freadline, uses ncurses to show prompt.
-  # White -freadline, uses plaintext, which we can expect.
+  # NOTE: (lb): Without -freadline, dpkg-reconfigure uses ncurses to manage
+  # the prompt, with is difficult to expect (probably; I didn't try). With
+  # -freadline, dpkg-reconfigure prints to stdout and sits on input, which
+  # we can easily expect. (We also specify --terse, for completeness, which
+  # suppresses the explanatory text that leads before the prompt-question.)
+  #
+  # NOTE: (lb): The printed prompt is underlined (and when you type your
+  # reply, it's echoed back in bold). I failed to tell dpkg-reconfigure to
+  # not do this, and it makes writing an exact expect more difficult, e.g.,
+  #
+  #   expect \"Should non-superusers be able to capture packets? \[yes/no\] \";
+  #
+  # will not hit. (What will happen is expect will hang for a bit, then time
+  # out, and then send the response anyway, so the net effect is profit!, but
+  # the hesitation makes me queasy; we can do better.) Adding ASCII escapes
+  # is also not helpful, e.g.,
+  #
+  #   expect -re \"\033\[4mShould non-superusers be able to capture packets? \[yes/no\].*\"; \
+  #
+  # also does not hit.
+  #
+  # Apparently, there are even more hidden escapes, because this regex works:
+  #
+  #   expect -re \".*s? \[yes/no\].*\"; \
+  #
+  # but this regex:
+  #
+  #   expect -re \".*ts? \[yes/no\].*\"; \
+  #
+  # does not hit!
+  #
+  # All that said, we actually don't care what the question/prompt is,
+  # all we care is to send a reply, so the best solution is to use the
+  # simplest regex -- .* -- and be done with it.
   shell: |
-    spawn dpkg-reconfigure wireshark-common -freadline
-    expect "Should non-superusers be able to capture packets? [yes/no] "
-    send "yes\r"
-    exit 0
-  # NOTE: `expect eof` does not work, but `exit 0` does.
-  # NOTE: shell module docs show example with args and delegate_to. Just FYI.
-  #         args:
-  #           executable: /usr/bin/expect
-  #         delegate_to: localhost
+    expect -c " \
+      spawn dpkg-reconfigure wireshark-common -freadline --terse; \
+      expect -re \".*\"; \
+      send \"yes\r\"; \
+      interact; \
+    "
 
 - name: 'Add user to Wireshark group'
   become: true
