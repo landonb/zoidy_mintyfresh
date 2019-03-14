@@ -23,11 +23,11 @@
     # - xcowsay
 
     # fortune-mod - provides fortune cookies on demand
-    fortune-mod
+    - fortune-mod
     # fortunes - Data files containing fortune cookies
     # 2019-01-23: I removed fortunes, and /usr/share/games/fortunes
     #   still has: fortunes, literature, and riddles.
-    fortunes
+    - fortunes
     # Other fortune lists you'll find on `apt-cache search fortune`:
     # - fortunes-min - Data files containing selected fortune cookies
     #   - fortunes-min is just a subset of fortunes, looks like.
@@ -42,7 +42,7 @@
     #   - `fortune anarchism`, if you want to leave America for a spell, e.g.,
     #       Order results spontaneously when things are let alone.
     #       ----+- Zhuangzi -+----
-    fortune-anarchism
+    - fortune-anarchism
     # - display-dhammapada - fortune-like collection of Buddhist sayings
     #   - Its own app, `display-dhammapada`; not sure where its files.
 
