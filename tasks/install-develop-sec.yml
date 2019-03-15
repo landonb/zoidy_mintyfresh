@@ -55,7 +55,11 @@
     - swish-e
     - unoconv
 
-    - gocryptfs
+    # 2019-03-14: It lags:
+    #   $ gocryptfs -version
+    #   gocryptfs 1.4.3; go-fuse 0.0~git20171124.0.14c3015; 2018-02-05 go1.9.3
+    # Be hardened, and install from GitHub release instead.
+    #   - gocryptfs
 
 # https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - name: 'Add user to fuse group'
