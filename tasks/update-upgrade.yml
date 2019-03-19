@@ -2,7 +2,7 @@
 
 # Update package list, and upgrade all packages, including distro pkgs.
 
-- name: Run command "apt-get update"
+- name: Run command "apt-get update" (update-upgrade)
   become: true
   apt:
     update_cache: yes
