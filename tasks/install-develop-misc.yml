@@ -48,6 +48,8 @@
 
     - htop
 
+    - jq
+
     - logcheck
     - logcheck-database
 
