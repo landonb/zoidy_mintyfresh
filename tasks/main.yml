@@ -1,7 +1,7 @@
 ---
 # Main task: Load package installers, or not, based on tags.
 
-- name: Update packages?
+- name: Load tasks dispatcher for ‘zoidy_mintyfresh’
   include_role:
     name: zoidy_mintyfresh
     tasks_from: all
