@@ -22,6 +22,8 @@
     # xcowsay - Graphical configurable talking cow
     # - xcowsay
 
+    - fdupes
+
     # fortune-mod - provides fortune cookies on demand
     - fortune-mod
     # fortunes - Data files containing fortune cookies
