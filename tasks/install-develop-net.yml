@@ -115,3 +115,13 @@
     state: stopped
     enabled: no
 
+# (lb): On second thought, disable both services, I don't need either HTTP
+# service, and I'm hardening my systems.
+- name: Disable nginx service
+  become: true
+  tags: install-develop-net
+  systemd:
+    name: nginx
+    state: stopped
+    enabled: no
+
