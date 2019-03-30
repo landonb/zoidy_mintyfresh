@@ -104,24 +104,3 @@
     groups: wireshark
     append: yes
 
-# (lb): Both apache2 and nginx are installed by Linux Minut 19, and they'll
-# both compete for port 80, and on my machine, nginx always wins. (I don't
-# necessarily prefer nginx over apache, but I also don't necessarily not.)
-- name: Disable Apache2 service
-  become: true
-  tags: install-develop-net
-  systemd:
-    name: apache2
-    state: stopped
-    enabled: no
-
-# (lb): On second thought, disable both services, I don't need either HTTP
-# service, and I'm hardening my systems.
-- name: Disable nginx service
-  become: true
-  tags: install-develop-net
-  systemd:
-    name: nginx
-    state: stopped
-    enabled: no
-
