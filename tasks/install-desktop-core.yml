@@ -34,6 +34,8 @@
     # Hexadecimal file viewer.
     - ghex
 
+    - hexedit
+
     # Hexadecimal diff.
     # [lb] I use ghex very rarely, and vbindiff less so,
     # but a hex viewer and a differ are essential tools.
