@@ -81,7 +81,10 @@
     # 2018-12-14: fabric is like Ansible, but for Python.
     # [lb]: Not sure why I added this. Did I use it once?
     #- fabric
-    #- python3-sphinx
+
+    # Use Sphinx to build reST into HTML.
+    - python-sphinx
+    - python3-sphinx
 
     # So Dropbox proprietary daemon installer can verify signatures.
     - python-gpg
