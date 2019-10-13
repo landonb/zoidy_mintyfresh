@@ -32,3 +32,7 @@
     # python-pygments - syntax highlighting package written in Python
     - python-pygments
 
+    # Use wkhtmltopdf to generate PDFs from HTML, e.g., those generated from reST.
+    # [MEH: (lb): Should an html2pdf app count as text-related and be listed here?]
+    - wkhtmltopdf
+
