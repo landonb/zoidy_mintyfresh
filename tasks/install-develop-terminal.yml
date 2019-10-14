@@ -58,6 +58,10 @@
     # mosh - Mobile shell that supports roaming and intelligent local echo
     - mosh
 
+    # Progress meter.
+    # pv - Shell pipeline element to meter data passing through
+    - pv
+
     # [lb] Maybe someday I'll try a shell other than Bash.
     #  (But why rock the boat when you've got a good thing?)
     # zsh - shell with lots of features
