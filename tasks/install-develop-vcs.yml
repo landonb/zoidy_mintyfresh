@@ -14,6 +14,9 @@
     # GUI git log tool and commit comparison [visual diff] tool
     - gitk
 
+    # GIT utilities [sic]
+    - git-extras
+
     # A beautiful, colorful git browser/helper.
     # tig - ncurses-based text-mode interface for Git
     - tig
