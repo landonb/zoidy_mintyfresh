@@ -23,6 +23,7 @@
     - install-develop-misc
     - install-develop-net
     - install-develop-net-wireshark
+    - install-develop-perl
     - install-develop-python
     - install-develop-ruby
     - install-develop-sec

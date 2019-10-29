@@ -102,6 +102,12 @@
     tasks_from: install-develop-net
   tags: install-develop-net, install-develop-net-wireshark
 
+- name: Install package group "install-develop-perl"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-perl
+  tags: install-develop-perl
+
 - name: Install package group "install-develop-python"
   include_role:
     name: zoidy_mintyfresh

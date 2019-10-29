@@ -1,0 +1,15 @@
+---
+
+- name: "Install Perl development packages"
+  become: true
+  apt: name={{ item }}
+  tags: install-develop-perl
+  loop:
+
+    # 2019-10-28: For myrepos.
+    - perl-doc
+
+    # Perl debugger (perl -d) readline support (e.g., pressing up-arrow to
+    # cycle through previously entered commands).
+    - libterm-readline-gnu-perl
+
