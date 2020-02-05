@@ -28,8 +28,15 @@
     # Eye of Gnome, a slideshow image viewer.
     - eog
 
-    # Awesomest graphical diff.
-    - meld
+    # [meld is the] Awesomest graphical diff.
+    # 2020-02-04: Avoid the distro's meld, currently stuck at 3.18.0.
+    #   It has at least one known, annoying issue: If you close a comparison
+    #   before saving, you're prompted to save changes, but no matter how
+    #   you respond, the comparison stays open, and the Ctrl-w close command
+    #   no longer works to close it, and you have to click the 'x' button).
+    #   * See replacement task:
+    #     zoidy_home-fries/tasks/app-meld.yml
+    # - meld
 
     # Hexadecimal file viewer.
     - ghex
