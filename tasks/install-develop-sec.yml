@@ -38,9 +38,6 @@
     # At least they didn't name it signing-key-party.
     - signing-party
 
-    # To run `ansible-playbook ... -k` to network host.
-    - sshpass
-
     # [lb]: keepassx may work for some people, but I'm smitten with `pass`.
     #   - keepassx
     # FIXME/2018-12-17: I built pass previously. Do I still need to?
