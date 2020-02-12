@@ -4,7 +4,7 @@
 
 # man systemd.service
 #
-# FIXME: Use symlink to ~/.fries/bin file?
+# FIXME: Use symlink to ~/.homefries/bin file?
 #
 # systemctl start power-suspend-lock-sessions.service
 
