@@ -22,6 +22,20 @@
     # xcowsay - Graphical configurable talking cow
     # - xcowsay
 
+    # BONUS!/2020-02-12: ``fd`` available in Ubuntu 19.04.
+    # - This task'll still fail if you're on a old distro.
+    #   - Just comment out the `fd-find`, sorry! Ha!!
+    #     (It's simpler to document here than to make a new task
+    #      that'll be removed soon because next distro includes fd.)
+    #   - Then check for and install the latest release:
+    #       sensible-browser https://github.com/sharkdp/fd/releases
+    #       # E.g.,
+    #       cd ~/.downloads
+    #       wget https://github.com/sharkdp/fd/releases/download/v7.4.0/fd_7.4.0_amd64.deb
+    #       sudo dpkg -i fd_7.4.0_amd64.deb
+    # FIXME/2020-02-12: Cleanup this comment someday.
+    - fd-find
+
     - fdupes
 
     # fortune-mod - provides fortune cookies on demand
