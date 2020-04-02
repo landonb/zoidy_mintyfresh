@@ -38,6 +38,17 @@
 
     # xclip - command line interface to X selections
     - xclip
+    # http://www.vergenet.net/~conrad/software/xsel/
+    # (lb): Do xclip and xsel have same features? This articles suggests so:
+    #         https://fernandobasso.dev/shell/copy-paste-from-command-line-xclip-xsel-clipboard.html
+    #       But AskUbuntu answer highlights different behavior in tmux:
+    #         https://askubuntu.com/questions/705620/xclip-vs-xsel
+    #       "xclip does not close STDOUT after it has read from tmux's buffer.
+    #        As such, tmux doesn't know that the copy task has completed, and
+    #        continues to wait for xclip's termination, thereby rendering tmux
+    #        unresponsive. A workaround is to redirect STDOUT of xclip to /dev/null"
+    #       - If you look in gpakosz/.tmux/.tmux.conf, you'll see `xclip >/dev/null 2>&1`.
+    - xsel
 
     # *** Shell
 
