@@ -32,6 +32,9 @@
     # libpam0g-dev - Development files for PAM
     - libpam0g-dev
 
+    # 2020-04-12: For building git.
+    - libssl-dev
+
     # NOTE: OpenSSH likely installed, because you did so to run Zoidy Ansible!
     - openssh-server
 
