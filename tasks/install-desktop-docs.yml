@@ -24,3 +24,6 @@
     # SVG editor.
     - inkscape
 
+    # Build LaTeX .tex templates.
+    - pandoc
+
