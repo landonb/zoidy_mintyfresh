@@ -69,6 +69,8 @@
     - logcheck
     - logcheck-database
 
+    - lzip
+
     # mount.nfs
     - nfs-common
 
