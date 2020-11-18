@@ -78,3 +78,6 @@
     # zsh - shell with lots of features
     - zsh
 
+    # readline wrapper, e.g., a nice Perl REPL: rlwrap perl -d -e 1
+    - rlwrap
+
