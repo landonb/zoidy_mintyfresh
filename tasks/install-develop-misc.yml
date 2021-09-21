@@ -38,6 +38,11 @@
 
     - fdupes
 
+    # feedgnuplot - Pipe-oriented frontend to Gnuplot
+    # 2021-09-20: As seen used in Git rev-list histogram example:
+    #   https://github.blog/2021-08-16-highlights-from-git-2-33/
+    - feedgnuplot
+
     # fortune-mod - provides fortune cookies on demand
     - fortune-mod
     # fortunes - Data files containing fortune cookies
