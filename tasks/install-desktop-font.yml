@@ -36,3 +36,10 @@
     # tv-fonts: X11 fonts for TV applications
     - tv-fonts
 
+    # ttf-mscorefonts-installer: Includes Arial.
+    # Before: $ fc-match Arial
+    #         LiberationSans-Regular.ttf: "Liberation Sans" "Regular"
+    # After:  fc-match Arial
+    #         Arial.ttf: "Arial" "Regular"
+    - ttf-mscorefonts-installer
+
