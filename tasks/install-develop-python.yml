@@ -6,87 +6,123 @@
   tags: install-develop-python
   loop:
 
-    # FIXME/2018-12-14: Revisit. I copied from Home-Fries
-    #   and disabled a bunch-ton of packages.
-
-    - python-dev
-    - python3-dev
-
-    - libpython-dev
-    - libpython3-dev
-
-    #- libapache2-mod-python
-
-    # Most Python packages should be pip-installed, or
-    # confined to a virtualenv, as necessary for each
-    # project, but some are nice to have at the ready.
+    # CXREF/2022-09-28: Historically, the author would install a handful of
+    # Python versions from the deadsnakes source. See this other playbook:
     #
-    # For instance, we want pip to install ansible requirments.
-
-    # Know ye there is also a get-pip.py installer,
-    #   https://bootstrap.pypa.io/get-pip.py
-    # but the pip that goes with the system Python
-    # should likewise come from aptitude (i.e.,
-    # install the latest pip in a venv).
-    - python-pip
-    - python3-pip
-
-    - python-all-dev
-    - python3-all-dev
-
-    - python-wheel
-    - python3-wheel
-
-    - python-setuptools
-    - python3-setuptools
-
-    # Install psutil for Ansible dconf module.
-    # MAYBE/2018-12-23: Add psutil to Ansible requirements?
-    - python-psutil
-    - python3-psutil
-
-    # SKIP: virtualenvwrapper is pip-installed.
-    #   #- virtualenvwrapper
-
-    #- python-pytest
-
-    #- python-tox
-
-    # Flake8 is preferred over pylint, I'm sure.
-    #   #- pylint
-    #- python-flake8
-    #- python3-flake8
-
-    #- python-coverage
-    #- python3-coverage
-
-    #- python-simplejson
-    #- python-logilab-common
-    #- python-gtk2
-    #- python-wnck
-    #- python-xlib
-    #- python-dbus
-
-    # 2018-12-14: Disabling these; cannot image I still need/use.
-    #   - python-egenix-mxdatetime
-    #   - python-egenix-mxtools
-    #   - python-subversion
-    #   - python-levenshtein
-
-    # Natural Language Toolkit. Installed for sake of curiousity.
-    #- python-nltk
-    #- python-matplotlib
-    #- python-tk
-
-    # 2018-12-14: fabric is like Ansible, but for Python.
-    # [lb]: Not sure why I added this. Did I use it once?
-    #- fabric
-
-    # Use Sphinx to build reST into HTML.
-    - python-sphinx
-    - python3-sphinx
+    #   zoidy_home-fries/tasks/python-deadsnakes.yml
+    #
+    # That playbook installs each supported Python for virtualenv development, e.g.,
+    #
+    #   sudo apt install python3.7 python3.7-dev
+    #
+    # And then we could use a virtual environment tool such virtualenv (and
+    # probably virtualenvwrapper) to choose and use a particular Python
+    # version for each of our different Python projects.
+    #
+    # But over the years, plenty more Python project management tools have
+    # been created, some of which obviate the need to install system-wide
+    # Python versions from package providers such as deadsnakes.
+    #
+    # One such tool, `pyenv`, will install and manage different Python
+    # versions directly (and it'll install and build Python from source,
+    # so you don't need to install Python separately).
+    #
+    # As far as installing Python libraries themselves from the OS package
+    # manager, you generally don't want to install Python libraries systemwide,
+    # either, but want to install them using project-local tooling, using
+    # something like Poetry (or Pipenv, or Conda, or pipx etc.; there are
+    # many tools you could decide to use, and new ones seem to be introduced
+    # regularly, like the recently-released PDM).
+    #
+    # So most of the packages installed by this file are now disabled.
+    #
+    # - Except for some libraries, like python-gpg, which I want Dropbox to
+    #   use, because I don't run Dropbox in a virtual environment.
+    #
+    #   - MAYBE/2022-09-30: But I bet I could figure out how to run Dropbox
+    #     in an isolated environment, so eventually I might be able to avoid
+    #     installing the python-gpg and python3-gpg packages from here, too.
 
     # So Dropbox proprietary daemon installer can verify signatures.
     - python-gpg
     - python3-gpg
+
+    # LATER/2022-09-30: I'm disabling this list for now; but let's remove it later.
+    #
+    # - python-dev
+    # - python3-dev
+    #
+    # - libpython-dev
+    # - libpython3-dev
+    #
+    # #- libapache2-mod-python
+    #
+    # # Most Python packages should be pip-installed, or
+    # # confined to a virtualenv, as necessary for each
+    # # project, but some are nice to have at the ready.
+    # #
+    # # For instance, we want pip to install ansible requirments.
+    #
+    # # Know ye there is also a get-pip.py installer,
+    # #   https://bootstrap.pypa.io/get-pip.py
+    # # but the pip that goes with the system Python
+    # # should likewise come from aptitude (i.e.,
+    # # install the latest pip in a venv).
+    # #- python-pip
+    # #- python3-pip
+    #
+    # - python-all-dev
+    # - python3-all-dev
+    #
+    # - python-wheel
+    # - python3-wheel
+    #
+    # - python-setuptools
+    # - python3-setuptools
+    #
+    # # Install psutil for Ansible dconf module.
+    # # MAYBE/2018-12-23: Add psutil to Ansible requirements?
+    # - python-psutil
+    # - python3-psutil
+    #
+    # # SKIP: virtualenvwrapper is pip-installed.
+    # #   #- virtualenvwrapper
+    #
+    # #- python-pytest
+    #
+    # #- python-tox
+    #
+    # # Flake8 is preferred over pylint, I'm sure.
+    # #   #- pylint
+    # #- python-flake8
+    # #- python3-flake8
+    #
+    # #- python-coverage
+    # #- python3-coverage
+    #
+    # #- python-simplejson
+    # #- python-logilab-common
+    # #- python-gtk2
+    # #- python-wnck
+    # #- python-xlib
+    # #- python-dbus
+    #
+    # # 2018-12-14: Disabling these; cannot image I still need/use.
+    # #   - python-egenix-mxdatetime
+    # #   - python-egenix-mxtools
+    # #   - python-subversion
+    # #   - python-levenshtein
+    #
+    # # Natural Language Toolkit. Installed for sake of curiousity.
+    # #- python-nltk
+    # #- python-matplotlib
+    # #- python-tk
+    #
+    # # 2018-12-14: fabric is like Ansible, but for Python.
+    # # [lb]: Not sure why I added this. Did I use it once?
+    # #- fabric
+    #
+    # # Use Sphinx to build reST into HTML.
+    # - python-sphinx
+    # - python3-sphinx
 
