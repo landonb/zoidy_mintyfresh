@@ -36,3 +36,10 @@
     # [MEH: (lb): Should an html2pdf app count as text-related and be listed here?]
     - wkhtmltopdf
 
+    # Text-to-speech apps:
+    #   espeak
+    #   festival
+    #   pico2wave (libttspico-utils)
+    #   gtts-cli (python3-gtts)
+    - espeak
+
