@@ -10,11 +10,10 @@
     - shellcheck
 
     # Lua scripting.
-    # 2018-12-15: lua5.3 released, but not docs for it.
-    #- lua5.2
-    - lua5.2-doc
-    - lua5.3
-    #- lua5.3-doc
+    - lua5.4
+    # 2023-03-24: Latest luaX.X-docs was 5.2, so guessing
+    # (though unconfirmed if) part of base luaX.X install.
+    #  - lua5.2-doc
 
     # Node.js and package manager.
     # - CXREF: See also nvm, a better way to manage Node versions.
