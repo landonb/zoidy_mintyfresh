@@ -54,11 +54,11 @@
     tasks_from: install-desktop-font
   tags: install-desktop-font
 
-- name: Install package group "install-desktop-photo"
+- name: Install package group "install-desktop-image"
   include_role:
     name: zoidy_mintyfresh
-    tasks_from: install-desktop-photo
-  tags: install-desktop-photo
+    tasks_from: install-desktop-image
+  tags: install-desktop-image
 
 - name: Install package group "install-develop-dbms"
   include_role:
