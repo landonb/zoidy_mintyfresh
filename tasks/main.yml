@@ -7,7 +7,6 @@
     tasks_from: all
   tags:
     - install-build-essentials
-    - install-build-essentials
     - install-desktop-abcde
     - install-desktop-audio
     - install-desktop-core
