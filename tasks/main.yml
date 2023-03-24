@@ -7,8 +7,10 @@
     tasks_from: all
   tags:
     - install-build-essentials
-    - install-desktop-abcde
-    - install-desktop-audio
+    # 2023-03-24: I haven't worked with MP3 files or audio apps in a while,
+    # so opt-in now.
+    #  - install-desktop-abcde
+    #  - install-desktop-audio
     - install-desktop-core
     - install-desktop-docs
     - install-desktop-email
