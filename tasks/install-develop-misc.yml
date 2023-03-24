@@ -52,11 +52,6 @@
     #   xcalib -invert -alter
     - xcalib
 
-    # https://direnv.net/
-    # Sources .envrc found in current or parent directory.
-    # FIXME/2018-12-16: Home Fries requires direnv; make Home Fries Install Role.
-    - direnv
-
     - tree
 
     # ScreenRuler project page:
