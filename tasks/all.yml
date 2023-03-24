@@ -66,6 +66,12 @@
     tasks_from: install-develop-dbms
   tags: install-develop-dbms
 
+- name: Install package group "install-develop-fortunes"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-fortunes
+  tags: install-develop-fortunes
+
 - name: Install package group "install-develop-grep"
   include_role:
     name: zoidy_mintyfresh

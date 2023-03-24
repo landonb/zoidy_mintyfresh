@@ -17,6 +17,7 @@
     - install-desktop-font
     - install-desktop-image
     - install-develop-dbms
+    - install-develop-fortunes
     - install-develop-grep
     - install-develop-image
     - install-develop-lang
