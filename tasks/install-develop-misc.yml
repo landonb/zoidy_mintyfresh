@@ -48,10 +48,6 @@
     # Un-Zip-a-Dee-Doo-Dah
     - unzip
 
-    # Flicker the screen! (I'm using in CI script to indicate when build is ready.)
-    #   xcalib -invert -alter
-    - xcalib
-
     - tree
 
     # ScreenRuler project page:
