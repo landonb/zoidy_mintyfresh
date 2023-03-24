@@ -14,6 +14,9 @@
     # running `vim` will work from the root account).
     - vim-gtk
 
+    # TRYIT/2023-03-24: Someday I'll demo neovim...
+    - neovim
+
     # Text columnizer. (Replaced by custom fork: parT)
     #   #- par
 
