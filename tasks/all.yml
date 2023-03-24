@@ -24,12 +24,6 @@
     tasks_from: install-desktop-abcde
   tags: install-desktop-abcde
 
-- name: Install package group "install-desktop-apps"
-  include_role:
-    name: zoidy_mintyfresh
-    tasks_from: install-desktop-apps
-  tags: install-desktop-apps
-
 - name: Install package group "install-desktop-audio"
   include_role:
     name: zoidy_mintyfresh
