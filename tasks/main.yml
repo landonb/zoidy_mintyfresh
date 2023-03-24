@@ -16,6 +16,7 @@
     - install-desktop-email
     - install-desktop-font
     - install-desktop-image
+    - install-develop-android
     - install-develop-dbms
     - install-develop-fortunes
     - install-develop-grep

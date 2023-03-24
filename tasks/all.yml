@@ -60,6 +60,12 @@
     tasks_from: install-desktop-image
   tags: install-desktop-image
 
+- name: Install package group "install-develop-android"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-android
+  tags: install-develop-android
+
 - name: Install package group "install-develop-dbms"
   include_role:
     name: zoidy_mintyfresh

@@ -6,12 +6,6 @@
   tags: install-develop-misc
   loop:
 
-    # 2016-09-30: Weird. I swore this was already part of setup.
-    # 2016-10-03: I installed adb first, then android-tools-adb,
-    # and the latter uninstalled the former. Hmmm.
-    #   - adb
-    - android-tools-adb
-
     # 2022-01-31: dateutils.ddiff
     - dateutils
 
