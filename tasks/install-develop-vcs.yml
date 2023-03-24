@@ -6,9 +6,6 @@
   tags: install-develop-vcs
   loop:
 
-    # All your repositories are belong to too many managers.
-    # [2018-12-15: [lb]: Said an old me. It's all git, now!]
-
     - git
 
     # GUI git log tool and commit comparison [visual diff] tool

@@ -6,22 +6,6 @@
   tags: install-develop-lang
   loop:
 
-    # Interactive bash debugger. To set a breakpoint:
-    #   source /usr/share/bashdb/bashdb-trace
-    #   _Dbg_debugger
-    #- bashdb
-    # http://bashdb.sourceforge.net/
-    # MAYBE/2018-12-15: bashdb dropped from 18.04. Move snippet below to new role?
-    # Build instructions courtesy
-    #  https://github.com/rogalmic/vscode-bash-debug/issues/67
-    #   apt-get install texi2html texinfo
-    #   wget https://netix.dl.sourceforge.net/project/bashdb/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.gz
-    #   tar -xvfz bashdb-*.tar.gz
-    #   cd bashdb-*
-    #   ./configure
-    #   make
-    #   sudo make install
-
     # shellcheck - lint tool for shell scripts
     - shellcheck
 
@@ -33,6 +17,7 @@
     #- lua5.3-doc
 
     # Node.js and package manager.
+    # - CXREF: See also nvm, a better way to manage Node versions.
     - nodejs
     - npm
 

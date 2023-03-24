@@ -35,7 +35,7 @@
     # 2020-04-12: For building git.
     - libssl-dev
 
-    # NOTE: OpenSSH likely installed, because you did so to run Zoidy Ansible!
+    # NOTE: OpenSSH likely installed, because you did so to run Ansible tasks!
     - openssh-server
 
     # At least they didn't name it signing-key-party.

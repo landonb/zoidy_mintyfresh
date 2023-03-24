@@ -7,7 +7,7 @@
   loop:
 
     # Vim. (See elsewhere: Install Dubs Vim.)
-    # Flavors: vim-gtk, vim-gtk3, vim-gnome, vim-tiny
+    # Flavors: vim-gtk, vim-gtk3, vim-tiny
     # (lb): Note that ZP builds Vim from scratch (see
     # app-vim-brams.yml) but we want to install vim-gtk
     # so that /usr/bin/vim is created (and then, e.g.,

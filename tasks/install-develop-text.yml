@@ -15,13 +15,6 @@
     #     grep -i --color=always version | \
     #     aha --black > ls-with-colors.html
 
-    # 2018-12-14: Huh: In 14.04, says logtail is deprecated:
-    #   logtail - Print log file lines that have not been read (deprecated)
-    # but not so in 18.04:
-    #   logtail - Print log file lines that have not been read
-    # but I'm not sure what I was using logtail for, anyway.
-    #   #- logtail
-
     # A colorful, more clever tail command.
     # multitail - view multiple logfiles windowed on console
     - multitail

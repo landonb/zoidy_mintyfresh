@@ -13,14 +13,13 @@
     - xdotool
 
     # apt-file - search for files within Debian packages (command-line interface)
-    # [lb]: Home Fries' once/ used to run: `sudo apt-file update`
     - apt-file
 
     # Oh, Snap!
     - snapd
 
     # Are we in a virtual machine?
-    #   - virt-what
+    #  - virt-what
 
     # Bleeding edge Chrome.
     - chromium-browser
@@ -48,13 +47,13 @@
     # but a hex viewer and a differ are essential tools.
     - vbindiff
     # Meh on hexdiff.
-    #   - hexdiff
+    #  - hexdiff
 
     # Color picker.
     # FIXME/2018-12-15: gcolor2 is missing from 18.04.
     #- gcolor2
     #   https://askubuntu.com/questions/1073990/gcolor2-package-missing-in-ubuntu-18-04
-    # Maybe write deb installer, e.g.,
+    # Maybe wire deb installer, e.g.,
     #   cd ~/Downloads
     #   wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcolor2/gcolor2_0.4-2.1ubuntu1_amd64.deb
     #   sudo apt-get install ./gcolor2_0.4-2.1ubuntu1_amd64.deb

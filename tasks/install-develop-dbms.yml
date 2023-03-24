@@ -15,7 +15,7 @@
     # SpatiaLite SQLite extension akin to PostGIS.
     - spatialite-bin
     # Should already be installed:
-    #   - libspatialite5
+    #  - libspatialite5
 
 - name: 'Add user to postgres group'
   become: true
