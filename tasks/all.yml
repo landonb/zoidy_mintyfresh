@@ -191,6 +191,13 @@
   tags: install-distro-18.04
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
 
+- name: Install package group "install-distro-22.04"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-distro-22.04
+  tags: install-distro-22.04
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
+
 # *** Perform sudo setup operations (I'm too lazy to put in other Galaxy Role).
 
 - name: Determine if host is “Desktop” or “Laptop”

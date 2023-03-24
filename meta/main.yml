@@ -1,8 +1,8 @@
 galaxy_info:
   author: Tally Bark LLC
   description: >
-    An Ansible role to install one developer's collection
-    of distro packages on Linux Mint 19 (Ubuntu 18.04)
+    An Ansible role to install one developer's collection of distro
+    packages on Linux Mint 21.1 Vera (Ubuntu 22.04 Jammy)
   company: https://tallybark.com
 
   license: GPLv3
@@ -12,7 +12,7 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - bionic
+        - jammy
 
   galaxy_tags:
     # Tags use alphanums only, max 20 per role.

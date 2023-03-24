@@ -1,0 +1,37 @@
+---
+
+- name: 'Install distro-specific packages for 18.04'
+  become: true
+  apt: name={{ item }}
+  tags: install-distro-18.04
+  loop:
+
+    # *** install-desktop-audio.yml
+
+    # Audio extraction tool(s). [For `abcde` CD encoder.]
+    # libcdio19 - library to read and control CD-ROM
+    - libcdio19
+
+    # *** install-develop-graphical.yml
+
+    # "International Components for Unicode"
+    - libicu70
+
+    # *** install-develop-lang.yml
+
+    - ruby3.0
+    - ruby3.0-dev
+    - ruby3.0-doc
+
+    # *** install-develop-python.yml
+
+    # wxPython. Widgets!
+    - python3-wxgtk4.0
+
+    # *** install-develop-spatial.yml
+
+    # libproj22 - Cartographic projection library
+    - libproj22
+    # libspatialite7 - Geospatial extension for SQLite - libraries
+    - libspatialite7
+
