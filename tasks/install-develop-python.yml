@@ -44,7 +44,9 @@
     #     installing the python-gpg and python3-gpg packages from here, too.
 
     # So Dropbox proprietary daemon installer can verify signatures.
-    - python-gpg
+    # 2023-03-25: No longer available on 22.04 (or maybe 20.04)
+    # (but also Python2, so, *see ya!*):
+    #   - python-gpg
     - python3-gpg
 
     # LATER/2022-09-30: I'm disabling this list for now; but let's remove it later.

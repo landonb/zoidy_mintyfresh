@@ -8,7 +8,9 @@
 
     # CLI OS and Window Manager customizers.
     - dconf-cli
-    - gconf-editor
+    # 2023-03-25 13:58: Ok, boomer: From Wiki:
+    #   gconf-editor Final release 3.0.1[1] / November 21, 2011; 11 years ago
+    # - gconf-editor
     - wmctrl
     - xdotool
 
