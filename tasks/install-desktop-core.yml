@@ -15,9 +15,6 @@
     # apt-file - search for files within Debian packages (command-line interface)
     - apt-file
 
-    # Oh, Snap!
-    - snapd
-
     # Are we in a virtual machine?
     #  - virt-what
 
