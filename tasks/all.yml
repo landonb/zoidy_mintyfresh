@@ -18,17 +18,20 @@
 
 # *** Install new packages, grouped by functionality.
 
-- name: Install package group "install-desktop-abcde"
-  include_role:
-    name: zoidy_mintyfresh
-    tasks_from: install-desktop-abcde
-  tags: install-desktop-abcde
-
-- name: Install package group "install-desktop-audio"
-  include_role:
-    name: zoidy_mintyfresh
-    tasks_from: install-desktop-audio
-  tags: install-desktop-audio
+# 2023-03-24: I haven't worked with MP3 files or audio apps in a while,
+# so opt-in now.
+#
+# - name: Install package group "install-desktop-abcde"
+#   include_role:
+#     name: zoidy_mintyfresh
+#     tasks_from: install-desktop-abcde
+#   tags: install-desktop-abcde
+#
+# - name: Install package group "install-desktop-audio"
+#   include_role:
+#     name: zoidy_mintyfresh
+#     tasks_from: install-desktop-audio
+#   tags: install-desktop-audio
 
 - name: Install package group "install-desktop-core"
   include_role:
