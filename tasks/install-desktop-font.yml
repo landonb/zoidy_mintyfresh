@@ -22,7 +22,10 @@
     # lmodern: scalable PostScript and OpenType fonts based on Computer Modern
     - lmodern
     # ttf-aenigma: 465 free TrueType fonts by Brian Kent
-    - ttf-aenigma
+    # 2023-03-25: 22.04 says now `fonts-aenigma`.
+    # - Still "465 free TrueType fonts by Brian Kent".
+    #  - ttf-aenigma
+    - fonts-aenigma
     # 2018-12-15: [lb] Old comment says "Symbola font for emojis."
     #   Did I mean the `ttf-ancient-fonts` supplies emojis? Sounds weird.
     # ttf-ancient-fonts: Unicode Fonts for Ancient Scripts (transitional package)
@@ -30,7 +33,10 @@
     # ttf-bitstream-vera: The Bitstream Vera family of free TrueType fonts
     - ttf-bitstream-vera
     # ttf-georgewilliams: Free unicode TrueType fonts by George Williams
-    - ttf-georgewilliams
+    # 2023-03-25: 22.04 says now `fonts-georgewilliams`
+    # - Unsure why other ttf-* packages not also now fonts-* packages.
+    #  - ttf-georgewilliams
+    - fonts-georgewilliams
     # ttf-sjfonts: Some Juicy Fonts handwriting fonts
     - ttf-sjfonts
     # tv-fonts: X11 fonts for TV applications
