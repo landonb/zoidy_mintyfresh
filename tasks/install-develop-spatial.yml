@@ -18,6 +18,12 @@
     # gdal-bin - Geospatial Data Abstraction Library - Utility programs
     # node-srs - spatial reference library for Node.js
     - gdal-bin
-    # gpx2shp - convert GPS or GPX file to ESRI Shape file
-    - gpx2shp
+
+    # gpx2shp missing in 22.04.
+    # - Package page last updated 2014, so might no longer be supported
+    #     https://gpx2shp.osdn.jp/
+    # - Or might have been rolled into `gis-gps` (but doubt it).
+    # Circa Ubuntu 18.04:
+    #   # gpx2shp - convert GPS or GPX file to ESRI Shape file
+    #   - gpx2shp
 

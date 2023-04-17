@@ -15,15 +15,15 @@
     #     grep -i --color=always version | \
     #     aha --black > ls-with-colors.html
 
-    # A colorful, more clever tail command.
+    # A colorful, more clever `tail` command.
     # multitail - view multiple logfiles windowed on console
     - multitail
 
-    # `most` is pretty lame; author prefers `less`.
-    #   - most
-    # Also, `less` is more with color.
-    # python-pygments - syntax highlighting package written in Python
-    - python-pygments
+    # Author prefers `less` (aka `more` with color) over `most`.
+    #  - most
+
+    # python3-pygments - syntax highlighting package written in Python 3
+    - python3-pygments
 
     # Use wkhtmltopdf to generate PDFs from HTML, e.g., those generated from reST.
     # [MEH: (lb): Should an html2pdf app count as text-related and be listed here?]
