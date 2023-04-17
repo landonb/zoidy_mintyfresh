@@ -58,11 +58,22 @@
     - swish-e
     - unoconv
 
-    # 2019-03-14: It lags:
+    # Skip distro gocryptfs:
+    #  - gocryptfs
+    # and install from GitHub release instead.
+    #
+    # - 2019-03-14: Linux Mint 19.3:
     #   $ gocryptfs -version
     #   gocryptfs 1.4.3; go-fuse 0.0~git20171124.0.14c3015; 2018-02-05 go1.9.3
-    # Be hardened, and install from GitHub release instead.
-    #   - gocryptfs
+    # - 2023-04-11: Linux Mint 21.1:
+    #   $ gocryptfs -version
+    #   gocryptfs 1.8.0; go-fuse 2.0.3; 2021-11-23 go1.17.3 linux/amd64
+    #   - 1.8.0 is last v1 release.
+    # - GH latest: v2.3.1
+    #     https://github.com/rfjakob/gocryptfs/releases
+    # - What I've been running from sources:
+    #   $ gocryptfs -version
+    #   gocryptfs v2.3.1 without_openssl; go-fuse v2.1.1-0.20221117175120-915cf5413cde; 2023-03-04 go1.19.6 linux/amd64
 
 # https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - name: 'Add user to fuse group'
