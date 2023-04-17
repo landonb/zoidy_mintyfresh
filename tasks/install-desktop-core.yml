@@ -33,7 +33,7 @@
     #   you respond, the comparison stays open, and the Ctrl-w close command
     #   no longer works to close it, and you have to click the 'x' button).
     #   * See replacement task:
-    #     zoidy_home-fries/tasks/app-meld.yml
+    #     zoidy_apps_et_al/tasks/app-meld.yml
     # - meld
 
     # Hexadecimal file viewer.

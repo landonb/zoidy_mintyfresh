@@ -9,7 +9,7 @@
     # CXREF/2022-09-28: Historically, the author would install a handful of
     # Python versions from the deadsnakes source. See this other playbook:
     #
-    #   zoidy_home-fries/tasks/python-deadsnakes.yml
+    #   zoidy_apps_et_al/tasks/python-deadsnakes.yml
     #
     # That playbook installs each supported Python for virtualenv development, e.g.,
     #
