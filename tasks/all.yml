@@ -205,7 +205,7 @@
 
 - name: Determine if host is “Desktop” or “Laptop”
   # (lb): Response should be either "Desktop" or "Notebook", at least what I've seen.
-  shell: dmidecode --string chassis-type
+  ansible.builtin.shell: dmidecode --string chassis-type
   become: yes
   register: chassis_type
   tags: laptop-lid-disable-wake-on

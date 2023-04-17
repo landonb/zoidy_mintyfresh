@@ -90,7 +90,7 @@
   # All that said, we actually don't care what the question/prompt is,
   # all we care is to send a reply, so the best solution is to use the
   # simplest regex -- .* -- and be done with it.
-  shell: |
+  ansible.builtin.shell: |
     expect -c " \
       spawn dpkg-reconfigure wireshark-common -freadline --terse; \
       expect -re \".*\"; \
