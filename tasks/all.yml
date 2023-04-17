@@ -253,12 +253,12 @@
 
 # ***
 
-- name: Load role to Install Ubuntu Snaps
-  include_role:
-    name: zoidy_mintyfresh
-    tasks_from: ubuntu-snaps
-    apply:
-      tags:
-        - ubuntu-snaps
-  tags: ubuntu-snaps
+# - name: Load role to Install Ubuntu Snaps
+#   include_role:
+#     name: zoidy_mintyfresh
+#     tasks_from: ubuntu-snaps
+#     apply:
+#       tags:
+#         - ubuntu-snaps
+#   tags: ubuntu-snaps
 
