@@ -3,7 +3,6 @@
 - name: 'Install [some] web servers'
   become: true
   apt: name={{ item }}
-  tags: install-develop-web
   loop:
 
     - apache2

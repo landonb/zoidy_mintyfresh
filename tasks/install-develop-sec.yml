@@ -3,7 +3,6 @@
 - name: 'Install security packages'
   become: true
   apt: name={{ item }}
-  tags: install-develop-sec
   loop:
 
     # EncFS is the classic encrypted filesystem.
@@ -78,7 +77,6 @@
 # https://en.wikipedia.org/wiki/Filesystem_in_Userspace
 - name: 'Add user to fuse group'
   become: true
-  tags: install-develop-sec
   user:
     name: "{{ ansible_env.LOGNAME }}"
     groups: fuse

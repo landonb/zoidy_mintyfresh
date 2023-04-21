@@ -3,7 +3,6 @@
 - name: "Install some language-specific develop tools [that this developer has used]"
   become: true
   apt: name={{ item }}
-  tags: install-develop-lang
   loop:
 
     # shellcheck - lint tool for shell scripts

@@ -3,7 +3,6 @@
 - name: "Install Ruby development packages"
   become: true
   apt: name={{ item }}
-  tags: install-develop-ruby
   loop:
 
     # Packages `ruby-install` installs unless --no-install-deps,

@@ -3,7 +3,6 @@
 - name: 'Install emailing, messaging, and related packages'
   become: true
   apt: name={{ item }}
-  tags: install-desktop-email
   loop:
 
     - thunderbird

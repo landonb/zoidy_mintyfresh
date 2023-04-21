@@ -3,7 +3,6 @@
 - name: 'Install Image Viewing application(s)'
   become: true
   apt: name={{ item }}
-  tags: install-desktop-image
   loop:
 
     # gthumb - image viewer and browser

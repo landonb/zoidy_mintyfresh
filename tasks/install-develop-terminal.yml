@@ -3,7 +3,6 @@
 - name: 'Install terminal tools'
   become: true
   apt: name={{ item }}
-  tags: install-develop-terminal
   loop:
 
     # tmux - terminal multiplexer

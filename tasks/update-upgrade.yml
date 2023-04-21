@@ -7,7 +7,6 @@
   apt:
     update_cache: yes
     cache_valid_time: 3600
-  tags: update-upgrade, update
 
 # This is a development machine, so would rather have
 # conflicts resolved and maybe something broken, than
@@ -21,5 +20,4 @@
   apt:
     # upgrade: dist | full | no | safe | yes
     upgrade: full
-  tags: update-upgrade, upgrade
 

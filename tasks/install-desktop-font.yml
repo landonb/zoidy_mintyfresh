@@ -3,7 +3,6 @@
 - name: 'Install font viewers and fonts'
   become: true
   apt: name={{ item }}
-  tags: install-desktop-font
   loop:
 
     # gucharmap - Unicode character picker and font browser

@@ -3,7 +3,6 @@
 - name: 'Install Android development app(s)'
   become: true
   apt: name={{ item }}
-  tags: install-develop-android
   loop:
 
     # 2016-09-30: Weird. I swore this was already part of setup.

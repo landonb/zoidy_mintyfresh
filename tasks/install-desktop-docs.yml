@@ -3,7 +3,6 @@
 - name: "Install [this developer's selected] document applications"
   become: true
   apt: name={{ item }}
-  tags: install-desktop-docs
   loop:
 
     # Excellent diagramming.

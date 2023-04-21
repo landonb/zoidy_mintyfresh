@@ -3,7 +3,6 @@
 - name: 'Install Vim and related packages'
   become: true
   apt: name={{ item }}
-  tags: install-develop-vim
   loop:
 
     # Vim. (See elsewhere: Install Dubs Vim.)

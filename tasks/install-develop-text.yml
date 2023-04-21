@@ -3,7 +3,6 @@
 - name: 'Install apps to help working with text in the terminal'
   become: true
   apt: name={{ item }}
-  tags: install-develop-text
   loop:
 
     # 2017-05-23: What is with wanting to save color output to a file?

@@ -3,7 +3,6 @@
 - name: 'Install version control packages'
   become: true
   apt: name={{ item }}
-  tags: install-develop-vcs
   loop:
 
     - git

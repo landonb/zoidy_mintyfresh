@@ -3,7 +3,6 @@
 - name: 'Install imagemagick and related packages'
   become: true
   apt: name={{ item }}
-  tags: install-develop-image
   loop:
 
     # libxml2-dev - Development files for the GNOME XML library

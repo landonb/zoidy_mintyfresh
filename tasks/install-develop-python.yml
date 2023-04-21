@@ -3,7 +3,6 @@
 - name: "Install Python development packages"
   become: true
   apt: name={{ item }}
-  tags: install-develop-python
   loop:
 
     # CXREF/2022-09-28: Historically, the author would install a handful of

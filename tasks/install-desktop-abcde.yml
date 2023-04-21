@@ -3,7 +3,6 @@
 - name: 'Install abcde CD encoder package and related'
   become: true
   apt: name={{ item }}
-  tags: install-desktop-abcde
   loop:
 
     # abcde - A Better CD Encoder

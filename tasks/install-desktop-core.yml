@@ -3,7 +3,6 @@
 - name: "Install core desktop tools"
   become: true
   apt: name={{ item }}
-  tags: install-desktop-core
   loop:
 
     # CLI OS and Window Manager customizers.

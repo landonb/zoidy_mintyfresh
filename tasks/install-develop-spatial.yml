@@ -3,7 +3,6 @@
 - name: 'Install spatial packages'
   become: true
   apt: name={{ item }}
-  tags: install-develop-spatial
   loop:
 
     # Cartographic projection packages.

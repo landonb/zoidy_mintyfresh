@@ -3,7 +3,6 @@
 - name: 'Install distro-specific packages for 14.04'
   become: true
   apt: name={{ item }}
-  tags: install-distro-14.04
   loop:
 
     # *** install-desktop-audio.yml

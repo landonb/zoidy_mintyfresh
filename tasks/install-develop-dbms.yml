@@ -3,7 +3,6 @@
 - name: "Install [this developer's have-used-at-least-once] database tools"
   become: true
   apt: name={{ item }}
-  tags: install-develop-dbms
   loop:
 
     - postgresql
@@ -19,7 +18,6 @@
 
 - name: 'Add user to postgres group'
   become: true
-  tags: install-develop-dbms
   user:
     name: "{{ ansible_env.LOGNAME }}"
     groups: postgres

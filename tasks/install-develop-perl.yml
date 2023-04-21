@@ -3,7 +3,6 @@
 - name: "Install Perl development packages"
   become: true
   apt: name={{ item }}
-  tags: install-develop-perl
   loop:
 
     # 2019-10-28: For myrepos.

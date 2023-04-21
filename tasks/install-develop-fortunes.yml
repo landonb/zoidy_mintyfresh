@@ -3,7 +3,6 @@
 - name: 'Install cowsay and fortune packages'
   become: true
   apt: name={{ item }}
-  tags: install-develop-fortunes
   loop:
 
     # *** cowsay
