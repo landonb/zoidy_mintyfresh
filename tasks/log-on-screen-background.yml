@@ -1,12 +1,26 @@
 ---
 
-# Refs:
+# CXREF:
 #
 #   - Official Source with Decent Documentation!
 #     (and full list of configuration options).
 #
 #     https://github.com/linuxmint/slick-greeter
 
+# SAVVY/2023-04-20: Determine greeter, supplied by display manager:
+#
+#   $ cat /etc/X11/default-display-manager
+#   /usr/sbin/lightdm
+
+# SAVVY/2023-04-20: View lightdm conf:
+#
+#   lightdm --show-config
+
+# CXREF: ~/.kit/ansible/roles/zoidy_mintyfresh/templates/slick-greeter.conf.j2
+# CXREF: See also: - MATE menu > Login Window >
+#        - Background > Background: <path>
+#        - Background > ✗ Draw user backgrounds
+#        - Background > ✗ Draw a grid
 - name: Install custom Slick Greeter
   become: true
   template:
