@@ -284,21 +284,3 @@
     apply: { tags: "log-on-screen-background" }
   tags: log-on-screen-background
 
-# ***
-
-# - name: Load role to Install Systemwide Pips
-#   include_role:
-#     name: zoidy_mintyfresh
-#     tasks_from: pippin-out
-#     apply: { tags: "pippin-out" }
-#   tags: pippin-out
-
-# ***
-
-# - name: Load role to Install Ubuntu Snaps
-#   include_role:
-#     name: zoidy_mintyfresh
-#     tasks_from: ubuntu-snaps
-#     apply: { tags: "ubuntu-snaps" }
-#   tags: ubuntu-snaps
-

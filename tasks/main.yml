@@ -40,9 +40,7 @@
     - laptop-lid-disable-wake-on
     - log-on-screen-background
     - mintupdate-automation-autoremove
-    - pippin-out
     - power-suspend-lock-sessions
-    - ubuntu-snaps
     - update
     - upgrade
     - update-upgrade
