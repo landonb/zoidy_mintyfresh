@@ -8,6 +8,10 @@
 #
 #   cat /proc/acpi/wakeup | grep "^LID"
 
+# CXREF/2023-04-21: See user settings to control laptop response to lid close:
+#
+#   ~/.kit/ansible/roles/zoidy_matecocido/tasks/power-management-prefs-laptop.yml
+
 # MEH: We could use symlink instead, which means we could edit service
 # as user (without sudo) but whatever, this script won't change often.
 - name: Permanently disable wake-on-lid
