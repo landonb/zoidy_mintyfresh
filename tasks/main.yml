@@ -46,6 +46,7 @@
     - laptop-lid-disable-wake-on
     - power-suspend-lock-sessions
     - log-on-screen-background
+    - mintupdate-automation-autoremove
     - pippin-out
     - ubuntu-snaps
 

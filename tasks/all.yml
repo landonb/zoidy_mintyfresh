@@ -260,6 +260,15 @@
 
 # ***
 
+- name: "Enable 'Remove obsolete kernels and dependencies'"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: mintupdate-automation-autoremove
+    apply: { tags: "mintupdate-automation-autoremove" }
+  tags: mintupdate-automation-autoremove
+
+# ***
+
 - name: Load role to Lock Sessions on Power Suspend
   include_role:
     name: zoidy_mintyfresh

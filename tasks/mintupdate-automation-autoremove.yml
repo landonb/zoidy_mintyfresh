@@ -1,0 +1,26 @@
+---
+
+# This task is similar to the GUI option:
+#   MATE Menu > Update Manager > Edit > Preferences >
+#   - Automation > ✓ Remove obsolete kernels and dependencies
+# and creates the symlink:
+#   /etc/systemd/system/timers.target.wants/mintupdate-automation-autoremove.timer
+#     -> /lib/systemd/system/mintupdate-automation-autoremove.timer
+# But the `systemctl` approach does not enable the "Remove obsolete" option.
+# - Oh well.
+
+# CXREF:
+#
+# https://github.com/linuxmint/mintupdate/blob/master/lib/systemd/system/mintupdate-automation-autoremove.timer
+# https://github.com/linuxmint/mintupdate/blob/master/usr/share/linuxmint/mintupdate/automation/autoremove.sh
+
+# E.g., sudo systemctl enable mintupdate-automation-autoremove.timer
+# CXREF:
+#   /etc/systemd/system/timers.target.wants/mintupdate-automation-autoremove.timer
+- name: Enable a timer unit for mintupdate-automation-autoremove
+  ansible.builtin.systemd:
+    name: mintupdate-automation-autoremove.timer
+    state: started
+    enabled: true
+  become: yes
+
