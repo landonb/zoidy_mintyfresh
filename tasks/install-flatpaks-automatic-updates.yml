@@ -1,0 +1,62 @@
+---
+
+# CREDS/CXREF: https://www.jwillikers.com/automate-flatpak-updates-with-systemd
+
+# This is essentially the long way to enable an automatic Flatpak update
+# like you can find in a MATE GUI:
+#
+#   MATE Menu > Update Manager > Edit > Preference
+#     Automation > ✓ Update Flatpaks automatically
+
+- name: "Create the system systemd service unit to update Flatpaks"
+  become: true
+  template:
+    src: update-system-flatpaks.service
+    dest: /etc/systemd/system
+  # IZOFF/2023-04-20: Won't need this so long as all Flatpak are user installs.
+  when: False
+
+- name: "Create the user systemd service unit to update Flatpaks"
+  become: true
+  template:
+    src: update-user-flatpaks.service
+    dest: /etc/systemd/user
+
+# ***
+
+- name: "Create the system systemd timer unit to automate the updates"
+  become: true
+  template:
+    src: update-system-flatpaks.timer
+    dest: /etc/systemd/system
+  # IZOFF/2023-04-20: Won't need this so long as all Flatpak are user installs.
+  when: False
+
+- name: "Create the user systemd timer unit to automate the updates"
+  become: true
+  template:
+    src: update-user-flatpaks.timer
+    dest: /etc/systemd/user
+
+# ***
+
+# E.g.,
+#   sudo systemctl --system enable --now update-system-flatpaks.timer
+- name: "Start the system systemd timer"
+  become: true
+  ansible.builtin.systemd:
+    name: update-system-flatpaks.timer
+    state: started
+    enabled: true
+  # IZOFF/2023-04-20: Won't need this so long as all Flatpak are user installs.
+  when: False
+
+# E.g.,
+#   systemctl --user enable --now update-user-flatpaks.timer
+- name: "Start the user systemd timer"
+  ansible.builtin.systemd:
+    name: update-user-flatpaks.timer
+    state: started
+    enabled: true
+    scope: user
+

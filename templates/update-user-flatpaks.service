@@ -1,0 +1,10 @@
+[Unit]
+Description=Update user Flatpaks
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak --user update -y
+
+[Install]
+WantedBy=default.target
+

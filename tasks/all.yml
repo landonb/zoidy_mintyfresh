@@ -242,6 +242,13 @@
     apply: { tags: "install-flatpaks" }
   tags: install-flatpaks
 
+- name: Load role to create flatpak update timer task
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-flatpaks-automatic-updates
+    apply: { tags: "install-flatpaks-automatic-updates" }
+  tags: install-flatpaks-automatic-updates
+
 # *** Perform sudo setup operations (I'm too lazy to put in other Galaxy Role).
 
 - name: Determine if host is “Desktop” or “Laptop”

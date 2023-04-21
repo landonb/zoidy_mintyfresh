@@ -37,6 +37,7 @@
     - install-distro-16.04
     - install-distro-18.04
     - install-flatpaks
+    - install-flatpaks-automatic-updates
     - laptop-lid-disable-wake-on
     - log-on-screen-background
     - mintupdate-automation-autoremove
