@@ -37,14 +37,13 @@
     - install-distro-16.04
     - install-distro-18.04
     - install-flatpaks
-    - update-upgrade
-    - update
-    - upgrade
-    # Addit'l.
     - laptop-lid-disable-wake-on
-    - power-suspend-lock-sessions
     - log-on-screen-background
     - mintupdate-automation-autoremove
     - pippin-out
+    - power-suspend-lock-sessions
     - ubuntu-snaps
+    - update
+    - upgrade
+    - update-upgrade
 
