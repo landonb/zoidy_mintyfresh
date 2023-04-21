@@ -261,6 +261,15 @@
 
 # ***
 
+- name: Load role to Customize Log on Greeter Screen Background
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: log-on-screen-background
+    apply: { tags: "log-on-screen-background" }
+  tags: log-on-screen-background
+
+# ***
+
 - name: "Enable 'Remove obsolete kernels and dependencies'"
   include_role:
     name: zoidy_mintyfresh
@@ -276,11 +285,4 @@
     tasks_from: power-suspend-lock-sessions
     apply: { tags: "power-suspend-lock-sessions" }
   tags: power-suspend-lock-sessions
-
-- name: Load role to Customize Log on Greeter Screen Background
-  include_role:
-    name: zoidy_mintyfresh
-    tasks_from: log-on-screen-background
-    apply: { tags: "log-on-screen-background" }
-  tags: log-on-screen-background
 
