@@ -1,0 +1,51 @@
+---
+
+# CXREF/2022-10-01:
+#
+#   https://flatpak.org/setup/Ubuntu
+#
+#   https://flathub.org/apps/details/org.gnome.meld
+#   https://flathub.org/apps/details/org.gimp.GIMP
+#
+#   https://docs.ansible.com/ansible/latest/collections/community/general/flatpak_module.html
+#   https://docs.ansible.com/ansible/latest/collections/community/general/flatpak_remote_module.html
+
+# ***
+
+# SAVVY/2023-04-20 19:42: If you don't remote-add before install, it'll error, e.g.,
+#  error: No remote refs found similar to ‘flathub’
+# Runs, e.g.,
+#   flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+- name: Add the flathub flatpak repository remote to the user installation
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: user
+
+# ***
+
+# Install meld, e.g.,
+#   flatpak install flathub org.gnome.meld
+# SAVVY: Run it:
+#   flatpak run org.gnome.meld
+# SPEED/2023-04-20 19:51: Slow. At least on Lenovo X201 Wi-Fi, 8m42s.
+- name: Install the meld flatpak
+  community.general.flatpak:
+    name: org.gnome.meld
+    state: present
+    method: user
+
+# ***
+
+# Install GIMP, e.g.,
+#   flatpak install flathub org.gimp.GIMP
+# ALTLY: You could download it and install from local file: CXREF:
+#   https://dl.flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+# SPEED/2023-04-20 20:02: Slow. At least on Lenovo X201 Wi-Fi, 5m26s.
+- name: Install the GIMP flatpak
+  community.general.flatpak:
+    name: org.gimp.GIMP
+    state: present
+    method: user
+

@@ -201,6 +201,15 @@
   tags: install-distro-22.04
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
 
+# *** Flatpaks
+
+- name: Install package group "install-flatpaks"
+  include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-flatpaks
+    apply: { tags: "install-flatpaks" }
+  tags: install-flatpaks
+
 # *** Perform sudo setup operations (I'm too lazy to put in other Galaxy Role).
 
 - name: Determine if host is “Desktop” or “Laptop”
