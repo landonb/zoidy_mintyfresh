@@ -25,9 +25,9 @@
     name: zoidy_mintyfresh
     tasks_from: install-desktop-abcde
     apply: { tags: "install-desktop-abcde" }
-  tags: install-desktop-abcde
-  # ISOFF/2023-03-24: I haven't worked with MP3 files or audio apps in a while.
-  when: False
+  # ISOFF/2023-03-24: I haven't worked with MP3 files or audio apps
+  # in a while, so making opt-in (specify --tag explicitly to run).
+  tags: install-desktop-abcde, never
 
 - name: Install package group "install-desktop-audio"
   include_role:
@@ -35,8 +35,6 @@
     tasks_from: install-desktop-audio
     apply: { tags: "install-desktop-audio" }
   tags: install-desktop-audio
-  # ISOFF/2023-03-24: I haven't worked with MP3 files or audio apps in a while.
-  when: False
 
 - name: Install package group "install-desktop-core"
   include_role:
