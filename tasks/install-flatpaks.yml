@@ -49,3 +49,17 @@
     state: present
     method: user
 
+# CXREF/2023-04-23: The GIMP desktop file:
+#   ~/.local/share/flatpak/app/org.gimp.GIMP/current/active/files/share/applications/org.gimp.GIMP.desktop
+# calls `gimp-2.10`, which I guess we need to create ourselves (or edit the desktop file).
+# - CXREF: ~/.kit/ansible/roles/zoidy_panelsweet/defaults/main/panel-objects.yml
+# - DUNNO: I'm not sure if launchers search ~/.local/bin directly,
+#   or if the launcher PATH is coming from my ~/.profile or something.
+- name: Creating GIMP ~/.local/bin alias
+  copy:
+    dest: ~/.local/bin/gimp-2.10
+    content: |
+      #!/bin/bash
+      flatpak run org.gimp.GIMP
+    mode: 0755
+
