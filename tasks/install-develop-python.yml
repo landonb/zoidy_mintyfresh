@@ -127,7 +127,7 @@
     # - python-sphinx
     # - python3-sphinx
 
-    # 2022-09-30: These packages are so pipenv can build Python from sources.
+    # 2022-09-30: These packages are so pyenv can build Python from sources.
     #   https://github.com/pyenv/pyenv/wiki#suggested-build-environment
     - make
     - build-essential
