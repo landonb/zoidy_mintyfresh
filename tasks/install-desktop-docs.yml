@@ -2,7 +2,7 @@
 
 - name: "Install [this developer's selected] document applications"
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # Excellent diagramming.

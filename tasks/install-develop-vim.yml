@@ -2,7 +2,7 @@
 
 - name: 'Install Vim and related packages'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # Vim. (See elsewhere: Install Dubs Vim.)

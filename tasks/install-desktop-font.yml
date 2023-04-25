@@ -2,7 +2,7 @@
 
 - name: 'Install font viewers and fonts'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # gucharmap - Unicode character picker and font browser

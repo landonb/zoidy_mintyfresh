@@ -2,7 +2,7 @@
 
 - name: 'Install miscellaneously-categoried development applications'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # 2022-01-31: dateutils.ddiff

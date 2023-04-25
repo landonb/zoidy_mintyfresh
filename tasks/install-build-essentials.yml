@@ -4,7 +4,7 @@
 
 - name: Install essential build essentials
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
     # Kernel goodies.
     - dkms

@@ -2,7 +2,7 @@
 
 - name: 'Install Image Viewing application(s)'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # gthumb - image viewer and browser

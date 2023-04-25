@@ -2,7 +2,7 @@
 
 - name: 'Install Android development app(s)'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # 2016-09-30: Weird. I swore this was already part of setup.

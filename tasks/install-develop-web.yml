@@ -2,7 +2,7 @@
 
 - name: 'Install [some] web servers'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     - apache2

@@ -2,7 +2,7 @@
 
 - name: 'Install version control packages'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     - git

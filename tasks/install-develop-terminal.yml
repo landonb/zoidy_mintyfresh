@@ -2,7 +2,7 @@
 
 - name: 'Install terminal tools'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # tmux - terminal multiplexer

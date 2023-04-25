@@ -2,7 +2,7 @@
 
 - name: 'Install distro-specific packages for 18.04'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # *** install-desktop-audio.yml

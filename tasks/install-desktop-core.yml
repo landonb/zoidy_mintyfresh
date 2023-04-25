@@ -2,7 +2,7 @@
 
 - name: "Install core desktop tools"
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # CLI OS and Window Manager customizers.

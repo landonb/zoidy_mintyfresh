@@ -2,7 +2,7 @@
 
 - name: 'Install security packages'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # EncFS is the classic encrypted filesystem.

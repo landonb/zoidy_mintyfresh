@@ -2,7 +2,7 @@
 
 - name: "Install Ruby development packages"
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # Packages `ruby-install` installs unless --no-install-deps,

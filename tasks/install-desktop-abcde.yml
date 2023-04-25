@@ -2,7 +2,7 @@
 
 - name: 'Install abcde CD encoder package and related'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # abcde - A Better CD Encoder

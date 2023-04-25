@@ -4,7 +4,7 @@
 
 - name: Run command "apt-get update" (update-upgrade)
   become: true
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: 3600
 
@@ -17,7 +17,7 @@
 
 - name: Run command "apt full-upgrade", i.e., "apt-get upgrade"
   become: true
-  apt:
+  ansible.builtin.apt:
     # upgrade: dist | full | no | safe | yes
     upgrade: full
 

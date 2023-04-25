@@ -2,7 +2,7 @@
 
 - name: "Install [this developer's have-used-at-least-once] database tools"
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     - postgresql

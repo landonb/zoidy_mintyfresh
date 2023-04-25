@@ -2,7 +2,7 @@
 
 - name: 'Install network application development and diagnostic tools'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   tags: install-develop-net
   loop:
 
@@ -28,7 +28,7 @@
 
 - name: 'Install network application development and diagnostic tools'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   tags: install-develop-net, install-develop-net-wireshark
   loop:
 
@@ -50,7 +50,7 @@
 
 - name: 'Ensure ‘expect’ is available'
   become: true
-  apt: name=expect
+  ansible.builtin.apt: name=expect
   tags: install-develop-net, install-develop-net-wireshark
 
 - name: 'Tell dumpcap to run privileged, so any user can run Wireshark'

@@ -2,7 +2,7 @@
 
 - name: 'Install distro-specific packages for 16.04'
   become: true
-  apt: name={{ item }}
+  ansible.builtin.apt: name={{ item }}
   loop:
 
     # *** install-develop-core.yml
