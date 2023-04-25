@@ -137,7 +137,6 @@
     - libreadline-dev
     - libsqlite3-dev
     - curl
-    - llvm
     - libncursesw5-dev
     - xz-utils
     - tk-dev
@@ -145,4 +144,6 @@
     - libxmlsec1-dev
     - libffi-dev
     - liblzma-dev
-
+    # Optional: For building PyPy.
+    - llvm
+    
