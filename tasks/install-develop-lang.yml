@@ -5,6 +5,9 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
+    # Count Lines Of Code ("statistics utility to count lines of code")
+    - cloc
+
     # shellcheck - lint tool for shell scripts
     - shellcheck
 
@@ -21,4 +24,7 @@
 
     # Yaml linter. Because you always wanted more Yaml in your life.
     - yamllint
+
+    # "Code coverage analysis using DWARF debugging information"
+    - kcov
 

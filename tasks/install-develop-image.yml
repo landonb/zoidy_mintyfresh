@@ -58,3 +58,14 @@
     # libagg-dev - AntiGrain Geometry graphical toolkit (development files)
     - libagg-dev
 
+    # 2023-04-24: I used to install these manually, but latest versions in
+    # aptitude are decently recent.
+    # - exiftool aliases libimage-exiftool-perl, "library and program to
+    #   read and write meta information in multimedia files"
+    - exiftool
+    # "EXIF/IPTC/XMP metadata manipulation tool"
+    - exiv2
+
+    # "advanced PNG (Portable Network Graphics) optimizer"
+    - optipng
+

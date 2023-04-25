@@ -1,0 +1,13 @@
+---
+
+- name: 'Install uncategorized desktop applications'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # "Explore, search and discover the planet"
+    - google-earth-pro-stable
+
+    # "lets you dock any application into the system tray"
+    - kdocker
+
