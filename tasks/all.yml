@@ -3,7 +3,7 @@
 # *** Update package list, and upgrade installed packages.
 
 - name: Update and upgrade installed packages
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: update-upgrade
     apply: { tags: "update-upgrade" }
@@ -12,7 +12,7 @@
 # *** Install build essentials.
 
 - name: Install package group "build essentials"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-build-essentials
     apply: { tags: "install-build-essentials" }
@@ -21,7 +21,7 @@
 # *** Install new packages, grouped by functionality.
 
 - name: Install package group "install-desktop-abcde"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-abcde
     apply: { tags: "install-desktop-abcde" }
@@ -30,168 +30,168 @@
   tags: install-desktop-abcde, never
 
 - name: Install package group "install-desktop-audio"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-audio
     apply: { tags: "install-desktop-audio" }
   tags: install-desktop-audio
 
 - name: Install package group "install-desktop-core"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-core
     apply: { tags: "install-desktop-core" }
   tags: install-desktop-core
 
 - name: Install package group "install-desktop-docs"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-docs
     apply: { tags: "install-desktop-docs" }
   tags: install-desktop-docs
 
 - name: Install package group "install-desktop-email"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-email
     apply: { tags: "install-desktop-email" }
   tags: install-desktop-email
 
 - name: Install package group "install-desktop-font"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-font
     apply: { tags: "install-desktop-font" }
   tags: install-desktop-font
 
 - name: Install package group "install-desktop-image"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-desktop-image
     apply: { tags: "install-desktop-image" }
   tags: install-desktop-image
 
 - name: Install package group "install-develop-android"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-android
     apply: { tags: "install-develop-android" }
   tags: install-develop-android
 
 - name: Install package group "install-develop-dbms"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-dbms
     apply: { tags: "install-develop-dbms" }
   tags: install-develop-dbms
 
 - name: Install package group "install-develop-fortunes"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-fortunes
     apply: { tags: "install-develop-fortunes" }
   tags: install-develop-fortunes
 
 - name: Install package group "install-develop-grep"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-grep
     apply: { tags: "install-develop-grep" }
   tags: install-develop-grep
 
 - name: Install package group "install-develop-image"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-image
     apply: { tags: "install-develop-image" }
   tags: install-develop-image
 
 - name: Install package group "install-develop-lang"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-lang
     apply: { tags: "install-develop-lang" }
   tags: install-develop-lang
 
 - name: Install package group "install-develop-misc"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-misc
     apply: { tags: "install-develop-misc" }
   tags: install-develop-misc
 
 - name: Install package group "install-develop-net"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-net
     apply: { tags: "install-develop-net" }
   tags: install-develop-net, install-develop-net-wireshark
 
 - name: Install package group "install-develop-perl"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-perl
     apply: { tags: "install-develop-perl" }
   tags: install-develop-perl
 
 - name: Install package group "install-develop-python"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-python
     apply: { tags: "install-develop-python" }
   tags: install-develop-python
 
 - name: Install package group "install-develop-ruby"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-ruby
     apply: { tags: "install-develop-ruby" }
   tags: install-develop-ruby
 
 - name: Install package group "install-develop-sec"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-sec
     apply: { tags: "install-develop-sec" }
   tags: install-develop-sec
 
 - name: Install package group "install-develop-spatial"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-spatial
     apply: { tags: "install-develop-spatial" }
   tags: install-develop-spatial
 
 - name: Install package group "install-develop-terminal"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-terminal
     apply: { tags: "install-develop-terminal" }
   tags: install-develop-terminal
 
 - name: Install package group "install-develop-text"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-text
     apply: { tags: "install-develop-text" }
   tags: install-develop-text
 
 - name: Install package group "install-develop-vcs"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-vcs
     apply: { tags: "install-develop-vcs" }
   tags: install-develop-vcs
 
 - name: Install package group "install-develop-vim"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-vim
     apply: { tags: "install-develop-vim" }
   tags: install-develop-vim
 
 - name: Install package group "install-develop-web"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-develop-web
     apply: { tags: "install-develop-web" }
@@ -200,7 +200,7 @@
 # *** Install new packages for specific distributions.
 
 - name: Install package group "install-distro-14.04"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-distro-14.04
     apply: { tags: "install-distro-14.04" }
@@ -208,7 +208,7 @@
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 17
 
 - name: Install package group "install-distro-16.04"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-distro-16.04
     apply: { tags: "install-distro-16.04" }
@@ -216,7 +216,7 @@
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
 
 - name: Install package group "install-distro-18.04"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-distro-18.04
     apply: { tags: "install-distro-18.04" }
@@ -224,7 +224,7 @@
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
 
 - name: Install package group "install-distro-22.04"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-distro-22.04
     apply: { tags: "install-distro-22.04" }
@@ -234,14 +234,14 @@
 # *** Flatpaks
 
 - name: Install package group "install-flatpaks"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-flatpaks
     apply: { tags: "install-flatpaks" }
   tags: install-flatpaks
 
 - name: Load role to create flatpak update timer task
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: install-flatpaks-automatic-updates
     apply: { tags: "install-flatpaks-automatic-updates" }
@@ -257,7 +257,7 @@
   tags: laptop-lid-disable-wake-on
 
 - name: Load role to Deactivate Reactive Laptop Lid Response
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: laptop-lid-disable-wake-on
     apply: { tags: "laptop-lid-disable-wake-on" }
@@ -267,7 +267,7 @@
 # ***
 
 - name: Load role to Customize Log on Greeter Screen Background
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: log-on-screen-background
     apply: { tags: "log-on-screen-background" }
@@ -276,7 +276,7 @@
 # ***
 
 - name: "Enable 'Remove obsolete kernels and dependencies'"
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: mintupdate-automation-autoremove
     apply: { tags: "mintupdate-automation-autoremove" }
@@ -285,7 +285,7 @@
 # ***
 
 - name: Load role to Lock Sessions on Power Suspend
-  include_role:
+  ansible.builtin.include_role:
     name: zoidy_mintyfresh
     tasks_from: power-suspend-lock-sessions
     apply: { tags: "power-suspend-lock-sessions" }

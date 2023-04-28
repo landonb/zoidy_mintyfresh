@@ -23,7 +23,7 @@
 #        - Background > ✗ Draw a grid
 - name: Install custom Slick Greeter
   become: true
-  template:
+  ansible.builtin.template:
     src: slick-greeter.conf.j2
     dest: /etc/lightdm/slick-greeter.conf
 

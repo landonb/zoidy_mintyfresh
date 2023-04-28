@@ -10,14 +10,14 @@
 
 - name: Ensure session is locked on power suspension
   become: true
-  template:
+  ansible.builtin.template:
     src: power-suspend-lock-sessions.service
     dest: /etc/systemd/system
 
 # `systemctl daemon-reload`
 - name: Reload systemd configs, to see newly installed lock-on-suspend service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     daemon_reload: yes
 
 # E.g.,
@@ -27,7 +27,7 @@
 #   systemctl enable --now power-suspend-lock-sessions.service
 - name: Start and Enable-on-boot Our lock-on-suspend service
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: power-suspend-lock-sessions.service
     # Ha! This locks the screen on ya when it runs!
     state: started

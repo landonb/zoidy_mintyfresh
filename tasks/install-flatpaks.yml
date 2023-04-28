@@ -56,7 +56,7 @@
 # - DUNNO: I'm not sure if launchers search ~/.local/bin directly,
 #   or if the launcher PATH is coming from my ~/.profile or something.
 - name: Creating GIMP ~/.local/bin alias
-  copy:
+  ansible.builtin.copy:
     dest: ~/.local/bin/gimp-2.10
     content: |
       #!/bin/bash

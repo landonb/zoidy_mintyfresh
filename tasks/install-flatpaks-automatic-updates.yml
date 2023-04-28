@@ -10,7 +10,7 @@
 
 - name: "Create the system systemd service unit to update Flatpaks"
   become: true
-  template:
+  ansible.builtin.template:
     src: update-system-flatpaks.service
     dest: /etc/systemd/system
   # IZOFF/2023-04-20: Won't need this so long as all Flatpak are user installs.
@@ -18,7 +18,7 @@
 
 - name: "Create the user systemd service unit to update Flatpaks"
   become: true
-  template:
+  ansible.builtin.template:
     src: update-user-flatpaks.service
     dest: /etc/systemd/user
 
@@ -26,7 +26,7 @@
 
 - name: "Create the system systemd timer unit to automate the updates"
   become: true
-  template:
+  ansible.builtin.template:
     src: update-system-flatpaks.timer
     dest: /etc/systemd/system
   # IZOFF/2023-04-20: Won't need this so long as all Flatpak are user installs.
@@ -34,7 +34,7 @@
 
 - name: "Create the user systemd timer unit to automate the updates"
   become: true
-  template:
+  ansible.builtin.template:
     src: update-user-flatpaks.timer
     dest: /etc/systemd/user
 
