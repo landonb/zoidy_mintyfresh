@@ -81,10 +81,10 @@
     # - python-setuptools
     # - python3-setuptools
     #
-    # # Install psutil for Ansible dconf module.
-    # # MAYBE/2018-12-23: Add psutil to Ansible requirements?
-    # - python-psutil
-    # - python3-psutil
+    # Install psutil for Ansible dconf module.
+    # - NOTED/2023-04-28: I think this is installed by default,
+    #   or by some other package's dependencies.
+    - python3-psutil
     #
     # # SKIP: virtualenvwrapper is pip-installed.
     # #   #- virtualenvwrapper
