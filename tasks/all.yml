@@ -25,9 +25,12 @@
     name: zoidy_mintyfresh
     tasks_from: install-desktop-abcde
     apply: { tags: always }
-  # ISOFF/2023-03-24: I haven't worked with MP3 files or audio apps
-  # in a while, so making opt-in (specify --tag explicitly to run).
-  tags: install-desktop-abcde, never
+  tags: install-desktop-abcde
+  # ISOFF/2023-03-24: I haven't worked with MP3 files or audio apps in a spell.
+  # OPTIN/2023-04-28: To support site.yml tag inheritence (e.g., `--tags
+  # zoidy_mintyfresh`), use obtuse `when` test instead of 'never' tag.
+  # - Use explicit `--tags install-desktop-abcde` to run this task.
+  when: "'install-desktop-abcde' in ansible_run_tags"
 
 - name: Install package group "install-desktop-audio"
   ansible.builtin.include_role:
