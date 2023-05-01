@@ -24,6 +24,8 @@
     # tshark - network traffic analyzer - console version
     - tshark
 
+    - nmap
+
 # *** Install Wireshark separately to support separate tags.
 
 - name: 'Install network application development and diagnostic tools'
