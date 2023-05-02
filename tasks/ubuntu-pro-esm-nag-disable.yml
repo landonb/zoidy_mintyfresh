@@ -1,0 +1,179 @@
+---
+
+# ESM is Canonical's *Expanded Security Maintenance* that provides 5 years
+# more support past the LTS EOL date, but it's not supported on Linux Mint.
+# - Or at least I'm told:
+#     @terpsichore $ sudo pro enable esm-apps --beta
+#     One moment, checking your subscription first
+#     Ubuntu Pro: ESM Apps is not available for Ubuntu 21.1 (Vera).
+#   Note the "21.1 (Vera) is Mint's version. And although Mint runs
+#   on Ubuntu 22.04 Jammy, `pro` doesn't seem to know this, or
+#   refuses to work on it.
+# - I did see some chatter on the Mint threads that suggest you can
+#   edit /etc/lsb-release and similar files to reflect their Ubuntu
+#   distro values. But that seems like a very deep rabbit hole, and
+#   it would break some of my code that relies on /etc/lsb-release
+#   bearing Linux Mint values.
+
+- name: "Backup /usr/lib/update-notifier/apt_check.py before editing"
+  become: true
+  ansible.builtin.copy:
+    remote_src: True
+    src: /usr/lib/update-notifier/apt_check.py
+    dest: "/usr/lib/update-notifier/apt_check.py-{{ ansible_date_time.iso8601_basic_short }}-zoidy_mintyfresh"
+
+- name: "Backup /usr/lib/update-notifier/update-motd-updates-available before editing"
+  become: true
+  ansible.builtin.copy:
+    remote_src: True
+    src: /usr/lib/update-notifier/update-motd-updates-available
+    dest: "/usr/lib/update-notifier/update-motd-updates-available-{{ ansible_date_time.iso8601_basic_short }}-zoidy_mintyfresh"
+
+# ***
+
+# 2023-05-02: I tried lineinfile, but it'll only consider two lines (one newline),
+# not more.
+# - So this first lineinfile works, but not the second one.
+# - CXREF: There is a user module with multiple line regexp support:
+#     https://github.com/yaegashi/ansible-role-blockinfile
+#   But I'm not falling down that rabbit hole.
+
+# Inhibit the first two lines (second one blank) of the SSH logon MOTD message:
+#   Expanded Security Maintenance for Applications is not enabled.
+#
+# CXREF:
+#   /usr/lib/update-notifier/apt_check.py:210
+- name: "Inhibit ESM motd injection (Example using lineinfile Part 1/2)"
+  become: true
+  ansible.builtin.lineinfile:
+    dest: /usr/lib/update-notifier/apt_check.py
+    regexp: "(def _output_esm_service_status\\(outstream, have_esm_service, service_type\\):\\n)"
+    line: "\\1    return\\n"
+    backrefs: true
+    state: present
+  when: False
+
+# Middle line(s), might be:
+#
+#   0 updates can be applied immediately.
+#
+# Or might be:
+#
+#   <#> updates can be applied immediately.
+#   To see these additional updates run: apt list --upgradable
+#
+# CXREF:
+#   /usr/lib/update-notifier/apt_check.py:255
+#
+# Source block:
+#
+#   if security_updates > 0:
+#       outstream.write("\n")
+#       outstream.write(gettext.dngettext("update-notifier",
+#                                         "%i of these updates is a "
+#                                         "standard security update.",
+#                                         "%i of these updates are "
+#                                         "standard security updates.",
+#                                         security_updates) %
+#                       security_updates)
+#
+# - See `sed` shell call below for simple pattern:
+#   - Disable `if security_updates > 0:` test.
+
+# Inhibit final two lines of annoying MOTD injection:
+#   Enable ESM Apps to receive additional future security updates.
+#   See https://ubuntu.com/esm or run: sudo pro status
+#
+# CXREF:
+#   /usr/lib/update-notifier/apt_check.py:161
+
+- name: "Inhibit ESM motd injection (Example using lineinfile Part 2/2)"
+  become: true
+  ansible.builtin.lineinfile:
+    dest: /usr/lib/update-notifier/apt_check.py
+    # WORKS:
+    #  regexp: "(def _output_esm_package_alert\\(\\n.*)"
+    # FAILS:
+    #  regexp: "(def _output_esm_package_alert\\(\\n.*\\n)"
+    # This is what we ultimately would want, but doesn't work:
+    regexp: "(def _output_esm_package_alert\\(\\n.*\\n\\):\\n)"
+    line: "\\1    XXXX\\n"
+    backrefs: true
+    state: present
+  when: False
+
+# The final part of the message:
+#   0 updates can be applied immediately.
+# is a little trickier. Source looks like the following.
+#     outstream.write(
+#         gettext.dngettext("update-notifier",
+#                           "%i update can be applied immediately.",
+#                           "%i updates can be applied immediately.",
+#                           upgrades) % upgrades
+#     )
+# CXREF:
+#   /usr/lib/update-notifier/apt_check.py:161
+
+# Okay, fine, getting anal, remove 3 leading blank lines, too, e.g.,:
+#       outstream.write("\n")
+#
+#
+#   def has_disabled_esm_security_update(esm_cache, pkg, esm_origin):
+# CXREF:
+#   /usr/lib/update-notifier/apt_check.py:284
+#
+# Which is one of the 3 blank lines.
+#
+# CXREF: The other two blanks come from the regenerate script:
+#   /usr/lib/update-notifier/update-motd-updates-available:54
+
+# ***
+
+# So we'll just use sed.
+
+# CXREF: This sed (apt_check.py) inspired by *Inhibit ESM messages at login*
+#   https://askubuntu.com/questions/1453749/inhibit-esm-messages-at-login
+# Specifically this answer:
+#   https://askubuntu.com/a/1456185
+# Which suggests the first two substitutions; I added the second two.
+
+# DUNNO/2023-05-02: Unsure why, but -z/--null-data "separate lines by NUL
+# characters" is necessary, lest no change. (Is this so \n works?)
+#
+# - REFER:
+#     $ echo "foo" | sed -E -e 's/^foo$/bar/'
+#     bar
+#     $ echo "foo" | sed -Ez -e 's/^foo$/bar/'
+#     foo
+#     $ echo "foo" | sed -Ez -e 's/^foo\n/bar/'
+#     bar$ echo "foo" | sed -E -e 's/^foo\n/bar/'
+#     foo
+
+- name: "Inhibit ESM motd injection [from apt_check.py, using sed]"
+  become: true
+  #    -e 's/(def _output_esm_service_status\(outstream, have_esm_service, service_type\):\n)/\1    return\n/' \
+  ansible.builtin.shell: >
+    sudo sed -Ezi \
+      -e 's/(def _output_esm_service_status\(outstream, have_esm_service, service_type\):\n)/\1    return\n/' \
+      -e 's/(def _output_esm_package_alert\(\n.*\n\):\n)/\1    return\n/' \
+      -e 's/    outstream.write\(\n        gettext.dngettext\("update-notifier",\n                          "%i update can be applied immediately.",\n                          "%i updates can be applied immediately.",\n                          upgrades\) % upgrades\n    \)\n//' \
+      -e 's/    if security_updates > 0:\n/    if False and security_updates > 0:\n/' \
+      -e 's/(    outstream.write\("\\n"\)\n\n\ndef has_disabled_esm_security_update\(esm_cache, pkg, esm_origin\):)/#\1/' \
+      \
+        /usr/lib/update-notifier/apt_check.py
+
+# This clears 2 blank lines that surround the output of the previous script.
+- name: "Inhibit ESM motd injection [from update-motd-updates-available, using sed]"
+  become: true
+  ansible.builtin.lineinfile:
+    dest: /usr/lib/update-notifier/update-motd-updates-available
+    regexp: '        echo ""'
+    state: absent
+
+# CXREF: Regenerates the injection file:
+#   /var/lib/update-notifier/updates-available
+# Afterwards, should be empty.
+- name: "Regenerate the MOTD injection without ESM advertisement"
+  become: true
+  ansible.builtin.shell: /usr/lib/update-notifier/update-motd-updates-available --force
+

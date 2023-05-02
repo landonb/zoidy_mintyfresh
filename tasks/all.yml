@@ -294,3 +294,12 @@
     apply: { tags: always }
   tags: power-suspend-lock-sessions
 
+# ***
+
+- name: Load tasks to inhibit ssh logon ESM notice
+  ansible.builtin.include_role:
+    name: zoidy_mintyfresh
+    tasks_from: ubuntu-pro-esm-nag-disable
+    apply: { tags: always }
+  tags: ubuntu-pro-esm-nag-disable
+

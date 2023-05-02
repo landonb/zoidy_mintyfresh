@@ -42,6 +42,7 @@
     - log-on-screen-background
     - mintupdate-automation-autoremove
     - power-suspend-lock-sessions
+    - ubuntu-pro-esm-nag-disable
     - update
     - upgrade
     - update-upgrade
