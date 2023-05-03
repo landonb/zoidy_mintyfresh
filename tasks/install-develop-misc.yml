@@ -38,11 +38,6 @@
 
     # nslookup is... stale, to be polite. Use `dig` instead.
 
-    # Un-Zip-a-Dee-Doo-Dah
-    - unzip
-
-    - tree
-
     # ScreenRuler project page:
     #
     #   https://gnomecoder.wordpress.com/screenruler/
@@ -51,4 +46,9 @@
     #
     #   https://code.launchpad.net/screenruler
     - screenruler
+
+    - tree
+
+    # Un-Zip-a-Dee-Doo-Dah
+    - unzip
 
