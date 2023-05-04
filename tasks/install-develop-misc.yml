@@ -5,6 +5,9 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
+    # 2023-05-03: bashtop, `htop` alternative; see also: `glances`.
+    - bashtop
+
     # 2022-01-31: dateutils.ddiff
     - dateutils
 
@@ -25,6 +28,9 @@
     - feedgnuplot
 
     - htop
+
+    # Network activity monitor, like `top`. Requires sudo.
+    - iftop
 
     - jq
 
