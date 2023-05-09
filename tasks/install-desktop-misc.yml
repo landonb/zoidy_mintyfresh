@@ -11,3 +11,7 @@
     # "lets you dock any application into the system tray"
     - kdocker
 
+    - spotify-client
+
+    - vlc
+
