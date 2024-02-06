@@ -39,7 +39,7 @@
 
     - lzip
 
-    # mount.nfs
+    # /sbin/mount.nfs, /sbin/mount.nfs4
     - nfs-common
 
     # nslookup is... stale, to be polite. Use `dig` instead.
