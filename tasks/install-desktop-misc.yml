@@ -1,5 +1,18 @@
 ---
 
+# SAVVY/2024-02-08: On new LM 21.3, `sudo apt-get update` complains
+# that the Spotify source signature cannot be verified.
+# - This fixes the problem, but seems weird that the install worked
+#   (`sudo apt install spotify-client`) before I had imported the key.
+# - You can see the Spotify repo under sources:
+#     /etc/apt/sources.list.d/spotify.list
+# - REFER: https://www.spotify.com/us/download/linux/
+- name: Add Spotify source key
+  become: true
+  ansible.builtin.shell: >
+    curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg \
+      | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+
 - name: 'Install uncategorized desktop applications'
   become: true
   ansible.builtin.apt: name={{ item }}
