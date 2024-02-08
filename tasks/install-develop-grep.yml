@@ -12,8 +12,14 @@
     # pcregrep - grep utility that uses perl 5 compatible regexes.
     - pcregrep
 
+    # ripgrep is the fastest searcher! > ag > grep
+    # - 2024-02-06: Linux Mint 21.3 includes ripgrep 13.0.0
+    # - REFER: For the latest ripgrep (curr. 14.1.0), see:
+    #     https://github.com/landonb/zoidy_apps_et_al
+    #   CXREF: On a DepoXy install, located at:
+    #     ~/.kit/ansible/roles/zoidy_apps_et_al/tasks/cli-ripgrep.yml
+    - ripgrep
+
     # The stately Silver Search, ag.
     - silversearcher-ag
-
-    # See elsewhere: ripgrep is ever better than ag!
 
