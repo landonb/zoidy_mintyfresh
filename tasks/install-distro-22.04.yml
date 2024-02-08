@@ -1,6 +1,6 @@
 ---
 
-- name: 'Install distro-specific packages for 18.04'
+- name: 'Install distro-specific packages for 22.04 (Ubuntu Jammy / Linux Mint 21.X)'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
