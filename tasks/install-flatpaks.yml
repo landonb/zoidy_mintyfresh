@@ -63,3 +63,15 @@
       flatpak run org.gimp.GIMP
     mode: 0755
 
+# ***
+
+# Install Slack, e.g.,
+#   flatpak install flathub com.slack.Slack -y
+# SAVVY: Run it:
+#   flatpak run com.slack.Slack
+- name: Install the Slack Flatpak
+  community.general.flatpak:
+    name: com.slack.Slack
+    state: present
+    method: user
+
