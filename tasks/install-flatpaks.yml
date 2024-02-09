@@ -16,7 +16,7 @@
 #  error: No remote refs found similar to ‘flathub’
 # Runs, e.g.,
 #   flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
-- name: Add the flathub flatpak repository remote to the user installation
+- name: Add the Flathub Flatpak repository remote to the user installation
   community.general.flatpak_remote:
     name: flathub
     state: present
@@ -30,7 +30,7 @@
 # SAVVY: Run it:
 #   flatpak run org.gnome.meld
 # SPEED/2023-04-20 19:51: Slow. At least on Lenovo X201 Wi-Fi, 8m42s.
-- name: Install the meld flatpak
+- name: Install the meld Flatpak
   community.general.flatpak:
     name: org.gnome.meld
     state: present
@@ -43,7 +43,7 @@
 # ALTLY: You could download it and install from local file: CXREF:
 #   https://dl.flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
 # SPEED/2023-04-20 20:02: Slow. At least on Lenovo X201 Wi-Fi, 5m26s.
-- name: Install the GIMP flatpak
+- name: Install the GIMP Flatpak
   community.general.flatpak:
     name: org.gimp.GIMP
     state: present
