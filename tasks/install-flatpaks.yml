@@ -69,6 +69,19 @@
 #   flatpak install flathub com.slack.Slack -y
 # SAVVY: Run it:
 #   flatpak run com.slack.Slack
+# DUNNO/2024-02-13: Slack Flatpak installs a Desktop file, e.g.,
+#   ~/.local/share/flatpak/app/com.slack.Slack/current/active/files/share/applications/com.slack.Slack.desktop
+# But it simply runs `com.slack.Slack`. You'll see a local bin at, e.g.,
+#   ~/.local/share/flatpak/app/com.slack.Slack/current/active/files/bin/com.slack.Slack
+# But this executable calls zypak-wrapper, which is a broken symlink, e.g.,
+#   ~/.local/share/flatpak/app/com.slack.Slack/current/active/files/bin/zypak-wrapper
+#     -> /app/bin/zypak-wrapper.sh
+# And searching doesn't indicate that end users are meant to install Zypak, REFER:
+#   https://github.com/refi64/zypak
+# Additionally, the Slack Flatpak itself says to run it like any other Flakpak, e.g.,
+#   flatpak run com.slack.Slack
+# REFER:
+#   https://github.com/flathub/com.slack.Slack/blob/master/README.md
 - name: Install the Slack Flatpak
   community.general.flatpak:
     name: com.slack.Slack
