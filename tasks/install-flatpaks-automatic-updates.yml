@@ -59,7 +59,7 @@
 #   sudo systemctl --system enable --now update-system-flatpaks.timer
 - name: "Start the system systemd timer"
   become: true
-  ansible.builtin.systemd:
+  ansible.builtin.systemd_service:
     name: update-system-flatpaks.timer
     state: started
     enabled: true
@@ -69,7 +69,7 @@
 # E.g.,
 #   systemctl --user enable --now update-user-flatpaks.timer
 - name: "Start the user systemd timer"
-  ansible.builtin.systemd:
+  ansible.builtin.systemd_service:
     name: update-user-flatpaks.timer
     state: started
     enabled: true
