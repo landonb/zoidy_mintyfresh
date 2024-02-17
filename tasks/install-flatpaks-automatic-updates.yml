@@ -3,10 +3,25 @@
 # CREDS/CXREF: https://www.jwillikers.com/automate-flatpak-updates-with-systemd
 
 # This is essentially the long way to enable an automatic Flatpak update
-# like you can find in a MATE GUI:
+# like you'll see in the MATE GUI:
 #
 #   MATE Menu > Update Manager > Edit > Preference
 #     Automation > ✓ Update Flatpaks automatically
+#
+# ALTHO: Update Manager says "Performed when you log in", but the timer
+#  set by this task runs daily. So if you don't login often (e.g., I just
+#  lock my machine, mostly), the Update Manager approach won't always keep
+#  your Flatpak apps up to date.
+#
+# Note also you won't see the "Update Flatpaks automatically" option
+# enabled in the GUI when using this approach. But it'll be running.
+
+# CXREF:
+#   /etc/systemd/user/update-user-flatpaks.service
+#   /etc/systemd/user/update-user-flatpaks.timer
+
+# REFER: Note this is a user timer:
+#   systemctl --user list-timers
 
 - name: "Create the system systemd service unit to update Flatpaks"
   become: true
