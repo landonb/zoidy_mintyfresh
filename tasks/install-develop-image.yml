@@ -69,3 +69,6 @@
     # "advanced PNG (Portable Network Graphics) optimizer"
     - optipng
 
+    # "tools for transforming and inspecting PDF files"
+    - qpdf
+
