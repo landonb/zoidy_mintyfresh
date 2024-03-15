@@ -24,6 +24,10 @@
 
     # *** install-develop-python.yml
 
+    # For `python3 -m venv ...`
+    # - Includes `ensurepip`
+    - python3.10-venv
+
     # wxPython. Widgets!
     - python3-wxgtk4.0
 
