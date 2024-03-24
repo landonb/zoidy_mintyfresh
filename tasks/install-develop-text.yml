@@ -14,6 +14,13 @@
     #     grep -i --color=always version | \
     #     aha --black > ls-with-colors.html
 
+    # Text-to-speech apps:
+    #   espeak
+    #   festival
+    #   pico2wave (libttspico-utils)
+    #   gtts-cli (python3-gtts)
+    - espeak
+
     # So `less` can highlight source code, e.g.,
     #   LESSOPEN="| /usr/bin/highlight %s --out-format xterm256 --force"
     - highlight
@@ -31,11 +38,4 @@
     # Use wkhtmltopdf to generate PDFs from HTML, e.g., those generated from reST.
     # [MEH: (lb): Should an html2pdf app count as text-related and be listed here?]
     - wkhtmltopdf
-
-    # Text-to-speech apps:
-    #   espeak
-    #   festival
-    #   pico2wave (libttspico-utils)
-    #   gtts-cli (python3-gtts)
-    - espeak
 
