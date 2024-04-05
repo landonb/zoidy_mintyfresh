@@ -58,6 +58,15 @@
     # expect - Automates interactive applications
     - expect
 
+    # fzy - Fuzzy finder menu-izer
+    # https://github.com/jhawthorn/fzy
+    # - E.g.,
+    #     declare -a options=(foo bar baz)
+    #     chosen="$(printf "%s\n" "${options[@]}" | fzy)"
+    # BEGET:
+    # https://unix.stackexchange.com/questions/715893/bash-completely-cli-interactive-menu
+    - fzy
+
     # inotify-tools - command-line programs providing a simple interface to inotify
     - inotify-tools
 
