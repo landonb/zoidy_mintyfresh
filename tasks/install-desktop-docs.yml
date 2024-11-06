@@ -26,3 +26,8 @@
     # Build LaTeX .tex templates.
     - pandoc
 
+    # Linux Mint includes LibreOffice by default.
+    # - Otherwise you could install it yourself:
+    #
+    #   - libreoffice
+
