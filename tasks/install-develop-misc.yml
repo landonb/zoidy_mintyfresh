@@ -55,6 +55,11 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
+    # "Resource monitor that shows usage and stats"
+    - bpytop
+    # "Modern and colorful command line resource monitor that shows usage and stats"
+    - btop
+
     - htop
 
     # Network activity monitor, like `top`. Requires sudo.
