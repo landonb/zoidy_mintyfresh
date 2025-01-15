@@ -149,7 +149,17 @@
     name: zoidy_mintyfresh
     tasks_from: install-develop-net
     apply: { tags: always }
-  tags: install-develop-net, install-develop-net-wireshark
+  tags: install-develop-net
+
+- name: Install package group "install-develop-net-wireshark"
+  ansible.builtin.include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-develop-net-wireshark
+    apply: { tags: always }
+  tags: install-develop-net-wireshark
+  # USAGE: OPTIN: Use explicit tags to run this task:
+  #   ansible-playbook ... --tags install-develop-net-wireshark ...
+  when: "'install-develop-net-wireshark' in ansible_run_tags"
 
 - name: Install package group "install-develop-perl"
   ansible.builtin.include_role:
