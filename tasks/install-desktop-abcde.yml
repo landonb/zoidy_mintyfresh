@@ -21,7 +21,16 @@
 
     # Audio extraction tools: cdparanoia, libcdio17/13, icedax, flac.
     # cdparanoia - audio extraction tool for sampling CDs
-    - cdparanoia
+    # https://www.xiph.org/paranoia/
+    # - ISOFF/2025-01-15: Included with 'cd-paranoia'.
+    #  - cdparanoia
+    #
+    # "audio CD reading utility which includes extra data verification features"
+    # https://www.gnu.org/software/libcdio/
+    # "The cdparanoia library and cdparanoia command are included making this the
+    #  only single-source cdparanoia that works on FreeBSD, NetBSD, OSX, cygwin,
+    #  Solaris, BSDI as well as GNU/Linux."
+    - cd-paranoia
 
     # icedax - Creates WAV files from audio CDs
     - icedax
