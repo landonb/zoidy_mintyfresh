@@ -60,7 +60,7 @@
     # python3-eyed3 - Python module for id3-tags manipulation (Python 3 version)
     - eyed3
 
-- name: 'Install MusicBrainz-related audio tools'
+- name: 'Install MusicBrainz-related acbde-related audio tools'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
@@ -74,7 +74,7 @@
     - libwebservice-musicbrainz-perl
 
 # SAVVY/2025-01-15: Not found via apt-search on Debian 12.
-- name: 'Install Mint-only audio tools'
+- name: 'Install Mint-only acbde-related audio tools'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
   ansible.builtin.apt: name={{ item }}
