@@ -10,7 +10,7 @@
     # GUI git log tool and commit comparison [visual diff] tool
     - gitk
 
-    # GIT utilities [sic]
+    # https://github.com/tj/git-extras
     - git-extras
 
     # A beautiful, colorful git browser/helper.
