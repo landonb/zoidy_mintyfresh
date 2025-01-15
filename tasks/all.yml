@@ -74,6 +74,13 @@
     apply: { tags: always }
   tags: install-desktop-image
 
+- name: Install package group "install-desktop-media"
+  ansible.builtin.include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-media
+    apply: { tags: always }
+  tags: install-desktop-media
+
 - name: Install package group "install-desktop-misc"
   ansible.builtin.include_role:
     name: zoidy_mintyfresh

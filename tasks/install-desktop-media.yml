@@ -1,0 +1,17 @@
+---
+
+- name: 'Install desktop media apps'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    - vlc
+
+- name: 'Install desktop media apps (Mint-only)'
+  when: ansible_lsb.id == 'LinuxMint'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # "Explore, search and discover the planet"
+    - google-earth-pro-stable
