@@ -6,11 +6,6 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # *** install-develop-graphical.yml
-
-    # "International Components for Unicode"
-    - libicu52
-
     # *** install-develop-misc.yml
 
     # bc: An arbitrary precision calculator language.

@@ -15,11 +15,6 @@
 
     - postgresql-server-dev-9.3
 
-    # *** install-develop-graphical.yml
-
-    # "International Components for Unicode"
-    - libicu52
-
     # Interactive bash debugger. To set a breakpoint:
     #   source /usr/share/bashdb/bashdb-trace
     #   _Dbg_debugger

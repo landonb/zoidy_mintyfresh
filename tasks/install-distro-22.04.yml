@@ -6,11 +6,6 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # *** install-develop-graphical.yml
-
-    # "International Components for Unicode"
-    - libicu70
-
     # *** install-develop-python.yml
 
     # For `python3 -m venv ...`

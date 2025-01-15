@@ -6,13 +6,6 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # *** install-develop-graphical.yml
-
-    # "International Components for Unicode"
-    # Ubuntu 16.04: libicu52
-    # Ubuntu 18.04: libicu60
-    - libicu60
-
     # *** install-develop-python.yml
 
     # wxPython. Widgets!
