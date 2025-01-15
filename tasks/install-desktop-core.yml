@@ -8,19 +8,22 @@
     # CLI OS and Window Manager customizers.
     - dconf-cli
 
+    # These are essential on MATE (Linux Mint), but still work (to
+    # some extent) on GNOME Shell (Debian).
     - wmctrl
     - xdotool
 
     # apt-file - search for files within Debian packages (command-line interface)
     - apt-file
 
-    # Are we in a virtual machine?
+    # "detect if we are running in a virtual machine"
     #  - virt-what
 
     # Bleeding edge Chrome.
     - chromium-browser
 
     # Eye of Gnome, a slideshow image viewer.
+    # - Installed by default on Debian 12.
     - eog
 
     # [meld is the] Awesomest graphical diff.
@@ -46,20 +49,19 @@
     #  - hexdiff
 
     # Color picker.
-    # FIXME/2018-12-15: gcolor2 is missing from 18.04.
-    #- gcolor2
-    #   https://askubuntu.com/questions/1073990/gcolor2-package-missing-in-ubuntu-18-04
-    # Maybe wire deb installer, e.g.,
-    #   cd ~/Downloads
-    #   wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcolor2/gcolor2_0.4-2.1ubuntu1_amd64.deb
-    #   sudo apt-get install ./gcolor2_0.4-2.1ubuntu1_amd64.deb
-    # or Maybe update to gcolor3
-    #   ppa:evertiro/gcolor3
-    # except "gcolor3 does not have broad list of predefined colors".
-    # Which is probably a feature, not a bug, because predefined colors
-    # clutter a list of colors shared with user-saved colors. Ahuh.
+    # - HSTRY/2018-12-15: Previously used gcolor2.
+    #   - REFER: Some tips from people asking for alts:
+    #       zenity --color-selection
+    #       yad --color  # Like zenity, but not installed by default
+    #       gpick
+    #     https://askubuntu.com/questions/1073990/gcolor2-package-missing-in-ubuntu-18-04
+    #   - NOTED: "gcolor3 does not have broad list of predefined colors".
+    #
+    # REFER: https://gitlab.gnome.org/World/gcolor3
+    # "Simple GTK3 color selector and picker"
+    - gcolor3
 
-    # artha - Handy off-line thesaurus based on WordNet
+    # artha - "Handy off-line thesaurus based on WordNet"
     # HINT: After running, press Ctrl-Alt-W to foreground!
     # [lb]: I don't really use this, but like to know that
     # if I'm offline, I can find a dictionary & thesaurus.
