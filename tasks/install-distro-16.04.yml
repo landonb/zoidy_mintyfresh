@@ -1,6 +1,7 @@
 ---
 
 - name: 'Install distro-specific packages for 16.04'
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
