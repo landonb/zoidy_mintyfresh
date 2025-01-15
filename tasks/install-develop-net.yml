@@ -24,6 +24,8 @@
 
     - nmap
 
+    - ufw
+
 - name: 'Install network app development, diagnostic, and security tools (Debian)'
   when: ansible_lsb.id == 'Debian'
   become: true
