@@ -49,6 +49,33 @@
 
     # id3v2 - A command line id3v2 tag editor
     - id3v2
+
+    # Needed for lame encoding.
+    # eyed3 - Display and manipulate id3-tags on the command-line
+    # python-eyed3 - Python module for id3-tags manipulation
+    # python3-eyed3 - Python module for id3-tags manipulation (Python 3 version)
+    - eyed3
+
+- name: 'Install MusicBrainz-related audio tools'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # What is the `musicbrainz` equivalent?
+    # Picard is a cross-platform music tagger written in Python.
+    # picard - Next-Generation MusicBrainz audio files tagger
+    - picard
+
+    # libwebservice-musicbrainz-perl - XML based Web service API to the MusicBrainz database
+    - libwebservice-musicbrainz-perl
+
+# SAVVY/2025-01-15: Not found via apt-search on Debian 12.
+- name: 'Install Mint-only audio tools'
+  when: ansible_lsb.id == 'LinuxMint'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
     # mkcue - Generates a CUE sheet from a CD
     - mkcue
 
@@ -61,15 +88,4 @@
     #   [2018-12-15 15:39: Must've been, if I never updated that comment!]
     # python-cddb - Python interface to CD-IDs and FreeDB
     - python-cddb
-    # What is the `musicbrainz` equivalent?
-    # Picard is a cross-platform music tagger written in Python.
-    # picard - Next-Generation MusicBrainz audio files tagger
-    - picard
-    # libwebservice-musicbrainz-perl - XML based Web service API to the MusicBrainz database
-    - libwebservice-musicbrainz-perl
-    # Needed for lame encoding.
-    # eyed3 - Display and manipulate id3-tags on the command-line
-    # python-eyed3 - Python module for id3-tags manipulation
-    # python3-eyed3 - Python module for id3-tags manipulation (Python 3 version)
-    - eyed3
 
