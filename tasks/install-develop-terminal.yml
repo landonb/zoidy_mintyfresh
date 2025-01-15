@@ -88,3 +88,11 @@
     # readline wrapper, e.g., a nice Perl REPL: rlwrap perl -d -e 1
     - rlwrap
 
+    # "Display graphical dialog boxes from shell scripts"
+    # - Should be pre-installed. (This is mostly a reminder.)
+    - zenity
+
+    # "tool for creating graphical dialogs from shell scripts"
+    # - Color picker: `yad --color`
+    - yad
+
