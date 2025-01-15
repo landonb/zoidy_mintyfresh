@@ -14,6 +14,9 @@
 #   distro values. But that seems like a very deep rabbit hole, and
 #   it would break some of my code that relies on /etc/lsb-release
 #   bearing Linux Mint values.
+#   - SAVVY/2025-01-15: Though I've since switched from using
+#     /etc/lsb-release to using /etc/os-release. Though same
+#     rabbit-hole sentiment applies.
 
 - name: "Backup /usr/lib/update-notifier/apt_check.py before editing"
   become: true
