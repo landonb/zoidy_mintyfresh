@@ -10,8 +10,6 @@
 
     - sshfs
 
-    - socket
-
     - traceroute
 
     - whois
@@ -25,4 +23,14 @@
     - tshark
 
     - nmap
+
+- name: 'Install network application development and diagnostic tools (Mint-only)'
+  when: ansible_lsb.id == 'LinuxMint'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  tags: install-develop-net
+  loop:
+
+    # 2025-01-15: Not found in Debian 12 sources.
+    - socket
 
