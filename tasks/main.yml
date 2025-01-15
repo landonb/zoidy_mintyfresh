@@ -15,6 +15,7 @@
     - install-desktop-font
     - install-desktop-image
     - install-desktop-misc
+    - install-desktop-spotify
     - install-develop-android
     - install-develop-dbms
     - install-develop-fortunes

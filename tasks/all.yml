@@ -81,6 +81,13 @@
     apply: { tags: always }
   tags: install-desktop-misc
 
+- name: Install package group "install-desktop-spotify"
+  ansible.builtin.include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-desktop-spotify
+    apply: { tags: always }
+  tags: install-desktop-spotify
+
 - name: Install package group "install-develop-android"
   ansible.builtin.include_role:
     name: zoidy_mintyfresh
