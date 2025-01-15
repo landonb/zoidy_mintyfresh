@@ -5,7 +5,7 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # DVD burning software.
+    # "CD/DVD burning application for GNOME"
     - brasero
 
     # Audio Player.
@@ -13,5 +13,6 @@
 
     # 2018-12-14: I haven't streamripped in forever,
     # but here's one app I've trusted previously.
+    # "download online streams into audio files"
     - streamripper
 

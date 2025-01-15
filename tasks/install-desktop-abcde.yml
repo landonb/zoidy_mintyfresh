@@ -40,6 +40,7 @@
 
     # mailx. Postfix. for cddb-tool
     # bsd-mailx - simple mail user agent
+    # - SAVVY: Included in stock Debian 12.
     - bsd-mailx
 
     # Misc.
