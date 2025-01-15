@@ -19,9 +19,6 @@
     # "detect if we are running in a virtual machine"
     #  - virt-what
 
-    # Bleeding edge Chrome.
-    - chromium-browser
-
     # Eye of Gnome, a slideshow image viewer.
     # - Installed by default on Debian 12.
     - eog
@@ -71,4 +68,22 @@
 
     # Let users mount devices (i.e., and avoid having to use `caja` GUI).
     - pmount
+
+- name: "Install core desktop tools (Mint-only)"
+  when: ansible_lsb.id == 'LinuxMint'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # Bleeding edge Chrome.
+    - chromium-browser
+
+- name: "Install core desktop tools (Debian-only)"
+  when: ansible_lsb.id == 'Debian'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # Bleeding edge Chrome.
+    - chromium
 
