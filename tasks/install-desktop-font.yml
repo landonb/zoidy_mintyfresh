@@ -15,6 +15,7 @@
     - font-manager
 
     # fonts-cantarell: sans serif font family designed for on-screen readability
+    # - Comes installed on Debian 12.
     - fonts-cantarell
     # fonts-tuffy - The Tuffy Truetype Font Family
     - fonts-tuffy
@@ -25,6 +26,7 @@
     # - Still "465 free TrueType fonts by Brian Kent".
     #  - ttf-aenigma
     - fonts-aenigma
+
     # 2018-12-15: [lb] Old comment says "Symbola font for emojis."
     #   Did I mean the `ttf-ancient-fonts` supplies emojis? Sounds weird.
     # ttf-ancient-fonts: Unicode Fonts for Ancient Scripts (transitional package)

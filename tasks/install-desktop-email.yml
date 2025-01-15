@@ -9,6 +9,7 @@
     # Mutt bark bark better than mail (see also: elm).
     - mutt
 
+    # "construct/send MIME messages from the command line"
     - mime-construct
 
     # For getting at automated emails sent by daemons.
