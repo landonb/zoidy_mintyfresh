@@ -254,22 +254,6 @@
   tags: install-distro-16.04
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
 
-- name: Install package group "install-distro-18.04"
-  ansible.builtin.include_role:
-    name: zoidy_mintyfresh
-    tasks_from: install-distro-18.04
-    apply: { tags: always }
-  tags: install-distro-18.04
-  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
-
-- name: Install package group "install-distro-22.04"
-  ansible.builtin.include_role:
-    name: zoidy_mintyfresh
-    tasks_from: install-distro-22.04
-    apply: { tags: always }
-  tags: install-distro-22.04
-  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
-
 # *** Flatpaks
 
 - name: Install package group "install-flatpaks"

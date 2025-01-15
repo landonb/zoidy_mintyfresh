@@ -12,11 +12,6 @@
     # 2016-07-17: Ubuntu missing bc. What a weirdo.
     - bc
 
-    # *** install-develop-spatial.yml
-
-    - libproj0
-    - libspatialite5
-
     # *** install-develop-vcs.yml
 
     # 2018-12-15: 18.04 not showing a git-core package.
