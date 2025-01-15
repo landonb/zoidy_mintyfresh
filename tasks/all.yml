@@ -207,7 +207,12 @@
     apply: { tags: always }
   tags: install-develop-web
 
-# *** Install new packages for specific distributions.
+# *** Linux Mint version-specific packages
+
+# DEVEL: Uncomment to inspect ansible_lsb dictionary:
+#
+# - ansible.builtin.fail: msg="ansible_lsb∷ {{ ansible_lsb }}"
+#   tags: always
 
 - name: Install package group "install-distro-14.04"
   ansible.builtin.include_role:
