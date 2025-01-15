@@ -1,6 +1,6 @@
 ---
 
-- name: 'Install network application development and diagnostic tools'
+- name: 'Install network app development, diagnostic, and security tools'
   become: true
   ansible.builtin.apt: name={{ item }}
   tags: install-develop-net
@@ -24,12 +24,22 @@
 
     - nmap
 
-- name: 'Install network application development and diagnostic tools (Mint-only)'
+- name: 'Install network app development, diagnostic, and security tools (Debian)'
+  when: ansible_lsb.id == 'Debian'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+    # `nslookup`
+    - bind9-dnsutils
+
+- name: 'Install network app development, diagnostic, and security tools (Linux Mint)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
   ansible.builtin.apt: name={{ item }}
   tags: install-develop-net
   loop:
+    # `nslookup`
+    - dnsutils
 
     # 2025-01-15: Not found in Debian 12 sources.
     - socket
