@@ -25,6 +25,13 @@
     # Yaml linter. Because you always wanted more Yaml in your life.
     - yamllint
 
+- name: "Install some language-specific develop tools [that this developer has used] (Mint-only)"
+  when: ansible_lsb.id == 'LinuxMint'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
     # "Code coverage analysis using DWARF debugging information"
+    # - SAVVY/2025-01-15: Not found in default Debian sources.
     - kcov
 
