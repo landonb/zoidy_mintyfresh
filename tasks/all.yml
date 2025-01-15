@@ -262,6 +262,7 @@
     tasks_from: install-flatpaks
     apply: { tags: always }
   tags: install-flatpaks
+  when: ansible_lsb.id == 'LinuxMint'
 
 - name: Load tasks to create flatpak update timer task
   ansible.builtin.include_role:
@@ -269,6 +270,7 @@
     tasks_from: install-flatpaks-automatic-updates
     apply: { tags: always }
   tags: install-flatpaks-automatic-updates
+  when: ansible_lsb.id == 'LinuxMint'
 
 # *** Perform sudo setup operations (I'm too lazy to put in other Galaxy Role).
 
@@ -278,6 +280,7 @@
   become: yes
   register: chassis_type
   tags: laptop-lid-disable-wake-on
+  when: ansible_lsb.id == 'LinuxMint'
 
 - name: Load tasks to Deactivate Reactive Laptop Lid Response
   ansible.builtin.include_role:
@@ -285,7 +288,7 @@
     tasks_from: laptop-lid-disable-wake-on
     apply: { tags: always }
   tags: laptop-lid-disable-wake-on
-  when: chassis_type.stdout == 'Notebook'
+  when: ansible_lsb.id == 'LinuxMint' and chassis_type.stdout == 'Notebook'
 
 # ***
 
@@ -295,6 +298,7 @@
     tasks_from: log-on-screen-background
     apply: { tags: always }
   tags: log-on-screen-background
+  when: ansible_lsb.id == 'LinuxMint'
 
 # ***
 
@@ -304,6 +308,7 @@
     tasks_from: mintupdate-automation-autoremove
     apply: { tags: always }
   tags: mintupdate-automation-autoremove
+  when: ansible_lsb.id == 'LinuxMint'
 
 # ***
 
@@ -313,6 +318,7 @@
     tasks_from: power-suspend-lock-sessions
     apply: { tags: always }
   tags: power-suspend-lock-sessions
+  when: ansible_lsb.id == 'LinuxMint'
 
 # ***
 
@@ -322,4 +328,5 @@
     tasks_from: ubuntu-pro-esm-nag-disable
     apply: { tags: always }
   tags: ubuntu-pro-esm-nag-disable
+  when: ansible_lsb.id == 'LinuxMint'
 
