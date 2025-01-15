@@ -17,10 +17,15 @@
     # fonts-cantarell: sans serif font family designed for on-screen readability
     # - Comes installed on Debian 12.
     - fonts-cantarell
+    # font-lmodern: scalable PostScript and OpenType fonts based on Computer Modern
+    # - Alias: lmodern
+    # "OpenType fonts based on Computer Modern"
+    # - Comes installed on Debian 12.
+    - fonts-lmodern
+
     # fonts-tuffy - The Tuffy Truetype Font Family
     - fonts-tuffy
-    # lmodern: scalable PostScript and OpenType fonts based on Computer Modern
-    - lmodern
+
     # ttf-aenigma: 465 free TrueType fonts by Brian Kent
     # 2023-03-25: 22.04 says now `fonts-aenigma`.
     # - Still "465 free TrueType fonts by Brian Kent".
