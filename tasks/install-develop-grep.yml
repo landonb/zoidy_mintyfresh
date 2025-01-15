@@ -6,7 +6,8 @@
   loop:
 
     # [lb]: I don't personally use ack, but sometimes I copy-paste it.
-    - ack-grep
+    # "grep-like program specifically for large source trees"
+    - ack
 
     # For when you need Perl-style regex.
     # pcregrep - grep utility that uses perl 5 compatible regexes.
