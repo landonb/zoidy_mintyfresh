@@ -5,13 +5,15 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # Vim. (See elsewhere: Install Dubs Vim.)
-    # Flavors: vim-gtk, vim-gtk3, vim-tiny
-    # (lb): Note that ZP builds Vim from scratch (see
-    # app-vim-brams.yml) but we want to install vim-gtk
-    # so that /usr/bin/vim is created (and then, e.g.,
-    # running `vim` will work from the root account).
-    - vim-gtk
+    # Vim.
+    # - Debian includes 'vim-tiny' by default.
+    # - HSTRY: I used to build Vim from sources,
+    #   back when I wanted to customize its Alt-Tab
+    #   icon, also so I take advantage of features
+    #   that hadn't yet been released to distro sources
+    #   (e.g., 'timers'). But nowadays the distro
+    #   package usually has everything I need.
+    - vim-gtk3
 
     # TRYIT/2023-03-24: Someday I'll demo neovim...
     - neovim
@@ -34,9 +36,12 @@
     # ncursesw is ncurses with Unicode (wide character) support.
     - libncursesw5-dev
 
-    # For GUI support. Without it, Vim builds, but gvim symlink
-    # is not made (and if you make it and run it, complains:
+    # HSTRY/2025-01-15: At least for obsolete GTK 2.0 Vim,
+    # without GTK lib ('libgtk2.0-dev'), Vim builds, but gvim
+    # symlink is not made (and if you make it and run it,
+    # complains):
+    #   # Missing 'libgtk2.0-dev' at compile-time.
     #   $ gvim
     #   E25: GUI cannot be used: Not enabled at compile time
-    - libgtk2.0-dev
+    - libgtk-3-dev
 
