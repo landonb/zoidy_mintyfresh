@@ -21,11 +21,6 @@
     # http://bashdb.sourceforge.net/
     - bashdb
 
-    # *** install-develop-python.yml
-
-    # wxPython. Widgets!
-    - python-wxgtk2.8
-
     # *** install-develop-spatial.yml
 
     - libproj0

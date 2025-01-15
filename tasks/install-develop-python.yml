@@ -146,4 +146,52 @@
     - liblzma-dev
     # Optional: For building PyPy.
     - llvm
-    
+
+    # For `python3 -m venv ...`
+    # - Includes `ensurepip`
+    - python3-venv
+
+# ***
+
+- name: 'Install distro-specific acbde-related packages (Debian 12)'
+  when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+    # wxPython. Widgets!
+    - python3-wxgtk4.0
+
+- name: "Install Ruby and related packages (Mint 21)"
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+    # wxPython. Widgets!
+    - python3-wxgtk4.0
+
+- name: "Install Ruby and related packages (Mint 19)"
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+    # wxPython. Widgets!
+    # Ubuntu 16.04: python-wxgtk2.8
+    # Ubuntu 18.04: python-wxgtk3.0
+    - python-wxgtk3.0
+
+- name: "Install Ruby and related packages (Mint 18)"
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+    # wxPython. Widgets!
+    - python-wxgtk2.8
+
+- name: "Install Ruby and related packages (Mint 17)"
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 17
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+    # wxPython. Widgets!
+    - python-wxgtk2.8
+

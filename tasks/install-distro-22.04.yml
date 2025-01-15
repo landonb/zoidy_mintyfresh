@@ -6,15 +6,6 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # *** install-develop-python.yml
-
-    # For `python3 -m venv ...`
-    # - Includes `ensurepip`
-    - python3.10-venv
-
-    # wxPython. Widgets!
-    - python3-wxgtk4.0
-
     # *** install-develop-spatial.yml
 
     # libproj22 - Cartographic projection library

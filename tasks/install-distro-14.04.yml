@@ -12,11 +12,6 @@
     # 2016-07-17: Ubuntu missing bc. What a weirdo.
     - bc
 
-    # *** install-develop-python.yml
-
-    # wxPython. Widgets!
-    - python-wxgtk2.8
-
     # *** install-develop-spatial.yml
 
     - libproj0

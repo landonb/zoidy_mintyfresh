@@ -6,13 +6,6 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # *** install-develop-python.yml
-
-    # wxPython. Widgets!
-    # Ubuntu 16.04: python-wxgtk2.8
-    # Ubuntu 18.04: python-wxgtk3.0
-    - python-wxgtk3.0
-
     # *** install-develop-spatial.yml
 
     # [lb]: 2019-01-03: Enabling these for completeness, but both already installed.
