@@ -30,8 +30,6 @@
     - cd-discid
     # id3v2 - A command line id3v2 tag editor
     - id3v2
-    # vorbis-tools - several Ogg Vorbis tools
-    - vorbis-tools
     # mkcue - Generates a CUE sheet from a CD
     - mkcue
     # Searching for cdrtools returns simpleburn:
