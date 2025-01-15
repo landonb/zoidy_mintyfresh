@@ -6,12 +6,6 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # *** install-desktop-audio.yml
-
-    # Audio extraction tool(s). [For `abcde` CD encoder.]
-    # libcdio17 - library to read and control CD-ROM
-    - libcdio17
-
     # *** install-develop-graphical.yml
 
     # "International Components for Unicode"
