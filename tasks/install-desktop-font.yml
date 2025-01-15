@@ -48,6 +48,15 @@
     # tv-fonts: X11 fonts for TV applications
     - tv-fonts
 
+- name: 'Install font viewers and fonts (Mint-only)'
+  when: ansible_lsb.id == 'LinuxMint'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # DUNNO/2025-01-15: Not found on Debian 12.
+    # - FIXME/MAYBE: Do I care about Arial? Maybe?
+    #
     # ttf-mscorefonts-installer: Includes Arial.
     # Before: $ fc-match Arial
     #         LiberationSans-Regular.ttf: "Liberation Sans" "Regular"
