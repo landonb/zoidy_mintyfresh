@@ -48,7 +48,7 @@
     # Meh on hexdiff.
     #  - hexdiff
 
-    # Color picker.
+    # Color pickers.
     # - HSTRY/2018-12-15: Previously used gcolor2.
     #   - REFER: Some tips from people asking for alts:
     #       zenity --color-selection
@@ -60,6 +60,8 @@
     # REFER: https://gitlab.gnome.org/World/gcolor3
     # "Simple GTK3 color selector and picker"
     - gcolor3
+    # "advanced GTK+ color picker"
+    - gpick
 
     # artha - "Handy off-line thesaurus based on WordNet"
     # HINT: After running, press Ctrl-Alt-W to foreground!
