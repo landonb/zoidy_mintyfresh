@@ -6,6 +6,7 @@
     name: zoidy_mintyfresh
     tasks_from: all
   tags:
+    - install-base-debian
     - install-build-essentials
     - install-desktop-abcde
     - install-desktop-audio

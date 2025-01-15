@@ -254,6 +254,26 @@
   tags: install-distro-16.04
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
 
+# *** "Base" Debian packages
+#
+# — This is a minimal set of packages author needs to onboard new Debian 12 host.
+#
+# - Packages installed by this task are duplicates of packages installed by the
+#   other tasks.
+
+- name: Install package group "install-base-debian"
+  ansible.builtin.include_role:
+    name: zoidy_mintyfresh
+    tasks_from: install-base-debian
+    apply: { tags: always }
+  tags: install-base-debian
+  # USAGE: OPTIN: Use explicit tags to run this task:
+  #   ansible-playbook ... --tags install-base-debian ...
+  when: >
+    'install-base-debian' in ansible_run_tags and (
+      ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
+    )
+
 # *** Flatpaks
 
 - name: Install package group "install-flatpaks"

@@ -1,0 +1,113 @@
+---
+
+# IKNOW: I know the Ansible role this is published under was
+# originally targeted for Linux Mint specifically (and named
+# accordingly, zoidy_mintyfresh). So it would seem that this
+# role has nothing to do with Debian (or Ubuntu), and that
+# this task should be elsewhere. But I believe this is an
+# issue with the project name, and not its scope. This role
+# is mostly about apt-install'ing packages, along with a few
+# Mint-specific tasks (e.g., laptop-lid-disable-wake-on.yml).
+# And I'd rather that create a Debian-specific role with
+# likely a lot of overlap in what apt packages it installs.
+# - MAYBE: Rename the role itself...
+#   - Or not, "minty fresh" is also something people say,
+#     so it doesn't *have* to mean this role is only for
+#     Linux Mint.
+#   - Perhaps zoidy_mintyfresh →
+#             zoidy_aptinstall ??
+#             zoidy_aptslather ??
+#             zoidy_pkginstall ??
+#             zoidy_apt_deploy ??
+#             zoidy_installapt ??
+#             zoidy_apt_plonkr ??
+
+# REFER/2025-01-15:
+#   ansible_lsb∷
+#     {'id': 'Debian',
+#      'description': 'Debian GNU/Linux 12 (bookworm)',
+#      'release': '12',
+#      'codename': 'bookworm',
+#      'major_release': '12'
+#     }"}
+
+- name: Install Debian base packages
+  when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int >= 12
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # *** Packages author needs to onboard new Debian environment,
+    #     and to enable (most) of the DepoXy environment features.
+
+    # SAVVY: You'll likely install this package manually on new host,
+    # then switch to @control host to run Ansible tasks over SSH.
+    - openssh-server
+
+    # CALSO:
+    # ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vim.yml
+    - vim-gtk3
+
+    # CALSO:
+    # ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vcs.yml
+    - tig
+
+    # `fd`, 'nuff said.
+    # - On Linux Mint 19.3, this is found in the 'fd' package.
+    - fd-find
+
+    # For at least mounting gocryptfs stores:
+    #   ~/.kit/ansible/roles/zoidy_troglodyte/tasks/cli-gocryptfs.yml
+    # Also used by sh-humble-prompt to process GNOME Shell Extension
+    # `gdbus call` responses for `window-calls`, to number terminal windows
+    # and to wire numbered-window focus/minimize window toggle accelerators:
+    #   ~/.kit/sh/sh-humble-prompt/lib/show-command-name-in-window-title.sh
+    - jq
+
+    # For mounting NAS, to restore user home directory, etc.
+    #   ~/.kit/ansible/zoidy/roles/zoidy_my_cp_dirs/tasks/sync-assure-mounted-nas.yml
+    - nfs-common
+
+    # OPSEC-related packages:
+    #   ~/.kit/ansible/roles/zoidy_troglodyte/tasks/install-packages-opsec.yml
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-sec.yml
+    - expect
+    - pass
+    - tomb
+    - ufw
+
+    # INERT/2025-01-15: Consider enabling unattended-upgrades:
+    #   ~/.kit/ansible/roles/zoidy_troglodyte/tasks/unattended-installs.yml
+    # - Though for now, author plans to manage manually:
+    #   - It's less risky to leave u-u disabled.
+    #     - For instance, you'd hate to wake up and find your workhorse
+    #       unusable because of a buggy update — and although this rarely
+    #       happens, it *does* happen, and it happened a few months ago
+    #       when `pass` broke because of a buggy `tree` release! (sometimes
+    #       it's the old, stable, legacy apps you least suspect!).
+    #   - If you enabled this, you'd have to decide how you want to manage
+    #     rebooting.
+    #     - You could enable automatic reboots, but I think everyone hates
+    #       those.
+    #     - You'd probably want to send an email after u-u runs that shows
+    #       a list of changes and also alerts you if you need to restart.
+    #       - For years past, author had `mintupdate-automation upgrade`
+    #         enabled on Linux Mint. But I had no email alert, so I never
+    #         know when I needed to reboot, and I rarely did:
+    #           ~/.kit/ansible/roles/zoidy_troglodyte/tasks/unattended-installs.yml
+    #
+    # - unattended-upgrades
+    # - apt-listchanges
+
+    # Search for files within Debian packages. Especially useful when
+    # onboarding a new distro.
+    - apt-file
+
+    # `nslookup`, for myrepos/ohmyrepos 'ffssh' action (`ff`).
+    # - Used to sync Git repos between local hosts.
+    # - On LM 19.3, nslookup is from 'dnsutils'.
+    - bind9-dnsutils
+
+    # For building from sources, etc.
+    - build-essential
+
