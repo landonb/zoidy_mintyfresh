@@ -13,6 +13,8 @@
 
     # *** install-develop-dbms.yml
 
+    # DUNNO/2025-01-15: This is the only place 'postgresql-server-dev'
+    # referenced. So obviously I have used/needed for over a decade.
     - postgresql-server-dev-9.3
 
     # Interactive bash debugger. To set a breakpoint:
