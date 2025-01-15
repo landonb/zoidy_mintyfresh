@@ -1,12 +1,9 @@
 ---
 
-- name: 'Install miscellaneously-categoried development applications'
+- name: 'Install assorted development and sysadmin apps'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
-
-    # 2023-05-03: bashtop, `htop` alternative; see also: `glances`.
-    - bashtop
 
     # 2022-01-31: dateutils.ddiff
     - dateutils
@@ -26,11 +23,6 @@
     # 2021-09-20: As seen used in Git rev-list histogram example:
     #   https://github.blog/2021-08-16-highlights-from-git-2-33/
     - feedgnuplot
-
-    - htop
-
-    # Network activity monitor, like `top`. Requires sudo.
-    - iftop
 
     - jq
 
@@ -57,4 +49,24 @@
 
     # Un-Zip-a-Dee-Doo-Dah
     - unzip
+
+- name: 'Install resource monitoring apps (*top)'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    - htop
+
+    # Network activity monitor, like `top`. Requires sudo.
+    - iftop
+
+- name: 'Install assorted development and sysadmin apps (Mint-only)'
+  when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int >= 21
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    # 2023-05-03: bashtop, `htop` alternative; see also: `glances`.
+    # - 2025-01-15: Not found in Debian 12 or LM 19.3 sources.
+    - bashtop
 
