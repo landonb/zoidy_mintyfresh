@@ -19,15 +19,6 @@
     # Ubuntu 18.04: libicu60
     - libicu60
 
-    # *** install-develop-lang.yml
-
-    # Ubuntu 14.04: ruby 1.9
-    # Ubuntu 16.04: ruby 2.3
-    # Ubuntu 18.04: ruby 2.5
-    - ruby2.5
-    - ruby2.5-dev
-    - ruby2.5-doc
-
     # *** install-develop-python.yml
 
     # wxPython. Widgets!

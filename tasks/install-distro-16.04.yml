@@ -20,12 +20,6 @@
     # "International Components for Unicode"
     - libicu52
 
-    # *** install-develop-lang.yml
-
-    - ruby2.3
-    - ruby2.3-dev
-    - ruby2.3-doc
-
     # Interactive bash debugger. To set a breakpoint:
     #   source /usr/share/bashdb/bashdb-trace
     #   _Dbg_debugger

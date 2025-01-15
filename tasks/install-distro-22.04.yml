@@ -17,12 +17,6 @@
     # "International Components for Unicode"
     - libicu70
 
-    # *** install-develop-lang.yml
-
-    - ruby3.0
-    - ruby3.0-dev
-    - ruby3.0-doc
-
     # *** install-develop-python.yml
 
     # For `python3 -m venv ...`

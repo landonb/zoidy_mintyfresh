@@ -17,15 +17,6 @@
     # "International Components for Unicode"
     - libicu52
 
-    # *** install-develop-lang.yml
-
-    - ruby2.3
-    - ruby2.3-dev
-    - ruby2.3-doc
-
-    # Ruby make
-    - rake
-
     # *** install-develop-misc.yml
 
     # bc: An arbitrary precision calculator language.
