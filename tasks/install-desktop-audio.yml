@@ -1,6 +1,6 @@
 ---
 
-- name: 'Install audio tools'
+- name: 'Install audio apps to play, burn, and streamrip'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
