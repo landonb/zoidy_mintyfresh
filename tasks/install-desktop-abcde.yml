@@ -1,5 +1,9 @@
 ---
 
+# SAVVY/2025-01-15: This task is opt-in:
+#
+#   ansible-playbook ... --tags install-desktop-abcde
+
 - name: 'Install abcde audio encoding and related tools'
   become: true
   ansible.builtin.apt: name={{ item }}
