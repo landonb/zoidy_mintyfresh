@@ -22,6 +22,9 @@
     - libmagick++-dev
 
     # texlive - TeX Live: A decent selection of the TeX Live packages
+    #   https://ctan.org/
+    #   https://ctan.org/pkg/texlive
+    # - Includs `latex` (via: texlive-latex-base)
     - texlive
 
     # autoconf - automatic configure script builder
