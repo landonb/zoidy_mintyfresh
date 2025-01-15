@@ -1,12 +1,11 @@
 ---
 
-# dkms: Dynamic Kernel Module Support Framework
-
 - name: Install essential build essentials
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
-    # Kernel goodies.
+    # Dynamic Kernel Module System (DKMS)
     - dkms
+    # Collection of build tools
     - build-essential
 
