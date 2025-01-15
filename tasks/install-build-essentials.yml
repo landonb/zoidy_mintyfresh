@@ -5,6 +5,7 @@
   ansible.builtin.apt: name={{ item }}
   loop:
     # Dynamic Kernel Module System (DKMS)
+    # - SPIKE/2025-01-15: What's this for? I think at least VirtualBox needs this.
     - dkms
     # Collection of build tools
     - build-essential
