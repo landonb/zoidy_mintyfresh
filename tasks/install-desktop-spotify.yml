@@ -1,19 +1,53 @@
 ---
 
-# SAVVY/2024-02-08: On new LM 21.3, `sudo apt-get update` complains
-# that the Spotify source signature cannot be verified.
-# - This fixes the problem, but seems weird that the install worked
-#   (`sudo apt install spotify-client`) before I had imported the key.
-# - You can see the Spotify repo under sources:
-#     /etc/apt/sources.list.d/spotify.list
-# - REFER: https://www.spotify.com/us/download/linux/
-- name: Add Spotify source key
+# Avoid error running deb822_repository module: "An exception
+# occurred ... ModuleNotFoundError: No module named 'debian'".
+- name: 'Install python3-debian for deb822_repository usage'
   become: true
-  ansible.builtin.shell: >
-    curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg \
-      | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+  ansible.builtin.apt:
+    name: python3-debian
+    state: present
 
-- name: 'Install desktop media apps — Spotify'
+# REFER: See latest installation instructions:
+#   https://www.spotify.com/us/download/linux/
+# - Check periodically for changed key ID.
+#
+# SAVVY/2025-01-16: On Debian 12, creates sources file:
+#     /etc/apt/sources.list.d/spotify.sources
+- name: Add Spotify APT repository
+  become: true
+  ansible.builtin.deb822_repository:
+    name: spotify
+    types: [deb]
+    uris: http://repository.spotify.com
+    signed_by: https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg
+    suites: [stable]
+    components: [non-free]
+    enabled: true
+
+- name: Run command "apt-get update" (app-spotify)
+  become: true
+  ansible.builtin.apt:
+    update_cache: yes
+    # Ignore the cache timeout, i.e., always assume the spotify.sources
+    # file was just created by the previous task (and that any previous
+    # apt-get update wouldn't have downloaded its package list).
+    #
+    #  cache_valid_time: 3600
+
+# NTRST: Without looping, doesn't print package name, e.g.:
+#   This:
+#     - name: 'Install Spotify desktop client application'
+#       become: true
+#       ansible.builtin.apt:
+#         name: spotify-client
+#         state: present
+#   Prints this:
+#     TASK [zoidy_mintyfresh : Install Spotify desktop client application]
+#     changed: [lethe]
+#   Whereas the loop used below shows the item names, e.g.:
+#     changed: [lethe] => (item=spotify-client)
+- name: 'Install Spotify desktop client application'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
