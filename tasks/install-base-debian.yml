@@ -52,6 +52,10 @@
     # ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vcs.yml
     - tig
 
+    # `dc`, for tig-newtons rebase operations (to inject commented tag into
+    # git-rebase-todo final rebase exec, a trick w/in a trick w/in a trick).
+    - dc
+
     # `fd`, 'nuff said.
     # - On Linux Mint 19.3, this is found in the 'fd' package.
     - fd-find

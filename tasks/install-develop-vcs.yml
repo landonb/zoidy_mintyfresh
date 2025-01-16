@@ -17,6 +17,12 @@
     # tig - ncurses-based text-mode interface for Git
     - tig
 
+    # tig-newtons uses `dc` to generate a comment character
+    # for the rebase todo, because there's no way to delimit
+    # a comment character in tig config.
+    # "GNU dc arbitrary precision reverse-polish calculator"
+    - dc
+
     # Just. In. Case. (Hopefully Never.)
     - subversion
     - mercurial
