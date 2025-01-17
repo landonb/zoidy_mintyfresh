@@ -11,6 +11,12 @@
 
     # For when you need Perl-style regex.
     # pcregrep - grep utility that uses perl 5 compatible regexes.
+    # - CXREF: Used by:
+    #   - Vim modeline plugin
+    #     ~/.vim/pack/landonb/start/dubs_style_guard/plugin/dubs_style_guard.vim
+    #   - OMR 'install' task:
+    #       mr -d ~/.kit/git/tig -n install
+    #     ~/.depoxy/ambers/home/.kit/git/_mrconfig-git-core
     - pcregrep
 
     # ripgrep is the fastest searcher! > ag > grep
