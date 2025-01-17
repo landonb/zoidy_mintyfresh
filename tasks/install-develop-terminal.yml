@@ -37,6 +37,8 @@
 
     # *** Shell
 
+    - bash-completion
+
     # direnv - An app I used to use, but not so much lately. At all
     #   "Utility to set directory specific environment variables"
     - direnv
