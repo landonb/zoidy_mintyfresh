@@ -42,22 +42,28 @@
 
     # SAVVY: You'll likely install this package manually on new host,
     # then switch to @control host to run Ansible tasks over SSH.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-sec.yml
     - openssh-server
 
-    # CALSO:
-    # ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vim.yml
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vim.yml
     - vim-gtk3
 
-    # CALSO:
-    # ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vcs.yml
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vcs.yml
     - tig
 
     # `dc`, for tig-newtons rebase operations (to inject commented tag into
     # git-rebase-todo final rebase exec, a trick w/in a trick w/in a trick).
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vcs.yml
     - dc
 
     # `fd`, 'nuff said.
     # - On Linux Mint 19.3, this is found in the 'fd' package.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-misc.yml
     - fd-find
 
     # For at least mounting gocryptfs stores:
@@ -66,18 +72,31 @@
     # `gdbus call` responses for `window-calls`, to number terminal windows
     # and to wire numbered-window focus/minimize window toggle accelerators:
     #   ~/.kit/sh/sh-humble-prompt/lib/show-command-name-in-window-title.sh
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-lang.yml
     - jq
 
     # For mounting NAS, to restore user home directory, etc.
     #   ~/.kit/ansible/zoidy/roles/zoidy_my_cp_dirs/tasks/sync-assure-mounted-nas.yml
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-misc.yml
     - nfs-common
 
     # OPSEC-related packages:
+    # - CALSO:
     #   ~/.kit/ansible/roles/zoidy_troglodyte/tasks/install-packages-opsec.yml
-    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-sec.yml
+    #
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-terminal.yml
     - expect
+    #
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-sec.yml
     - pass
     - tomb
+    #
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-net.yml
     - ufw
 
     # INERT/2025-01-15: Consider enabling unattended-upgrades:
@@ -105,13 +124,21 @@
 
     # Search for files within Debian packages. Especially useful when
     # onboarding a new distro.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-desktop-core.yml
     - apt-file
 
     # `nslookup`, for myrepos/ohmyrepos 'ffssh' action (`ff`).
     # - Used to sync Git repos between local hosts.
     # - On LM 19.3, nslookup is from 'dnsutils'.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-net.yml
     - bind9-dnsutils
 
     # For building from sources, etc.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-build-essentials.yml
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-python.yml
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-ruby.yml
     - build-essential
 
