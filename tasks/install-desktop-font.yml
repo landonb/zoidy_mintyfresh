@@ -1,6 +1,6 @@
 ---
 
-- name: 'Install font viewers and fonts'
+- name: 'Install font viewers and font utilities'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
@@ -48,7 +48,7 @@
     # tv-fonts: X11 fonts for TV applications
     - tv-fonts
 
-- name: 'Install font viewers and fonts (Mint-only)'
+- name: 'Install fonts (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
   ansible.builtin.apt: name={{ item }}
