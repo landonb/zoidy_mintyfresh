@@ -14,6 +14,13 @@
     # font-manager - font management application for the GNOME desktop
     - font-manager
 
+- name: 'Install fonts'
+  become: true
+  ansible.builtin.apt: name={{ item }}
+  loop:
+
+    - fonts-hack
+
     # fonts-cantarell: sans serif font family designed for on-screen readability
     # - Comes installed on Debian 12.
     - fonts-cantarell
