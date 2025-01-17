@@ -9,6 +9,13 @@
     # "grep-like program specifically for large source trees"
     - ack
 
+    # On Debian 12, built-in `awk` is `mawk`, and:
+    #   /usr/bin/awk -> /etc/alternatives/awk
+    #   /etc/alternatives/awk -> /usr/bin/mawk
+    # After installing this package:
+    #   /etc/alternatives/awk -> /usr/bin/gawk
+    - gawk
+
     # For when you need Perl-style regex.
     # pcregrep - grep utility that uses perl 5 compatible regexes.
     # - CXREF: Used by:
