@@ -47,8 +47,16 @@
     - openssh-server
 
     # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-net.yml
+    - rsync
+
+    # - CALSO:
     #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vim.yml
     - vim-gtk3
+
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-desktop-font.yml
+    - fonts-hack
 
     # - CALSO:
     #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-vcs.yml
@@ -76,6 +84,17 @@
     #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-lang.yml
     - jq
 
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-grep.yml
+    # `rg`
+    - ripgrep
+    # `awk`, so many of author's shell functionality uses `awk`.
+    # - E.g., including processing `rg` results for Vim quickfix window:
+    #     https://github.com/landonb/dubs_grep_steady#🧐
+    #       https://github.com/landonb/dubs_grep_steady/blob/1.6.0/bin/vim-grepprg-rg-sort
+    #     ~/.vim/pack/landonb/start/dubs_grep_steady/bin/vim-grepprg-rg-sort
+    - gawk
+
     # For mounting NAS, to restore user home directory, etc.
     #   ~/.kit/ansible/zoidy/roles/zoidy_my_cp_dirs/tasks/sync-assure-mounted-nas.yml
     # - CALSO:
@@ -98,6 +117,11 @@
     # - CALSO:
     #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-net.yml
     - ufw
+
+    # So that at least `pass` completion works.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-terminal.yml
+    - bash-completion
 
     # INERT/2025-01-15: Consider enabling unattended-upgrades:
     #   ~/.kit/ansible/roles/zoidy_troglodyte/tasks/unattended-installs.yml
@@ -141,4 +165,41 @@
     #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-python.yml
     #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-ruby.yml
     - build-essential
+
+    # Not necessarily essential, but Meld might be useful while onboarding a
+    # new host (the whole point of this task file, install-base-debian, is to
+    # install a core set of immediately useful apt packages, and not to spend
+    # how many ever minutes installing all the apt packages from this role,
+    # zoidy_mintyfresh... though I admit the latest runtime (2025-01-15) for
+    # the entire role wasn't really that long).
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-desktop-core.yml
+    - meld
+
+    # DUNNO: Am I just making one all-inclusive list? Is there really a point
+    # to this list? Maybe it's a just ranking of my favorite apt packages....
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-sec.yml
+    - pwgen
+
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-net.yml
+    - curl
+    - wget
+
+    # While generally not useful in GNOME Shell, a few windows are still X,
+    # including GVim. This enables `gvim-open-kindness` to front and focus
+    # the GVim window.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-desktop-core.yml
+    #  - wmctrl
+    - xdotool
+
+    # For running DepoXy OMR 'infuse' command.
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-text.yml
+    - m4
+    # - CALSO:
+    #   ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-develop-image.yml
+    - texlive
 
