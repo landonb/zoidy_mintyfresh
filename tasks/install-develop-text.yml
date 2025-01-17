@@ -25,6 +25,8 @@
     #   LESSOPEN="| /usr/bin/highlight %s --out-format xterm256 --force"
     - highlight
 
+    - m4
+
     # A colorful, more clever `tail` command.
     # multitail - view multiple logfiles windowed on console
     - multitail
