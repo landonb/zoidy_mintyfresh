@@ -82,14 +82,19 @@
     # - Color picker: `yad --color`
     - yad
 
+    # ***
+
+    # xclip - command line interface to X selections
+    # - SAVVY: Also included for Debian (seems to still work,
+    #   and author has a lot of shell code that references).
+    - xclip
+
 - name: 'Install terminal tools (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
 
-    # xclip - command line interface to X selections
-    - xclip
     # http://www.vergenet.net/~conrad/software/xsel/
     # (lb): Do xclip and xsel have same features? This articles suggests so:
     #         https://fernandobasso.dev/shell/copy-paste-from-command-line-xclip-xsel-clipboard.html
