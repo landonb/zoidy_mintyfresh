@@ -8,6 +8,10 @@
 
     - curl
 
+    - wget
+
+    - rsync
+
     - sshfs
 
     - traceroute
