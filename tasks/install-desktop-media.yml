@@ -5,6 +5,7 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
+    # ALTLY: See also strong VLC competitor: mpv
     - vlc
 
 - name: 'Install desktop media apps (Mint-only)'
