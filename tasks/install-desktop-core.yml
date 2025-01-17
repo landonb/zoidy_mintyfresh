@@ -24,14 +24,15 @@
     - eog
 
     # [meld is the] Awesomest graphical diff.
-    # 2020-02-04: Avoid the distro's meld, currently stuck at 3.18.0.
-    #   It has at least one known, annoying issue: If you close a comparison
-    #   before saving, you're prompted to save changes, but no matter how
-    #   you respond, the comparison stays open, and the Ctrl-w close command
-    #   no longer works to close it, and you have to click the 'x' button).
-    #   * See replacement task:
-    #     zoidy_apps_et_al/tasks/app-meld.yml
-    # - meld
+    # REFER/2025-01-16: Because of circa 2020-02-04 issue with
+    # meld (v3.18.0) from Linux Mint apt sources, this package
+    # was skipped, and Meld was installed as a Flatpak instead.
+    # - CXREF: See install-flatpaks.yml task in this role.
+    #   - If you're in a DepoXy environment, found locally at:
+    #     ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-flatpaks.yml
+    # - But author's experience w/ Debian 12 Meld (v3.22.0) has
+    #   been flawless.
+    - meld
 
     # Hexadecimal file viewer.
     - ghex
