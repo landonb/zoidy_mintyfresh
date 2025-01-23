@@ -18,12 +18,13 @@
 
     # For when you need Perl-style regex.
     # pcregrep - grep utility that uses perl 5 compatible regexes.
-    # - CXREF: Used by:
-    #   - Vim modeline plugin
-    #     ~/.vim/pack/landonb/start/dubs_style_guard/plugin/dubs_style_guard.vim
-    #   - OMR 'install' task:
-    #       mr -d ~/.kit/git/tig -n install
-    #     ~/.depoxy/ambers/home/.kit/git/_mrconfig-git-core
+    # - CXREF:
+    #   - If present during DepoXy OMR tig 'install' task, e.g.:
+    #         mr -d ~/.kit/git/tig -n install
+    #     pcregrep will be included in `tig` build config. See:
+    #       ~/.depoxy/ambers/home/.kit/git/_mrconfig-git-core
+    #     (On macOS, the tig 'install' task brew-installs pcre2,
+    #      which includes pcregrep.)
     - pcregrep
 
     # ripgrep is the fastest searcher! > ag > grep
