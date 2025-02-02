@@ -92,7 +92,7 @@
     # - E.g., including processing `rg` results for Vim quickfix window:
     #     https://github.com/landonb/dubs_grep_steady#🧐
     #       https://github.com/landonb/dubs_grep_steady/blob/1.6.0/bin/vim-grepprg-rg-sort
-    #     ~/.vim/pack/landonb/start/dubs_grep_steady/bin/vim-grepprg-rg-sort
+    #     ~/.kit/nvim/landonb/start/dubs_grep_steady/bin/vim-grepprg-rg-sort
     - gawk
 
     # For mounting NAS, to restore user home directory, etc.
