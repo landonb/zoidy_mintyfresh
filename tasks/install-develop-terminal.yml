@@ -89,6 +89,8 @@
     # xclip - command line interface to X selections
     # - SAVVY: Also included for Debian (seems to still work,
     #   and author has a lot of shell code that references).
+    #   - REFER: Use wl-copy/wl-paste on Wayland, included
+    #     by default (Debian 12) via wl-clipboard package.
     - xclip
 
 - name: 'Install terminal tools (Mint-only)'
