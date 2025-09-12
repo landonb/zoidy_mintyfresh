@@ -16,3 +16,17 @@
     #   the full role.
     - libnotify-bin
 
+    # "utility for tracking non-official package versions"
+    # - No obviously value-add because apt-list does same,
+    #   e.g.:
+    #
+    #   $ apt list '?narrow(?installed, ?not(?origin(Debian)))'
+    #   google-chrome-stable/stable,now 140.0.7339.127-1 amd64 [installed]
+    #   interactive-rebase-tool/now 2.4.1-1 amd64 [installed,local]
+    #   spotify-client/stable,now 1:1.2.63.394.g126b0d89 amd64 [installed]
+    #
+    #   $ apt-forktracer | sort
+    #   google-chrome-stable (140.0.7339.127-1) [Google LLC: 140.0.7339.127-1]
+    #   interactive-rebase-tool (2.4.1-1)
+    #   spotify-client (1:1.2.63.394.g126b0d89) [Spotify LTD: 1:1.2.63.394.g126b0d89]
+    - apt-forktracer
