@@ -49,7 +49,7 @@
 #     changed: [lethe] => (item=spotify-client)
 - name: 'Install Spotify desktop client application'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: {{ item }}
   loop:
     - spotify-client
-
