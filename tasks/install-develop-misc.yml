@@ -35,6 +35,10 @@
 
     # nslookup is... stale, to be polite. Use `dig` instead.
 
+    # `locate` command (formerly mlocate; see also Homebrew glocate
+    # from findutils (though not in APT findutils)).
+    - plocate
+
     # ScreenRuler project page:
     #
     #   https://gnomecoder.wordpress.com/screenruler/
