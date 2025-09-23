@@ -11,6 +11,9 @@
     # Audio Player.
     - clementine
 
+    # 2025-09-23: For `paplay` (for DXY/bin/notify).
+    - pulseaudio-utils
+
     # 2018-12-14: I haven't streamripped in forever,
     # but here's one app I've trusted previously.
     # "download online streams into audio files"
