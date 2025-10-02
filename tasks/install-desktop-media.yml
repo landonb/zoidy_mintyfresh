@@ -5,6 +5,8 @@
   ansible.builtin.apt: name={{ item }}
   loop:
 
+    - mplayer
+
     # ALTLY: See also strong VLC competitor: mpv
     - vlc
 
