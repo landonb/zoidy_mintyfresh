@@ -1,17 +1,14 @@
 zoidy_mintyfresh
 ================
 
-An Ansible role to install packages specific to one Developer's
-`Linux Mint 19 ‘Tara’ <https://linuxmint.com/edition.php?id=256>`__
-(`Ubuntu 18.04 <http://releases.ubuntu.com/18.04/>`__)
--
-`MATE <https://mate-desktop.org/>`__
+An Ansible role to apt-install packages specific to one Developer's
+`Debian <https://www.debian.org/>`__
 development machine.
 
 Requirements
 ------------
 
-A fresh install of Mint.
+A fresh install of Debian.
 
 Example Playbook
 ----------------
@@ -35,4 +32,3 @@ License
 -------
 
 `GPLv3 <LICENSE>`__
-
