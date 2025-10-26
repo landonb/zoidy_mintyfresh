@@ -23,14 +23,14 @@
   ansible.builtin.copy:
     remote_src: True
     src: /usr/lib/update-notifier/apt_check.py
-    dest: "/usr/lib/update-notifier/apt_check.py-{{ ansible_date_time.iso8601_basic_short }}-zoidy_mintyfresh"
+    dest: "/usr/lib/update-notifier/apt_check.py-{{ ansible_date_time.iso8601_basic_short }}-zoidy_captivator"
 
 - name: "Backup /usr/lib/update-notifier/update-motd-updates-available before editing"
   become: true
   ansible.builtin.copy:
     remote_src: True
     src: /usr/lib/update-notifier/update-motd-updates-available
-    dest: "/usr/lib/update-notifier/update-motd-updates-available-{{ ansible_date_time.iso8601_basic_short }}-zoidy_mintyfresh"
+    dest: "/usr/lib/update-notifier/update-motd-updates-available-{{ ansible_date_time.iso8601_basic_short }}-zoidy_captivator"
 
 # ***
 

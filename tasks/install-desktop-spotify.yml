@@ -43,7 +43,7 @@
 #         name: spotify-client
 #         state: present
 #   Prints this:
-#     TASK [zoidy_mintyfresh : Install Spotify desktop client application]
+#     TASK [zoidy_captivator : Install Spotify desktop client application]
 #     changed: [lethe]
 #   Whereas the loop used below shows the item names, e.g.:
 #     changed: [lethe] => (item=spotify-client)

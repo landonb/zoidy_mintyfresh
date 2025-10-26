@@ -1,4 +1,4 @@
-zoidy_mintyfresh
+zoidy_captivator
 ================
 
 An Ansible role to apt-install packages specific to one Developer's
@@ -17,7 +17,7 @@ It's simple to run the role from a playbook::
 
   - hosts: servers
     roles:
-       - role: zoidy_mintyfresh
+       - role: zoidy_captivator
 
 This role needs to become ``root`` to install packages,
 so add ``-K`` to be prompted for the password.::

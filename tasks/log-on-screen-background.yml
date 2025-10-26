@@ -16,7 +16,7 @@
 #
 #   lightdm --show-config
 
-# CXREF: ~/.kit/ansible/roles/zoidy_mintyfresh/templates/slick-greeter.conf.j2
+# CXREF: ~/.kit/ansible/roles/zoidy_captivator/templates/slick-greeter.conf.j2
 # CXREF: See also: - MATE menu > Login Window >
 #        - Background > Background: <path>
 #        - Background > ✗ Draw user backgrounds

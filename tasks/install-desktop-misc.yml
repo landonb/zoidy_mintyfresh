@@ -11,7 +11,7 @@
 
     # Installs `notify-send` desktop notifications app.
     # - HSTRY/2025-01-16: This is a dependency of one or more other
-    #   packages installed by zoidy_mintyfresh on Debian 12. I.e.,
+    #   packages installed by zoidy_captivator on Debian 12. I.e.,
     #   it'll be installed whether listed here or not if you play
     #   the full role.
     - libnotify-bin

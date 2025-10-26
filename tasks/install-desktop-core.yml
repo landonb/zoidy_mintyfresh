@@ -29,7 +29,7 @@
     # was skipped, and Meld was installed as a Flatpak instead.
     # - CXREF: See install-flatpaks.yml task in this role.
     #   - If you're in a DepoXy environment, found locally at:
-    #     ~/.kit/ansible/roles/zoidy_mintyfresh/tasks/install-flatpaks.yml
+    #     ~/.kit/ansible/roles/zoidy_captivator/tasks/install-flatpaks.yml
     # - But author's experience w/ Debian 12 Meld (v3.22.0) has
     #   been flawless.
     - meld
