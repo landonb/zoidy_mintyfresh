@@ -30,6 +30,32 @@
 
     - ufw
 
+    # *** Email
+
+    # mailutils - includes 9 commands, including `mail`.
+    #   https://packages.debian.org/search?keywords=mailutils
+    #   https://packages.debian.org/trixie/mailutils
+    - mailutils
+
+    # postfix - Wietse Venema's mail transport agent (alt. to Sendmail).
+    #   https://packages.debian.org/search?keywords=postfix
+    #   https://packages.debian.org/trixie/postfix
+    # CXREF: Because interactive and non-trivial setup,
+    # see postfix install task from other Ansible playbook:
+    #   https://github.com/landonb/zoidy_apps_et_al 🦞
+    #     ~/.kit/ansible/roles/zoidy_apps_et_al/tasks/email-gmail-postfix.yml
+    #  - postfix
+
+    # See also Dovecot, open source IMAP and POP3 mail server:
+    #   https://packages.debian.org/search?keywords=dovecot
+    #   https://packages.debian.org/trixie/dovecot-core
+    # REFER:
+    #   https://doc.dovecot.org/latest/
+    #   https://wiki.archlinux.org/title/Dovecot
+    # Author only needs to forward emails to external service, so
+    # doesn't need mail server, but here's how you might set it up:
+    #   https://www.linode.com/docs/guides/email-with-postfix-dovecot-and-mysql/
+
 - name: 'Install network app development, diagnostic, and security tools (Debian)'
   when: ansible_lsb.id == 'Debian'
   become: true
