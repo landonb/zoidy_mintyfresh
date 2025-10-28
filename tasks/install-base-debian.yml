@@ -1,28 +1,5 @@
 ---
 
-# IKNOW: I know the Ansible role this is published under was
-# originally targeted for Linux Mint specifically (and named
-# accordingly, zoidy_captivator). So it would seem that this
-# role has nothing to do with Debian (or Ubuntu), and that
-# this task should be elsewhere. But I believe this is an
-# issue with the project name, and not its scope. This role
-# is mostly about apt-install'ing packages, along with a few
-# Mint-specific tasks (e.g., laptop-lid-disable-wake-on.yml).
-# And I'd rather that create a Debian-specific role with
-# likely a lot of overlap in what apt packages it installs.
-# - MAYBE: Rename the role itself...
-#   - Or not, "minty fresh" is also something people say,
-#     so it doesn't *have* to mean this role is only for
-#     Linux Mint.
-#   - Perhaps zoidy_mintyfresh →
-#             zoidy_aptinstall ??
-#             zoidy_aptslather ??
-#             zoidy_pkginstall ??
-#             zoidy_apt_deploy ??
-#             zoidy_installapt ??
-#             zoidy_apt_plonkr ??
-# - RNAMD: Recent rebranded: zoidy_mintyfresh → zoidy_captivator
-
 # REFER/2025-01-15:
 #   ansible_lsb∷
 #     {'id': 'Debian',
