@@ -172,13 +172,15 @@
     - curl
     - wget
 
-    # While generally not useful in GNOME Shell, a few windows are still X,
-    # including GVim. This enables `gvim-open-kindness` to front and focus
-    # the GVim window.
+    # ISOFF/2025-10-28: Author had been using xdotool for the few remaining
+    # X Window apps in GNOME shell, specifically so that gvim-open-kindness
+    # could front and focus the GVim window. (And notwithstanding that I no
+    # longer use GVim) But front-and-focus is now achieved via window-calls:
+    #   https://extensions.gnome.org/extension/4724/window-calls/
     # - CALSO:
     #   ~/.kit/ansible/roles/zoidy_captivator/tasks/install-desktop-core.yml
-    #  - wmctrl
-    - xdotool
+    #  # - wmctrl
+    #  - xdotool
 
     # For running DepoXy OMR 'infuse' command.
     # - CALSO:
