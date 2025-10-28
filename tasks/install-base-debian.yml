@@ -14,13 +14,14 @@
 #   - Or not, "minty fresh" is also something people say,
 #     so it doesn't *have* to mean this role is only for
 #     Linux Mint.
-#   - Perhaps zoidy_captivator →
+#   - Perhaps zoidy_mintyfresh →
 #             zoidy_aptinstall ??
 #             zoidy_aptslather ??
 #             zoidy_pkginstall ??
 #             zoidy_apt_deploy ??
 #             zoidy_installapt ??
 #             zoidy_apt_plonkr ??
+# - RNAMD: Recent rebranded: zoidy_mintyfresh → zoidy_captivator
 
 # REFER/2025-01-15:
 #   ansible_lsb∷
