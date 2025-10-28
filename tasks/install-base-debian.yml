@@ -1,5 +1,15 @@
 ---
 
+# *** Packages author needs to onboard new Debian environment,
+#     and to enable (most) of the DepoXy environment features.
+#
+# The packages listed herein are duplicated from other Ansible
+# tasks (and each is annotated with a CALSO ref to that task's
+# path (within a DepoXY environment)).
+# - This task lets you quickly install the core packages while
+#   onboarding a new host, so you can perform other onboarding
+#   tasks first, then running all the other tasks in this play.
+
 # REFER/2025-01-15:
 #   ansible_lsb∷
 #     {'id': 'Debian',
@@ -14,9 +24,6 @@
   become: true
   ansible.builtin.apt: name={{ item }}
   loop:
-
-    # *** Packages author needs to onboard new Debian environment,
-    #     and to enable (most) of the DepoXy environment features.
 
     # SAVVY: You'll likely install this package manually on new host,
     # then switch to @control host to run Ansible tasks over SSH.

@@ -10,15 +10,13 @@
     - encfs
 
     # 2018-09-20: New hotness.
+    # - ORNOT/2025-10-28: I don't currently use cryfs, though
+    #   I do respect its filesystem and block size obsfucation.
     - cryfs
 
     # You shouldn't need to scrub if your sensitive bits only
     # hit metal through encrypted file systems, but nevertheless.
     - scrub
-
-    # FIXME/2018-12-15: [lb]: Disable for now -- I'm curious how `pass` works without.
-    #- pinentry-gtk2
-    #- pinentry-doc
 
     # gnupg - GNU privacy guard - a free PGP replacement
     # gnupg1 - GNU privacy guard - a PGP implementation (deprecated "classic" version)
@@ -34,19 +32,23 @@
     # 2020-04-12: For building git.
     - libssl-dev
 
-    # NOTE: OpenSSH likely installed, because you did so to run Ansible tasks!
+    # SAVVY: OpenSSH likely installed, because you did so to run Ansible tasks!
     - openssh-server
 
-    # At least they didn't name it signing-key-party.
+    # At least they didn't name it signing-key-party. [mic drop?]
     - signing-party
 
-    # [lb]: keepassx may work for some people, but I'm smitten with `pass`.
-    #   - keepassx
-    # FIXME/2018-12-17: I built pass previously. Do I still need to?
+    # AWARE/2025-10-28: Author builds a `pass` fork (that adds Neovim syntax
+    # highlighting), so this command (/usr/bin/pass) will be shadowed by the
+    # custom build (~/.local/bin/pass).
+    # - This'll work before the custom build created (or serve as a fallback).
+    # - REFER/2018-12-17: KeePassX [now KeePassXC] is another popular choice:
+    #   https://keepassxc.org/
     - pass
 
     - tomb
     # Optional extensions. Run `tomb --version`
+    # - dcfldd — enhanced version of dd for forensics and security
     - dcfldd
     - steghide
     #  tomb-kdb-pbkdf2: cannot find

@@ -1,5 +1,8 @@
 ---
 
+# ******************************************************
+# *** APT packages (distro-version-agnostic)
+
 # *** Update package list, and upgrade installed packages.
 
 - name: Update and upgrade installed packages
@@ -29,7 +32,7 @@
   # ISOFF/2023-03-24: I haven't worked with MP3 files or audio apps in a spell.
   # OPTIN/2023-04-28: To support site.yml tag inheritence (e.g., `--tags
   # zoidy_captivator`), use obtuse `when` test instead of 'never' tag.
-  # - Use explicit `--tags install-desktop-abcde` to run this task.
+  # - USAGE: Use explicit `--tags install-desktop-abcde` to run this task.
   when: "'install-desktop-abcde' in ansible_run_tags"
 
 - name: Install package group "install-desktop-audio"
@@ -231,7 +234,8 @@
     apply: { tags: always }
   tags: install-develop-web
 
-# *** "Base" Debian packages
+# ******************************************************
+# *** "Base" Debian packages (potentially distro-version-specific)
 #
 # — This is a minimal set of packages author needs to onboard new Debian 12 host.
 #
@@ -251,6 +255,7 @@
       ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
     )
 
+# ******************************************************
 # *** Flatpaks
 
 - name: Install package group "install-flatpaks"
