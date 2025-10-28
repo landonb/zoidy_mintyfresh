@@ -19,9 +19,7 @@
     - scrub
 
     # gnupg - GNU privacy guard - a free PGP replacement
-    # gnupg1 - GNU privacy guard - a PGP implementation (deprecated "classic" version)
-    # gnupg2 - GNU privacy guard - a free PGP replacement (dummy transitional package)
-    - gnupg2
+    - gnupg
 
     - pwgen
 
