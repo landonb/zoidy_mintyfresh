@@ -7,6 +7,16 @@
 
     - mplayer
 
+    # "Collection of command line video4linux utilities."
+    # - UCASE: Show list of camera devices, e.g.:
+    #   $ v4l2-ctl --list-devices
+    #   Integrated IR Camera: Integrate (usb-0000:00:14.0-5):
+    #     /dev/video0
+    #     /dev/video1
+    #     /dev/media0
+    #   ...
+    - v4l-utils
+
     # ALTLY: See also strong VLC competitor: mpv
     - vlc
 
