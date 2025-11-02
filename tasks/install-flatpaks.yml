@@ -87,4 +87,3 @@
     name: com.slack.Slack
     state: present
     method: user
-
