@@ -252,7 +252,7 @@
   #   ansible-playbook ... --tags install-base-debian ...
   when: >
     'install-base-debian' in ansible_run_tags and (
-      ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
+      ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int >= 12
     )
 
 # ******************************************************
