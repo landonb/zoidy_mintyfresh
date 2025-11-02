@@ -264,7 +264,6 @@
     tasks_from: install-flatpaks
     apply: { tags: always }
   tags: install-flatpaks
-  when: ansible_lsb.id == 'LinuxMint'
 
 - name: Load tasks to create flatpak update timer task
   ansible.builtin.include_role:
@@ -272,5 +271,4 @@
     tasks_from: install-flatpaks-automatic-updates
     apply: { tags: always }
   tags: install-flatpaks-automatic-updates
-  when: ansible_lsb.id == 'LinuxMint'
 
