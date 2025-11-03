@@ -25,6 +25,11 @@
 
 # ***
 
+# CXREF/2025-11-02: To run `meld` from terminal, see
+# DepoXy `meld` function, found within DepoXy env. at:
+#   ~/.depoxy/ambers/core/meld-wrap.sh
+# https://github.com/DepoXy/depoxy#🍯
+#
 # Install meld, e.g.,
 #   flatpak install flathub org.gnome.meld
 # SAVVY: Run it:
