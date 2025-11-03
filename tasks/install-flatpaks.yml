@@ -16,6 +16,9 @@
 #  error: No remote refs found similar to ‘flathub’
 # Runs, e.g.,
 #   flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+# - I think this updates a file under ~/.local/share/flatpak/ but I'm not certain.
+# REFER: See also:
+#   flatpak remote-ls --user
 - name: Add the Flathub Flatpak repository remote to the user installation
   community.general.flatpak_remote:
     name: flathub
