@@ -108,6 +108,8 @@
 #   flatpak install flathub com.obsproject.Studio
 # SAVVY: Run it:
 #   flatpak run com.obsproject.Studio
+# REFER:
+#   https://obsproject.com/
 - name: Install OBS Flatpak
   community.general.flatpak:
     name: com.obsproject.Studio
