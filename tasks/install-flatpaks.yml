@@ -101,3 +101,15 @@
 #     name: com.slack.Slack
 #     state: present
 #     method: user
+
+# ***
+
+# Install Open Broadcaster Studio [OBS], e.g.,
+#   flatpak install flathub com.obsproject.Studio
+# SAVVY: Run it:
+#   flatpak run com.obsproject.Studio
+- name: Install OBS Flatpak
+  community.general.flatpak:
+    name: com.obsproject.Studio
+    state: present
+    method: user
