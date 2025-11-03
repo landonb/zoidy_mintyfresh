@@ -30,3 +30,10 @@
     #   interactive-rebase-tool (2.4.1-1)
     #   spotify-client (1:1.2.63.394.g126b0d89) [Spotify LTD: 1:1.2.63.394.g126b0d89]
     - apt-forktracer
+
+    # "🎮 ⌨ An easy to use tool to change the behaviour of your input devices."
+    # "Supports X11, Wayland, combinations, programmable macros, joysticks, wheels,
+    #   triggers, keys, mouse-movements and more. Maps any input to any other input."
+    # - Compare to macOS Hammerspoon, and Karabiner Elements.
+    # https://github.com/sezanzeb/input-remapper
+    - input-remapper
