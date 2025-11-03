@@ -30,7 +30,7 @@
 # SAVVY: Run it:
 #   flatpak run org.gnome.meld
 # SPEED/2023-04-20 19:51: Slow. At least on Lenovo X201 Wi-Fi, 8m42s.
-- name: Install the meld Flatpak
+- name: Install the Meld Flatpak
   community.general.flatpak:
     name: org.gnome.meld
     state: present
