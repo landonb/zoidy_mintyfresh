@@ -27,7 +27,9 @@
     - pandoc
 
     # Linux Mint includes LibreOffice by default.
-    # - Otherwise you could install it yourself:
+    # - Otherwise you could install it yourself.
+    # - For Debian, author suggests installing from .deb
+    #   archive download — I had issues on Debian 13 with
+    #   the one published via APT.
     #
     #   - libreoffice
-
