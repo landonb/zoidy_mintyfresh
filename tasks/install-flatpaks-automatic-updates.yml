@@ -22,6 +22,9 @@
 
 # REFER: Note this is a user timer:
 #   systemctl --user list-timers
+#
+# - And you'll find logs in `journalctl` (it should
+#   run a few seconds after midnight each day).
 
 - name: "Create the system systemd service unit to update Flatpaks"
   become: true
