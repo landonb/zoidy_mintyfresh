@@ -53,6 +53,13 @@
     # Un-Zip-a-Dee-Doo-Dah
     - unzip
 
+    # Install 'uptimed', for `uprecords`.
+    # https://github.com/rpodgorny/uptimed
+    # https://wiki.gentoo.org/wiki/Uptimed
+    # BEGET:
+    # https://www.reddit.com/r/debian/comments/iyxz9s/pros_and_cons_of_encrypted_lvm/
+    - uptimed
+
 - name: 'Install resource monitoring apps (*top)'
   become: true
   ansible.builtin.apt: name={{ item }}
