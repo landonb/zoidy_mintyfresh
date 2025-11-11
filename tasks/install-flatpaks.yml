@@ -73,7 +73,7 @@
 #     content: |
 #       #!/bin/bash
 #       flatpak run org.gimp.GIMP
-#     mode: 0755
+#     mode: '0755'
 
 # ***
 
