@@ -39,7 +39,7 @@
     #   (Or maybe I was using libcurl for another project?)
     # libcurl3 - easy-to-use client-side URL transfer library (OpenSSL flavour)
     # libcurl4 - easy-to-use client-side URL transfer library (OpenSSL flavour)
-    #- libcurl3
+    #  - libcurl3
 
     # pcregrep - grep utility that uses perl 5 compatible regexes.
     - pcregrep
