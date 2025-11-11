@@ -271,4 +271,3 @@
     tasks_from: install-flatpaks-automatic-updates
     apply: { tags: always }
   tags: install-flatpaks-automatic-updates
-
