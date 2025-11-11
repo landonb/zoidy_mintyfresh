@@ -46,17 +46,32 @@
     - pass
 
     - tomb
-    # Optional extensions. Run `tomb --version`
+    #
+    # ***Optional extensions. Run `tomb --version`
+    #
+    # - argon2 - memory-hard hashing function - utility
+    - argon2
     # - dcfldd — enhanced version of dd for forensics and security
     - dcfldd
+    # - steghide - steganography hiding tool
     - steghide
-    #  tomb-kdb-pbkdf2: cannot find
-    #  For similar:
-    #     apt-cache search pbk
-    #- tomb-kdb-pbkdf2
+    # - recoll - Personal full text search package
+    - recoll
+    # - qrencode - QR Code encoder into PNG image
     - qrencode
+    # - swish-e - Simple Web Indexing System for Humans - Enhanced
     - swish-e
-    - unoconv
+    # - unoconv - Universal Office Converter - Convert between any
+    #   document format supported by LibreOffice/OpenOffice.
+    # https://github.com/unoconv/unoconv
+    # - DUNNO: Installed, but tomb --version doesn't recognize
+    #   (or maybe tomb's unoconv is something different? seems
+    #   unlikely):
+    #     $ dpkg -S /usr/bin/unopkg
+    #     libreoffice-common: /usr/bin/unopkg
+    #   - CALSO: "Package has a Suggests on unoconv which cannot be satisfied on amd64."
+    #     https://qa.debian.org/debcheck.php?dist=stable&package=tomb
+    #  - unoconv
 
     # Skip distro gocryptfs:
     #  - gocryptfs
