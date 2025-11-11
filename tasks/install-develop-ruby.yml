@@ -2,7 +2,8 @@
 
 - name: "Install Ruby development packages"
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # Packages `ruby-install` installs unless --no-install-deps,
@@ -25,7 +26,8 @@
 - name: "Install Ruby and related packages (Debian 12)"
   when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     - ruby3.1
     - ruby3.1-dev
@@ -34,7 +36,8 @@
 - name: "Install Ruby and related packages (Mint 21)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     - ruby3.0
     - ruby3.0-dev
@@ -43,7 +46,8 @@
 - name: "Install Ruby and related packages (Mint 19)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # Ubuntu 14.04: ruby 1.9
     # Ubuntu 16.04: ruby 2.3
@@ -55,7 +59,8 @@
 - name: "Install Ruby and related packages (Mint 17/18)"
   when: ansible_lsb.id == 'LinuxMint' and (ansible_lsb.major_release|int in [17,18])
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     - ruby2.3
     - ruby2.3-dev

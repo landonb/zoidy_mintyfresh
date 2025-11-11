@@ -2,7 +2,8 @@
 
 - name: "Install core desktop tools"
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # CLI OS and Window Manager customizers.
@@ -73,7 +74,8 @@
 - name: "Install core desktop tools (Mint-only)"
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # Bleeding edge Chrome.
@@ -82,7 +84,8 @@
 - name: "Install core desktop tools (Debian-only)"
   when: ansible_lsb.id == 'Debian'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # Bleeding edge Chrome.

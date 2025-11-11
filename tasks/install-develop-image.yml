@@ -2,7 +2,8 @@
 
 - name: 'Install imagemagick and related packages'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # libxml2-dev - Development files for the GNOME XML library

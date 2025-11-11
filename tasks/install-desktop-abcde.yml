@@ -6,7 +6,8 @@
 
 - name: 'Install abcde audio encoding and related tools'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # abcde - A Better CD Encoder
@@ -62,7 +63,8 @@
 
 - name: 'Install MusicBrainz-related acbde-related audio tools'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # What is the `musicbrainz` equivalent?
@@ -77,7 +79,8 @@
 - name: 'Install Mint-only acbde-related audio tools'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # mkcue - Generates a CUE sheet from a CD
@@ -98,7 +101,8 @@
 - name: 'Install distro-specific acbde-related packages (Debian 12)'
   when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # libcdio19 - library to read and control CD-ROM
     - libcdio19
@@ -106,7 +110,8 @@
 - name: "Install Ruby and related packages (Mint 21)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # libcdio19 - library to read and control CD-ROM
     - libcdio19
@@ -114,7 +119,8 @@
 - name: "Install Ruby and related packages (Mint 19)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # libcdio17 - library to read and control CD-ROM
     - libcdio17
@@ -122,7 +128,8 @@
 - name: "Install Ruby and related packages (Mint 17)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 17
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # libcdio13 - library to read and control CD-ROM
     - libcdio13

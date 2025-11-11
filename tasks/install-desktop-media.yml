@@ -2,7 +2,8 @@
 
 - name: 'Install desktop media apps'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     - mplayer
@@ -23,7 +24,8 @@
 - name: 'Install desktop media apps (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # "Explore, search and discover the planet"

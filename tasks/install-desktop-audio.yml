@@ -2,7 +2,8 @@
 
 - name: 'Install audio apps to play, burn, and streamrip'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # "CD/DVD burning application for GNOME"

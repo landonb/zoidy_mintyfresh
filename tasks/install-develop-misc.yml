@@ -2,7 +2,8 @@
 
 - name: 'Install assorted development and sysadmin apps'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # 2022-01-31: dateutils.ddiff
@@ -62,7 +63,8 @@
 
 - name: 'Install resource monitoring apps (*top)'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # "Resource monitor that shows usage and stats"
@@ -78,7 +80,8 @@
 - name: 'Install assorted development and sysadmin apps (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int >= 21
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # 2023-05-03: bashtop, `htop` alternative; see also: `glances`.

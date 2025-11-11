@@ -22,7 +22,8 @@
 - name: Install Debian base packages
   when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int >= 12
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # SAVVY: You'll likely install this package manually on new host,

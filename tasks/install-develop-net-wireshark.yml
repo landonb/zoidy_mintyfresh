@@ -2,7 +2,8 @@
 
 - name: 'Wireshark∷ Install network application development and diagnostic tools'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   tags: install-develop-net-wireshark
   loop:
 

@@ -3,7 +3,8 @@
 - name: 'Install desktop apps — misc (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # "lets you dock any application into the system tray"

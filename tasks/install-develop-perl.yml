@@ -2,7 +2,8 @@
 
 - name: "Install Perl development packages"
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # 2019-10-28: For myrepos.

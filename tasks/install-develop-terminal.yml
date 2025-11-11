@@ -2,7 +2,8 @@
 
 - name: 'Install terminal tools'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # tmux - terminal multiplexer
@@ -96,7 +97,8 @@
 - name: 'Install terminal tools (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # http://www.vergenet.net/~conrad/software/xsel/

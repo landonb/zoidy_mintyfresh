@@ -2,7 +2,8 @@
 
 - name: 'Install font viewers and font utilities'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # gucharmap - Unicode character picker and font browser
@@ -16,7 +17,8 @@
 
 - name: 'Install fonts'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     - fonts-hack
@@ -58,7 +60,8 @@
 - name: 'Install fonts (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # DUNNO/2025-01-15: Not found on Debian 12.

@@ -2,7 +2,8 @@
 
 - name: "Install some language-specific develop tools [that this developer has used]"
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # Count Lines Of Code ("statistics utility to count lines of code")
@@ -31,7 +32,8 @@
 - name: "Install some language-specific develop tools [that this developer has used] (Mint-only)"
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # "Code coverage analysis using DWARF debugging information"

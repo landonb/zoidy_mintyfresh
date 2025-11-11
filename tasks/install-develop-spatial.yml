@@ -2,7 +2,8 @@
 
 - name: 'Install spatial packages'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # Cartographic projection packages.
@@ -31,7 +32,8 @@
 - name: 'Install distro-specific acbde-related packages (Debian 12)'
   when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # libproj25 - Cartographic projection library
     - libproj25
@@ -41,7 +43,8 @@
 - name: "Install Ruby and related packages (Mint 21)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # libproj22 - Cartographic projection library
     - libproj22
@@ -51,7 +54,8 @@
 - name: "Install Ruby and related packages (Mint 19)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # [lb]: 2019-01-03: Enabling these for completeness, but both already installed.
     # libproj12 - Cartographic projection library
@@ -62,7 +66,8 @@
 - name: "Install Ruby and related packages (Mint 18)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     - libproj0
     - libspatialite5
@@ -70,7 +75,8 @@
 - name: "Install Ruby and related packages (Mint 17)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 17
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     - libproj0
     - libspatialite5

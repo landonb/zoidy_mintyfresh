@@ -2,7 +2,8 @@
 
 - name: 'Install grepper packages (not including `rg`)'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # [lb]: I don't personally use ack, but sometimes I copy-paste it.

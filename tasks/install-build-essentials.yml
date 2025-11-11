@@ -2,7 +2,8 @@
 
 - name: Install essential build essentials
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # Dynamic Kernel Module System (DKMS)
     # - SPIKE/2025-01-15: What's this for? I think at least VirtualBox needs this.

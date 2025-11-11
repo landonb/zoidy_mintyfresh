@@ -2,7 +2,8 @@
 
 - name: 'Install network app development, diagnostic, and security tools'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   tags: install-develop-net
   loop:
 
@@ -59,7 +60,8 @@
 - name: 'Install network app development, diagnostic, and security tools (Debian)'
   when: ansible_lsb.id == 'Debian'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # `nslookup`
     - bind9-dnsutils
@@ -67,7 +69,8 @@
 - name: 'Install network app development, diagnostic, and security tools (Linux Mint)'
   when: ansible_lsb.id == 'LinuxMint'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   tags: install-develop-net
   loop:
     # `nslookup`

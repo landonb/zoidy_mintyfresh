@@ -2,7 +2,8 @@
 
 - name: 'Install apps to help working with text in the terminal'
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
 
     # 2017-05-23: What is with wanting to save color output to a file?
@@ -49,7 +50,8 @@
 - name: 'Install distro-specific acbde-related packages (Debian 12)'
   when: ansible_lsb.id == 'Debian' and ansible_lsb.major_release|int == 12
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # "International Components for Unicode"
     - libicu72
@@ -57,7 +59,8 @@
 - name: "Install Ruby and related packages (Mint 21)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 21
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # "International Components for Unicode"
     - libicu70
@@ -65,7 +68,8 @@
 - name: "Install Ruby and related packages (Mint 19)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 19
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # "International Components for Unicode"
     # Ubuntu 16.04: libicu52
@@ -75,7 +79,8 @@
 - name: "Install Ruby and related packages (Mint 18)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 18
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # "International Components for Unicode"
     - libicu52
@@ -83,7 +88,8 @@
 - name: "Install Ruby and related packages (Mint 17)"
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int == 17
   become: true
-  ansible.builtin.apt: name={{ item }}
+  ansible.builtin.apt:
+    name: "{{ item }}"
   loop:
     # "International Components for Unicode"
     - libicu52
