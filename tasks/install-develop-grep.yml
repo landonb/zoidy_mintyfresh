@@ -17,16 +17,16 @@
     #   /etc/alternatives/awk -> /usr/bin/gawk
     - gawk
 
-    # For when you need Perl-style regex.
-    # pcregrep - grep utility that uses perl 5 compatible regexes.
-    # - CXREF:
-    #   - If present during DepoXy OMR tig 'install' task, e.g.:
-    #         mr -d ~/.kit/git/tig -n install
-    #     pcregrep will be included in `tig` build config. See:
-    #       ~/.depoxy/ambers/home/.kit/git/_mrconfig-git-core
-    #     (On macOS, the tig 'install' task brew-installs pcre2,
-    #      which includes pcregrep.)
-    - pcregrep
+    # pcre2-utils - New Perl Compatible Regular Expression Library - utilities
+    # - For pcre2grep (née pcregrep), for when you need Perl-style
+    #   Perl 5-compatible regex (for, e.g., lookahead and lookbehind).
+    # - CXREF: pcre2grep also ensured by DepoXy OMR tig 'install' task, e.g.:
+    #     mr -d ~/.kit/git/tig -n install
+    #   ~/.depoxy/ambers/home/.kit/git/_mrconfig-git-core
+    # - CALSO: Homebrew pcre2.
+    #   - (On macOS, the tig 'install' task brew-installs pcre2,
+    #      which includes pcre2grep (and pcregrep).)
+    - pcre2-utils
 
     # ripgrep is the fastest searcher! > ag > grep
     # - 2024-02-06: Linux Mint 21.3 includes ripgrep 13.0.0

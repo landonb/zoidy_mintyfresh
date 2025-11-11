@@ -41,8 +41,9 @@
     # libcurl4 - easy-to-use client-side URL transfer library (OpenSSL flavour)
     #  - libcurl3
 
-    # pcregrep - grep utility that uses perl 5 compatible regexes.
-    - pcregrep
+    # pcre2-utils - New Perl Compatible Regular Expression Library - utilities
+    # - For pcre2grep (née pcregrep).
+    - pcre2-utils
 
     # gir1.2-gtop-2.0 - gtop system monitoring library (gir bindings)
     - gir1.2-gtop-2.0
