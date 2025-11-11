@@ -50,6 +50,6 @@
 - name: 'Install Spotify desktop client application'
   become: true
   ansible.builtin.apt:
-    name: {{ item }}
+    name: "{{ item }}"
   loop:
     - spotify-client
