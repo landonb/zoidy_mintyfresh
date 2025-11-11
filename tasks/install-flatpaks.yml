@@ -12,6 +12,15 @@
 
 # ***
 
+- name: Install package 'flatpak'
+  become: true
+  ansible.builtin.apt:
+    name: "{{ item }}"
+  loop:
+    - flatpak
+
+# ***
+
 # SAVVY/2023-04-20 19:42: If you don't remote-add before install, it'll error, e.g.,
 #  error: No remote refs found similar to ‘flathub’
 # Runs, e.g.,
