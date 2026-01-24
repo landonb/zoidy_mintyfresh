@@ -61,7 +61,7 @@
     # https://www.reddit.com/r/debian/comments/iyxz9s/pros_and_cons_of_encrypted_lvm/
     - uptimed
 
-- name: 'Install resource monitoring apps (*top)'
+- name: 'Install resource monitoring apps (*top, d*f)'
   become: true
   ansible.builtin.apt:
     name: "{{ item }}"
@@ -76,6 +76,12 @@
 
     # Network activity monitor, like `top`. Requires sudo.
     - iftop
+
+    # ***
+
+    # "Disk Usage/Free Utility - a better 'df'"
+    # https://github.com/muesli/duf 14.6k★
+    - duf
 
 - name: 'Install assorted development and sysadmin apps (Mint-only)'
   when: ansible_lsb.id == 'LinuxMint' and ansible_lsb.major_release|int >= 21
