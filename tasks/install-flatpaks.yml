@@ -126,3 +126,19 @@
     method: user
 
 # ***
+
+# Install Telegram, e.g.,
+#   flatpak install flathub org.telegram.desktop
+# SAVVY: Run it:
+#   flatpak run org.telegram.desktop
+# REFER:
+#   https://telegram.org/
+#   https://desktop.telegram.org/
+#   https://flathub.org/en/apps/org.telegram.desktop
+- name: Install Telegram Flatpak
+  community.general.flatpak:
+    name: org.telegram.desktop
+    state: present
+    method: user
+
+# ***
