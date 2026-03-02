@@ -49,6 +49,11 @@
     #   https://code.launchpad.net/screenruler
     - screenruler
 
+    # /usr/sbin/smartctl
+    - smartmontools
+    # /usr/sbin/gsmartcontrol, /usr/sbin/gsmartcontrol-root
+    - gsmartcontrol
+
     - tree
 
     # Un-Zip-a-Dee-Doo-Dah
