@@ -53,6 +53,16 @@
     state: present
     method: user
 
+# SAVVY/2026-05-25: Allow meld to access files under /tmp.
+# - By default, Flatpak processes are sandboxed and use their own
+#   /tmp filesystem, so they cannot see other processes' temp files.
+# - REFER: man flatpak-override
+#   - This command creates
+#       ~/.local/share/flatpak/overrides/org.gnome.meld
+#   - It does not affect stdout-less `flatpak override --show`.
+- name: "Grant Meld Flatpak Filesystem Access to /tmp"
+  ansible.builtin.command: "flatpak override --user --filesystem=/tmp org.gnome.meld"
+
 # ***
 
 # Install GIMP, e.g.,
