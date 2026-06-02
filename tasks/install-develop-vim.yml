@@ -22,8 +22,11 @@
     # Text columnizer. (Replaced by custom fork: parT)
     #   #- par
 
-    # Ctags.
+    # Exuberant Ctags.
     - exuberant-ctags
+    # Universal Ctags. "A maintained ctags implementation." /oh-burn
+    # https://github.com/universal-ctags/ctags
+    - universal-ctags
 
     # Ruby dev tools for Command-T.
     - ruby-dev
