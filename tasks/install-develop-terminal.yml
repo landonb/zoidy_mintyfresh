@@ -69,21 +69,21 @@
     # pv - Shell pipeline element to meter data passing through
     - pv
 
-    # [lb] Maybe someday I'll try a shell other than Bash.
-    #  (But why rock the boat when you've got a good thing?)
-    # zsh - shell with lots of features
-    - zsh
-
     # readline wrapper, e.g., a nice Perl REPL: rlwrap perl -d -e 1
     - rlwrap
+
+    # "tool for creating graphical dialogs from shell scripts"
+    # - Color picker: `yad --color`
+    - yad
 
     # "Display graphical dialog boxes from shell scripts"
     # - Should be pre-installed. (This is mostly a reminder.)
     - zenity
 
-    # "tool for creating graphical dialogs from shell scripts"
-    # - Color picker: `yad --color`
-    - yad
+    # [lb] Maybe someday I'll try a shell other than Bash.
+    #  (But why rock the boat when you've got a good thing?)
+    # zsh - shell with lots of features
+    - zsh
 
     # ***
 
