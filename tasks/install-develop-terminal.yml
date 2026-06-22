@@ -73,6 +73,9 @@
     - rlwrap
 
     # ronn - convert markdown files to manpages
+    # - REFER/2026-06-22: Installs: ronn v0.10.1 (Ronn-NG)
+    #   - "Ronn-NG: An updated fork of ronn."
+    #   https://github.com/apjanke/ronn-ng
     - ronn
 
     # "tool for creating graphical dialogs from shell scripts"
