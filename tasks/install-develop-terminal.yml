@@ -72,6 +72,9 @@
     # readline wrapper, e.g., a nice Perl REPL: rlwrap perl -d -e 1
     - rlwrap
 
+    # ronn - convert markdown files to manpages
+    - ronn
+
     # "tool for creating graphical dialogs from shell scripts"
     # - Color picker: `yad --color`
     - yad
