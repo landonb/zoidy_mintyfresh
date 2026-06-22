@@ -39,6 +39,7 @@
     #  - most
 
     # python3-pygments - syntax highlighting package written in Python 3
+    # - Includes: pygmentize
     - python3-pygments
 
 # ***
