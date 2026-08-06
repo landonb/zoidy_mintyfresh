@@ -272,4 +272,14 @@
     apply: { tags: always }
   tags: install-flatpaks-automatic-updates
 
+# ******************************************************
+# *** Snaps
+
+- name: Install package group "install-snaps"
+  ansible.builtin.include_role:
+    name: zoidy_captivator
+    tasks_from: install-snaps
+    apply: { tags: always }
+  tags: install-snaps
+
 # ***

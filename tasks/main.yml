@@ -41,6 +41,7 @@
     - install-distro-16.04
     - install-flatpaks
     - install-flatpaks-automatic-updates
+    - install-snaps
     - laptop-lid-disable-wake-on
     - log-on-screen-background
     - mintupdate-automation-autoremove

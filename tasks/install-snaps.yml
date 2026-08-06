@@ -1,0 +1,58 @@
+---
+
+# TRACK/2026-08-06: DUNNO: Sometimes apt-update fails:
+#
+#   [WARNING]: Failed to update cache after 1 retries due to , retrying
+#   [WARNING]: Sleeping for 2 seconds, before attempting to refresh the cache again
+#   ...
+#   [WARNING]: Failed to update cache after 5 retries due to , retrying
+#   [WARNING]: Sleeping for 13 seconds, before attempting to refresh the cache again
+#   [ERROR]: Task failed: Module failed: Failed to update apt cache after 5 retries:
+#   Origin: /home/user/.kit/ansible/roles/zoidy_captivator/tasks/install-snaps.yml:4:3
+#   ...
+#   fatal: [lethe]: FAILED! => {"changed": false, "msg":
+#     "Failed to update apt cache after 5 retries: "}
+#
+# - I haven't figured out why. Reboot works.
+#   - Or, more easily, run update manually so cache_valid_time skips the task:
+#
+#     sudo apt update
+
+# CRUMB: 'sudo apt update && sudo apt install snapd'
+- name: Install snapd APT
+  become: true
+  ansible.builtin.apt:
+    name:
+      - snapd
+    state: present
+    # Runs `apt-get update`.
+    update_cache: true
+    cache_valid_time: 3600
+
+# ***
+
+# CRUMB: 'sudo snap install snapd'
+- name: Install snapd Snap
+  become: true
+  community.general.snap:
+    name:
+      - snapd
+
+# CRUMB: 'sudo snap install [PKG...]'
+- name: Install snaps
+  become: true
+  community.general.snap:
+    name:
+      - miller
+      - slack
+      # - spotify
+      # - vlc
+
+# CRUMB: 'sudo snap install ghostty --classic'
+- name: Install snaps
+  become: true
+  community.general.snap:
+    name:
+      - ghostty
+    # REFER: "This option can only be specified when the task involves a single snap."
+    classic: true
