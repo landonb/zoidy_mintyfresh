@@ -152,6 +152,12 @@
     # - Includes `ensurepip`
     - python3-venv
 
+    # Adds /usr/bin/python -> python3, and pydoc -> pydoc3, which is
+    # generally unnecessary if you always use pyenv, but might be
+    # useful for non-user shells (e.g., if you're too lazy to change
+    # 'python' refs. to 'python3' in your cron or accelerator scripts).
+    - python-is-python3
+
 # ***
 
 - name: 'Install distro-specific acbde-related packages (Debian 12)'
