@@ -158,6 +158,19 @@
     # 'python' refs. to 'python3' in your cron or accelerator scripts).
     - python-is-python3
 
+    # HSTRY/2026-08-26: Latest Debian does not include 'command-not-found'.
+    # - You could apt-install it, and then, e.g.
+    #     $ python3 /usr/lib/command-not-found howami
+    #     howami: command not found
+    #     $ python3 /usr/lib/command-not-found whyami
+    #     Command 'whyami' not found, did you mean:
+    #       command 'whoami' from deb coreutils
+    #     Try: sudo apt install <deb name>
+    # - But we'll just live with Debian's handler,
+    #     command_not_found_handle
+    #
+    #  - command-not-found
+
 # ***
 
 - name: 'Install distro-specific Python dev packages (Debian 12)'
