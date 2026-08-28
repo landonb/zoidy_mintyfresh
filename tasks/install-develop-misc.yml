@@ -66,6 +66,9 @@
     # https://www.reddit.com/r/debian/comments/iyxz9s/pros_and_cons_of_encrypted_lvm/
     - uptimed
 
+    # GUI for libvirt VMs.
+    - virt-manager
+
 - name: 'Install resource monitoring apps (*top, d*f)'
   become: true
   ansible.builtin.apt:
